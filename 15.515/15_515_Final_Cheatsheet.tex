@@ -26,6 +26,8 @@
 \usepackage{booktabs} % Optional: For better table lines (thin/thick)
 \usepackage{caption} % Optional: Adjust caption formatting
 
+\usepackage{pdfpages}
+
 % Set minimal padding between rows
 \renewcommand{\arraystretch}{0.8} % Adjust row height, default is 1.0
 
@@ -90,10 +92,11 @@
 \begin{document}
 \raggedright
 
-\begin{tabular}{|cccccccccc|cccccc|cc|}
-    \multicolumn{10}{c|}{\textbf{ASSETS}} & \multicolumn{6}{c|}{\textbf{LIABILITIES}} & \multicolumn{2}{c}{\textbf{EQUITY}} \\ \hline
-    \multicolumn{1}{|c|}{\cellcolor[HTML]{9AFF99}\$Cash} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}A/R} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}-ADA\\ (XA)\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}Inv.} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}PPE} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}-Acc. Dep.\\ (XA)\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}\begin{tabular}[c]{@{}c@{}}Prepaid\\ \{rent, asset\}\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}\begin{tabular}[c]{@{}c@{}}Marketable\\ Securities\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}Goodwill} & \cellcolor[HTML]{9AFF99}Intangible & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}A/P} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\begin{tabular}[c]{@{}c@{}}Deferred/\\ unearned Rev.\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\begin{tabular}[c]{@{}c@{}}Bond\\ Payable\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}-Discount\\ (XL)\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\begin{tabular}[c]{@{}c@{}}Wages\\ Payable\end{tabular}} & \cellcolor[HTML]{FFCCC9}{\color[HTML]{333333} \begin{tabular}[c]{@{}c@{}}Rent\\ Payable\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFC7}\begin{tabular}[c]{@{}c@{}}Contributed\\ Capital\end{tabular}} & \cellcolor[HTML]{FFFFC7}\begin{tabular}[c]{@{}c@{}}Retained\\ Earnings\end{tabular} \\ \hline
-    \end{tabular}
+%\begin{tabular}{|cccccccccc|cccccc|cc|}
+%    \multicolumn{10}{c|}{\textbf{ASSETS}} & \multicolumn{6}{c|}{\textbf{LIABILITIES}} & \multicolumn{2}{c}{\textbf{EQUITY}} \\ \hline
+%    \multicolumn{1}{|c|}{\cellcolor[HTML]{9AFF99}\$Cash} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}A/R} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}-ADA\\ (XA)\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}Inv.} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}PPE} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}-Acc. Dep.\\ (XA)\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}\begin{tabular}[c]{@{}c@{}}Prepaid\\ \{rent, asset\}\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}\begin{tabular}[c]{@{}c@{}}Marketable\\ Securities\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}Goodwill} & \cellcolor[HTML]{9AFF99}Intangible & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}A/P} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\begin{tabular}[c]{@{}c@{}}Deferred/\\ unearned Rev.\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\begin{tabular}[c]{@{}c@{}}Bond\\ Payable\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}-Discount\\ (XL)\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\begin{tabular}[c]{@{}c@{}}Wages\\ Payable\end{tabular}} & \cellcolor[HTML]{FFCCC9}{\color[HTML]{333333} \begin{tabular}[c]{@{}c@{}}Rent\\ Payable\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFC7}\begin{tabular}[c]{@{}c@{}}Contributed\\ Capital\end{tabular}} & \cellcolor[HTML]{FFFFC7}\begin{tabular}[c]{@{}c@{}}Retained\\ Earnings\end{tabular} \\ \hline
+%\end{tabular}
+
 \begin{multicols}{3}
 \scriptsize
 % multicol parameters
@@ -427,4 +430,7 @@ available to each share of common stock outstanding during the reporting period.
 \end{itemize} 
 
 \end{multicols}
+
+\includepdf[pages=-]{15_515_H1_Cheatsheet.pdf}
+
 \end{document}
