@@ -1,5 +1,6 @@
 \documentclass[10pt,landscape]{article}
 \usepackage{multicol}
+\usepackage{multirow}
 \usepackage{calc}
 \usepackage{ifthen}
 \usepackage[landscape]{geometry}
@@ -256,6 +257,86 @@ recorded on the books.
     Mo 1 &  &  & 2,212.85 &  &  &  & -\color{brown}{2,212.85} & Am. exp. \\
     Mo 2 & -2,500 &  &  &  & -1,988.61 &  & -\color{violet}{511.40} & Int. exp. \\
     Mo 2 &  &  & 2,212.85 &  &  &  & -\color{brown}{2,212.85} & Am. exp.
+\end{tabular}
+
+\subsubsection{Shareholder's Equity}
+
+\begin{tabular}{|ccccccc}
+    \multicolumn{7}{|c|}{\cellcolor[HTML]{FFFFC7}Shareholder's Equity} \\
+    \multicolumn{4}{|c|}{{\color[HTML]{CB0000} Contributed Capital}} & \multicolumn{1}{c|}{{\color[HTML]{CB0000} \begin{tabular}[c]{@{}c@{}}- Treasury\\ Stock\end{tabular}}} & \multicolumn{1}{c|}{{\color[HTML]{00009B} \begin{tabular}[c]{@{}c@{}}Retained\\ Earnings\end{tabular}}} & \multicolumn{1}{c|}{{\color[HTML]{00009B} \begin{tabular}[c]{@{}c@{}}Comprehensive\\ Income\end{tabular}}} \\
+    \multicolumn{2}{|c|}{{\color[HTML]{F56B00} Common Stock}} & \multicolumn{2}{c|}{{\color[HTML]{663234} Preferred Stock}} & \multicolumn{3}{c}{} \\
+    \multicolumn{1}{|c|}{{\color[HTML]{F56B00} Par}} & \multicolumn{1}{c|}{{\color[HTML]{F56B00} APIC}} & \multicolumn{1}{c|}{{\color[HTML]{663234} Par}} & \multicolumn{1}{c|}{{\color[HTML]{663234} APIC}} & \multicolumn{3}{l}{\multirow{-2}{*}{}}
+\end{tabular}
+
+\Red{Common Stock} Basic residual ownership share in the corporation.
+\begin{itemize}
+    \item \Blue{Par value} stated value on the face of the security; has no relation to mkt value
+    \item \Blue{Additional paid in capital (APIC)} Amount received from shareholders in addition to par value; i.e. the difference between capital raised (cash) and par value; if shares are bough back and then reissued, the difference between repurchase price and proceeds from sale increases / decreases APIC.
+\end{itemize}
+
+Three types of shares
+\begin{itemize}
+    \item \Blue{Authorized} \# of shares that can be sold/issued; \Hint{No journal entry is changed; amend corporate charter}
+    \item \Blue{Issued} \# of shares that were sold/issued; \Hint{$\le$ above}
+    \item \Blue{Outstanding} \# of issued shares actually owned by shareholders; \Hint{= issued shares - issued shares held in treasury; $\le$ above}
+\end{itemize}
+
+\Green{E.g. Equity Issuance - Tesla raised \$402M in equity by issuing 1,536,000 shares of stock at a par value of \$0.001/share}
+\begin{itemize}
+    \item Common stock = par value $\times$ \# of shares outstanding
+    \item APIC = Cash - Common Stock
+\end{itemize}
+\begin{tabular}{cccc}
+    Cash (A) & = & Common Stock (E) & APIC (E) \\ \hline
+    \multicolumn{1}{r}{402M} & \multicolumn{1}{r}{} & \multicolumn{1}{r}{1,536} & \multicolumn{1}{r}{401,998,464}
+\end{tabular}
+
+\Red{Dividends (-R/E)} returns paid to shareholders. When paid, dividends impact Cash (A) and R/E (E), but \Hint{not the income statement; not an expense}
+\begin{enumerate}
+    \item \Blue{Declaration Date} when the company's board announces the dividend; record liability
+    \item \Blue{Date of Record} date on which shareholders must be on the company's records to receive the dividend. There is no transaction on this date
+    \item \Blue{Payment Date} when the dividend is actually paid to shareholders
+\end{enumerate}
+
+\Green{E.g. Dividend - on 1/21/25 XYZ Corp declares a dividend of 2 cents per share and it has 1 million shares outstanding.  The date of record is 2/1/25, and the payment date is 2/28/25}
+\begin{tabular}{rrrrrrr}
+    \multicolumn{1}{c}{} & \multicolumn{1}{c}{Cash (A)} & \multicolumn{1}{c}{=} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Dividend\\ Payable (L)\end{tabular}} & \multicolumn{1}{c}{+} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}R/E\\ (E)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Inc. State.\\ Caption\end{tabular}} \\ \hline
+    1/21/25 &  &  & 20,000 &  & -20,000 & Dividends \\
+    2/28/25 & -20,000 &  & -20,000 &  &  & 
+\end{tabular}
+
+\Blue{Stock Dividends} (as opposed to cash). \begin{itemize}
+    \item if $< 25\%$, record the transaction at mkt value of the firm's stock
+    \item if $> 25\%$, record the transaction using the par value of the firm's stock
+\end{itemize}
+
+\Green{E.g. Stock Dividends - on 1/21/2025 XYZ Corp, which has 1,000,000 shares outstanding of \$5 par value stock, makes a stock dividend of 10\% when the market price \$30 per share} \# shares to be paid as dividends = $1,000,000 \times 10\% = 100,000$; Par Value (E) = $\$5 \times 100,000$
+\begin{tabular}{cccc}
+    Par Value (E) & APIC (E) & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}R/E\\ (E)\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Inc. State.\\ Caption\end{tabular} \\ \hline
+    \multicolumn{1}{r}{500,000} & \multicolumn{1}{r}{2,500,00} & \multicolumn{1}{r}{-3,000,000} & \multicolumn{1}{r}{Stock Dividend}
+\end{tabular}
+
+\Green{E.g. Stock Dividends - ditto but makes a stock dividend of 50\%}
+\begin{tabular}{cccc}
+    Par Value (E) & APIC (E) & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}R/E\\ (E)\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Inc. State.\\ Caption\end{tabular} \\ \hline
+    \multicolumn{1}{r}{5,000,000} & & \multicolumn{1}{r}{-5,000,000} & \multicolumn{1}{r}{Stock Dividend}
+\end{tabular}
+
+\Red{Treasury Stock (Share Repurchases)} stock which has been repurchased by the company. A contra equity account that
+increases when a company repurchases its shares. Why?
+\begin{itemize}
+    \item Tax-advantaged way to distribute cash to investors (instead of dividends)
+    \item To provide stock for stock compensation contracts
+    \item To increase earnings per share (i.e., decrease the denominator)
+    \item To thwart takeover attempts or reduce the number of stockholders (bar outsiders from gaining influence)
+\end{itemize}
+\Hint{The accounting treatment of a stock repurchase is to reduce cash
+and to reduce Shareholders Equity. Thus, treasury stock is not an asset.}
+
+\Green{E.g. Tesla purchases 1 million shares at \$420 per share}
+\begin{tabular}{ccc}
+    Cash (A) & = & -Treasury Stock (XE) \\ \hline
+    -420M & & 420M
 \end{tabular}
 
 \end{multicols}
