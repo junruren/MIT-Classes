@@ -210,6 +210,53 @@ recorded on the books.
     0 & 400 & 400 & FMV adj.; unreal. gain
 \end{tabular}
 
+\subsubsection{Leases}
+
+\Red{Lease} an agreement conveying the right to use property, plant, or equipment usually for a stated period of time.
+
+\Blue{Players} lessor (owner) and lessee (renter)
+\begin{tabular}{l|c|c}
+    & Loan & Lease \\ \hline
+    Down pymt required & Bigger & Smaller / None \\
+    Maintenance and support provided? & Not by bank & Yes \\
+    Flexibility - trade up, return? & No & Yes \\
+    Obsolescence risk? & Yes & No \\
+    Restrictive covenants? & Often & No
+\end{tabular}
+
+\Red{Finance Lease} Lessee owns property and records the leased asset on the B/S.
+\begin{itemize}
+    \item Balance Sheet: \begin{itemize}
+        \item \Blue{Lease Asset} = PV of lease pymts; \Hint{amortized over time like PPE}
+        \item \Blue{Lease Liability} = PV of lease pymts; \Hint{Reduced as pymts are made like a mortgage}
+    \end{itemize}
+    \item Income Statement: \begin{itemize}
+        \item \Blue{Amortization Expense} = PV of periodic lease pymts/term of the lease; \Hint{same every period with straight-line method}
+        \item \Blue{Interest Expernse} = int. rate $\times$ outstanding lease liability; \Hint{decreases every period}
+    \end{itemize}
+    \item Cash Flow Statement: \begin{itemize}
+        \item \Blue{Operating Outflow} portion of payment classified as interest \Hint{decreases over time}
+        \item \Blue{Financing Outflow} portion of payment classified as principal \Hint{increases over time}
+    \end{itemize}
+\end{itemize}
+
+\Hint{Over time} increasing principal pymts; decreasing interest pymts; interest = rate $\times$ balance at begining of period; balance declines to 0; total cash pymts constant over time.
+
+\Green{Lease 2 yrs; \$2.5k/mo. (paid at month-end), assuming finance at 1\%}
+\begin{itemize}
+    \item PV of lease pymts $= 2,500 \cdot \text{AnnuityTable}(r=1\%, t=24) = 53,108.48$
+    \item Amortization exp. (straight-line) $= 53,108.48 / 24 = \color{brown}{2,212.85}$
+    \item Mo 1 int. exp. = lease obligation $\times$ int. rate $= 53,108.48 \times 1\% = \color{purple}{531.08}$
+    \item Mo 2 int. exp = $(53,108.48 - 1,968.92) \times 1\% = \color{violet}{511.40}$
+\end{itemize}
+\begin{tabular}{lrrrrrrrr}
+    \multicolumn{1}{c}{} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Cash\\ (A)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Lease\\ PPE\\ (A)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}-Acc.\\ Amo\\ (XA)\end{tabular}} & \multicolumn{1}{c}{=} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Lease\\ Obligation\\ (L)\end{tabular}} & \multicolumn{1}{c}{+} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}R/E\\ (E)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Inc. Stat.\\ Caption\end{tabular}} \\ \hline
+    Signing &  & 53,108.48 &  &  & 53,108.48 &  &  &  \\
+    Mo 1 & -2,500 &  &  &  & -1,968.92 &  & -\color{purple}{531.08} & Int. exp. \\
+    Mo 1 &  &  & 2,212.85 &  &  &  & -\color{brown}{2,212.85} & Am. exp. \\
+    Mo 2 & -2,500 &  &  &  & -1,988.61 &  & -\color{violet}{511.40} & Int. exp. \\
+    Mo 2 &  &  & 2,212.85 &  &  &  & -\color{brown}{2,212.85} & Am. exp.
+\end{tabular}
 
 \end{multicols}
 \end{document}
