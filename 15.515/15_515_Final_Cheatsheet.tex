@@ -243,7 +243,7 @@ recorded on the books.
 
 \Hint{Over time} increasing principal pymts; decreasing interest pymts; interest = rate $\times$ balance at begining of period; balance declines to 0; total cash pymts constant over time.
 
-\Green{Lease 2 yrs; \$2.5k/mo. (paid at month-end), assuming finance at 1\%}
+\Green{E.g. Lease 2 yrs; \$2.5k/mo. (paid at month-end), assuming finance at 1\%}
 \begin{itemize}
     \item PV of lease pymts $= 2,500 \cdot \text{AnnuityTable}(r=1\%, t=24) = 53,108.48$
     \item Amortization exp. (straight-line) $= 53,108.48 / 24 = \color{brown}{2,212.85}$
@@ -257,6 +257,40 @@ recorded on the books.
     Mo 1 &  &  & 2,212.85 &  &  &  & -\color{brown}{2,212.85} & Am. exp. \\
     Mo 2 & -2,500 &  &  &  & -1,988.61 &  & -\color{violet}{511.40} & Int. exp. \\
     Mo 2 &  &  & 2,212.85 &  &  &  & -\color{brown}{2,212.85} & Am. exp.
+\end{tabular}
+
+\Green{E.g. On January 1, 2024, XYZ Corporation signed a 5-year lease for machinery with a present
+value of \$200,000 (rounded to the nearest thousand). The lease qualifies as a financing lease.
+The company will make annual lease payments of \$50,000, beginning on January 1, 2025.
+The implicit interest rate of the lease is 8\%. The company uses straight line, and there is no
+residual value for the lease}
+
+\begin{tabular}{rrrrrrrr}
+    \multicolumn{1}{c}{Date} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Cash\\ (A)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Right to\\ use Asset\\ (A)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}-Accum\\ Dep.\\ (XA)\end{tabular}} & \multicolumn{1}{c}{=} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Lease\\ Payable\\ (L)\end{tabular}} & \multicolumn{1}{c|}{R/E (E)} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Inc. State.\\ Caption\end{tabular}} \\ \hline
+    1/1/24 &  & 200,000 &  &  & 200,000 &  &  \\
+    12/31/24 &  &  & 40,000 &  &  & -40,000 & Dep. exp. \\
+    1/1/25 & -50,000 &  &  &  & -34,000 & -16,000 & Int. exp. \\
+    12/31/25 &  &  & 40,000 &  &  & -40,000 & Dep. exp. \\
+    1/1/26 & -50,000 &  &  &  & -36,720 & -13,280 & Int. exp.
+\end{tabular}
+
+\Green{If the implicit rate of the lease were 5\% instead of 8\%, but the payment schedule remained the same, how would
+it affect the balance sheet on the day they enter the lease in 2024 and the day they make their first lease payment on
+1/12025 and record the related depreciation expense on 12/31/2024}
+On the date they enter the lease,
+\begin{itemize}
+    \item \Hint{assets would increase}, since a lower discount rate increases the
+    present value of the lease obligation. The magnitude is $216,474 - 200,000 = 16,474$
+    \item \Hint{shareholder's equity would stay the same}, as entering a lease does not immediately affect equity.
+\end{itemize}
+After recording the lease payment and depreciation expense, \Hint{total assets will be larger}:
+\begin{tabular}{r|r|r}
+    & 5\% interest rate & 8\% interest rate \\ \hline
+    Cash & -50,000 & -50,000 \\
+    Right to use asset & 216,474 & 200,000 \\
+    -Accum Amor (XA) & 216,474 / 5 = 43,295 & 40,000 \\
+    Net right to use asset & 173,179 & 160,000 \\
+    Total Assets & 123,179 & 110,000
 \end{tabular}
 
 \subsubsection{Shareholder's Equity}
@@ -338,6 +372,59 @@ and to reduce Shareholders Equity. Thus, treasury stock is not an asset.}
     Cash (A) & = & -Treasury Stock (XE) \\ \hline
     -420M & & 420M
 \end{tabular}
+
+\Red{Stock options} Gives an employee a right (but not the obligation) to buy a specified number of shares at an established price.
+\begin{itemize}
+    \item \Blue{Exercise price (or strike price)}: the price the option holder pays to acquire the share
+    \item \Blue{Expiration date} date when employee can no longer exercise the option
+    \item \Blue{Vesting period} how long the option holder must work before being able to exercise all of their options
+    \item \Blue{Cliff} how long the option holder must work before being able to exercise any of their options
+    \item \Blue{In-the-money} the current share price $>$ the exercise price
+    \item \Blue{At-the-money} the current share price = the exercise price
+    \item \Blue{Out-of-the-money} the current share price is $<$ the exercise price
+\end{itemize}
+
+\Green{E.g. On Jan 1, 2020 Ram awards 100,000 stock options to its employees. Ram stock has a par value of \$1, and the stock options have an exercise price of \$5 per share. The current market price is also \$5 per share (so the options are issued “at the money”). The estimated fair value of the options are \$540,000. The vesting period is three years (so the options fully vest at the end of 2022). On Jan. 1, 2023, employees exercised 90,000 options (90\% of the options) that vested. On that date, the market price of Ram Co. stock was \$7 per share}\begin{itemize}
+    \item no entry on grant date
+    \item Compensation expense each year $\$540,000 / 3 = \$180,000$
+    \item On 1/1/23, The amount collected from the employees totaled \$450,000 or \$5 x 90,000 options
+    \item \$450,000 = 90\% of the \$540,000
+\end{itemize}
+
+\begin{tabular}{rrrrrrrr}
+    \multicolumn{1}{c}{Date} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Cash\\ (A)\end{tabular}} & \multicolumn{1}{c}{=} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Paid in\\ Capital\\ Options\\ (E)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Common\\ Stock\\ Par Value\\ (E)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Paid in\\ Capital\\ Stock\\ (E)\end{tabular}} & \multicolumn{1}{c|}{R/E (E)} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Inc. State.\\ Caption\end{tabular}} \\ \hline
+    12/31/20 &  &  & 180,000 &  &  & -180,000 & Comp. exp. \\
+    12/31/21 &  &  & 180,000 &  &  & -180,000 & Comp. exp. \\
+    12/31/22 &  &  & 180,000 &  &  & -180,000 & Comp. exp. \\
+    1/1/23 & 450,000 &  & -486,000 & 90,000 & 846,000 &  & 
+\end{tabular}
+
+\Green{E.g. On January 1, 2024, XYZ Corporation granted 10,000 stock options to its executives. Strike price: \$50 per share. The options vest over 4 yrs and have a fair value of \$15 per option on the grant date. XYZ uses the straight-line method to recognize compensation expense}
+
+Transaction for the compensation expense related to the stock options for the year ended December 31, 2024:
+\begin{tabular}{cc}
+    APIC Stock Options (E) & R/E (E) \\ \hline
+    37,500 & -37,500 (Options exp.)
+\end{tabular}
+$37,500 = 15 \times 10,000 / 4$
+
+Transaction for the exercise of all options in 2029 (after they vest).  The employee pays cash when exercising.  Par value of the stock is \$1.  The market value of the stock is \$100
+\begin{tabular}{cccc}
+    Cash & Common Stock & APIC Options & APIC Common Stock \\ \hline
+    500,000 & 10,000 & -150,000 & 640,000
+\end{tabular}
+
+\Red{Earnings Per Share (EPS)} = Net Income / Weighted Average Shares Outstanding. The amount of earnings for the period
+available to each share of common stock outstanding during the reporting period.
+
+\Red{Impacts on Shareholder's Equity:}
+\begin{itemize}
+    \item \Blue{As options vest over time} As compensation expense is recognized each year, it reduces retained earnings.
+    However, it increases APIC, offsetting the reduction in retained earnings. Over time, as options vest, the net
+    impact on shareholder's equity is \Hint{neutral until the options are exercised}.
+    \item \Blue{Stock Issuance} Increases both common stock and APIC, thus increasing total shareholders' equity.
+    \item \Blue{Stock Repurchase} Increases treasury stock (a contra-equity account), which reduces total shareholders' equity.
+\end{itemize} 
 
 \end{multicols}
 \end{document}
