@@ -1,0 +1,215 @@
+\documentclass[10pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{listings}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{mathtools}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{MnSymbol}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{tikz}
+
+\usepackage{blindtext}
+
+\usepackage{colortbl}
+
+\usepackage{etoolbox}
+
+\usepackage{array} % For advanced table formatting
+\usepackage{booktabs} % Optional: For better table lines (thin/thick)
+\usepackage{caption} % Optional: Adjust caption formatting
+
+% Set minimal padding between rows
+\renewcommand{\arraystretch}{0.8} % Adjust row height, default is 1.0
+
+% Adjust column spacing
+\setlength{\tabcolsep}{2pt} % Default is 6pt
+
+% This sets page margins to .1 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=0.2in,left=0.2in,right=0.2in,bottom=0.2in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\footnotesize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex}%
+                                {0.1ex}%
+                                {\normalfont\scriptsize\bfseries}}
+
+\makeatother
+
+% Itemize to use less space
+\usepackage{enumitem}
+\setlist{leftmargin=*, nosep}
+\setenumerate{nosep}
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+
+\newcommand{\Blue}[1]{\noindent{\textcolor{Blue}{\textbf{#1}}}:}
+\newcommand{\Red}[1]{\noindent{\textcolor{BrickRed}{\textbf{#1}}}:}
+\newcommand{\Green}[1]{\noindent{\textcolor{PineGreen}{\textbf{#1}}}:}
+\newcommand{\Hint}[1]{\noindent{\textcolor{Orange}{#1}}}
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+
+\begin{tabular}{|cccccccccc|cccccc|cc|}
+    \multicolumn{10}{c|}{\textbf{ASSETS}} & \multicolumn{6}{c|}{\textbf{LIABILITIES}} & \multicolumn{2}{c}{\textbf{EQUITY}} \\ \hline
+    \multicolumn{1}{|c|}{\cellcolor[HTML]{9AFF99}\$Cash} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}A/R} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}-ADA\\ (XA)\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}Inv.} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}PPE} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}-Acc. Dep.\\ (XA)\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}\begin{tabular}[c]{@{}c@{}}Prepaid\\ \{rent, asset\}\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}\begin{tabular}[c]{@{}c@{}}Marketable\\ Securities\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{9AFF99}Goodwill} & \cellcolor[HTML]{9AFF99}Intangible & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}A/P} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\begin{tabular}[c]{@{}c@{}}Deferred/\\ unearned Rev.\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\begin{tabular}[c]{@{}c@{}}Bond\\ Payable\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}-Discount\\ (XL)\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\begin{tabular}[c]{@{}c@{}}Wages\\ Payable\end{tabular}} & \cellcolor[HTML]{FFCCC9}{\color[HTML]{333333} \begin{tabular}[c]{@{}c@{}}Rent\\ Payable\end{tabular}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFC7}\begin{tabular}[c]{@{}c@{}}Contributed\\ Capital\end{tabular}} & \cellcolor[HTML]{FFFFC7}\begin{tabular}[c]{@{}c@{}}Retained\\ Earnings\end{tabular} \\ \hline
+    \end{tabular}
+\begin{multicols}{3}
+\scriptsize
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\subsection{H2}
+
+\subsubsection{Long-term Debt}
+
+\Red{Liabilities} probable future \textbf{sacrifices of economic benefits arising from present obligations} of a
+particular entity to transfer assets or provide services to other entities in the future \textbf{as a result of past
+transactions}
+
+\Red{Present Value (PV)} \begin{itemize}
+    \item Lump sum of \$100 received 3 yrs from now on + $8\%$ interest rate: $PV = \frac{\text{Lump Sum}}{(1+r)^t} = \frac{\mathdollar 100}{(1+0.08)^3}$.
+    \item 3 year \$100 ordinary annuity + $8\%$: $PV = \left(\frac{\text{Annual Cash Flow}}{r}\right) \left(1 - \frac{1}{(1+r)^t}\right)$
+\end{itemize}
+
+\Red{Bond Accounting}
+\begin{itemize}
+    \item \Blue{Par Value} (aka. face value) amount that is returned to the investor when the bond matures (or ``principal"). E.g. if a bond is bought at issuance for \$1,000, the investor bought the bond at its par value. At the maturity date, the investor will get back the \$1,000.
+    \item \Blue{Maturity} The date the firm must repay the investors their par value.
+    \item \Blue{Discount} Amount below the par value at which the bond is trading at in the market at issuance; amortized over time ($MR > CR$)
+    \item \Blue{Premium} Amount above the par value at which the bond is trading at in the market at issuance; amortized over time ($MR < CR$)
+    \item \Blue{Market Value / Fair Value} Value at which a bond is currently trading at in the market; determined by market rates for similar bonds.
+    \item \Blue{Carrying Value / Book Value} Net amount between bond's face value and any unamortized premiums or minus any amortized discounts.
+    \item \Blue{Coupon Rate} The interest rate stated on the face of the bond. The periodic cash payments made to investors will be the coupon rate times the par value of the bond. Coupon payments are typically semi-annual
+    \item \Blue{Zero Coupon Bond} A bond that doesn't make periodic interest payments but one lump sum due at maturity
+    \item \Blue{Market interest rate (at issuance)} (aka. effective interest rate) rate that determines interest expense and book value (BV) of liability at issuance. Fixed at issuance. Rate investors demand to earn for loaning their money.
+    \item \Blue{Market interest rate (current / after issuance)} rate that determines current market value (MV) of bond. Based on mkt conditions and risk characteristics of borrower. Fluctuates over time.
+    \item \Blue{Interest Expense} = mkt rate at the time the bond is issued $\times$ \underline{net} bond payable.
+    \item \Blue{Interest payments} = coupon rate $\times$ par amount.
+    \item Difference between int. exp. and int. pymt. is accounted for in a balance sheet item called the \underline{bond discount (or premium)}.
+\end{itemize}
+
+\Green{E.g.  Zero coupon bond that will result in a single payment of \$10,000 after 3 yrs; mkt rate: 6\%}
+(FV = 10,000, CR = 0\%, MR = 6\%, Maturity = 3 yrs.)
+
+Math: $8,396 \approx \frac{10,000}{(1+6\%)^3}$, $504 \approx 8,396 \times 6\%$
+
+\begin{tabular}{rrlrrlrrrr}
+    \multicolumn{1}{c}{} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Cash\\ (A)\end{tabular}} & = & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}B/P\\ (L)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}-Discount\\ (XL)\end{tabular}} & + & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}R/E\\ (E)\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Inc. Stat.\\ Caption\end{tabular}} & \multicolumn{1}{c}{{\color[HTML]{656565} \begin{tabular}[c]{@{}c@{}}Net\\ B/P\end{tabular}}} & \multicolumn{1}{c}{{\color[HTML]{656565} \begin{tabular}[c]{@{}c@{}}Disc.\\ Balance\end{tabular}}} \\ \hline
+    iss. & 8,369 &  & 10,000 & 1,604 &  &  & \multicolumn{1}{r|}{} & {\color[HTML]{656565} 8,396} & {\color[HTML]{656565} 1,604} \\
+    Y1 &  &  &  & -504 &  & -504 & \multicolumn{1}{r|}{Int. exp.} & {\color[HTML]{656565} 8,900} & {\color[HTML]{656565} 1,100} \\
+    Y2 &  &  &  & -534 &  & -534 & \multicolumn{1}{r|}{Int. exp.} & {\color[HTML]{656565} 9,434} & {\color[HTML]{656565} 566} \\
+    Y3 &  &  &  & -566 &  & -566 & \multicolumn{1}{r|}{Int. exp.} & {\color[HTML]{656565} 10,000} & {\color[HTML]{656565} 0} \\
+     & -10,000 &  & -10,000 & 0 &  &  &  &  & 
+\end{tabular}
+
+\Green{E.g. Coupon bond issued at par value}
+(FV = 10,000, CR = 6\%, MR = 6\%, Maturity = 3 yrs.) Cash flows can be seen as:
+\begin{enumerate}
+    \item \$600 annuity for 3 yrs at 6\% MR: $\left(\frac{\$600}{6\%}\right) \left(1 - \frac{1}{(1+6\%)^3}\right) \approx \$1,603.8$
+    \item \$10,000 single sum in 3 yrs at 6\% MR: $\frac{\$10,00}{(1+6\%)^3} \approx \$8,396.2$
+\end{enumerate}
+Total NPV of Cash Flows $= \mathdollar1,603.8 + \mathdollar8,396.2 = \mathdollar 10,000$
+\begin{tabular}{rrlrlrr}
+    \multicolumn{1}{c}{} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Cash\\ (A)\end{tabular}} & = & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}B/P\\ (L)\end{tabular}} & + & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}R/E\\ (E)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Inc. Stat.\\ Caption\end{tabular}} \\ \hline
+    iss. & 10,000 &  & 10,000 &  &  &  \\
+    Y1 & -600 &  &  &  & -600 & Int. exp. \\
+    Y2 & -600 &  &  &  & -600 & Int. exp. \\
+    Y3 & -600 &  &  &  & -600 & Int. exp. \\
+     & -10,000 &  & -10,000 &  &  & 
+\end{tabular}
+
+Y1-Ended Statement of Cash Flows:
+\begin{itemize}
+    \item inflow financing 10k - principal
+    \item outflow operating 600 - interest
+\end{itemize}
+
+\Green{E.g. As of 12/31/23, a signle \$500k, 5-yr bond outstanding, issued at par with a fixed 4\% int. rate. Fair value of the bond is \$510k. The bond matures in 12/31/28 and int. pymt. are made annually on 12/31}
+In 2024, record interest expense $= \$500k \times 4\% = \$20k$.
+Implications of bond fair value disclosures for both investors and the company:
+\begin{itemize}
+    \item Fair value can differ from carrying value due to changes in interest rates or market conditions. If the fair value of the bond is higher than the carrying value (as in this case), it indicates that the bond is trading at a premium. This can suggest that investors perceive the company as less risky, or that interest rates have decreased since issuance.
+    \item For financial statement analysis: Fair value disclosures help investors assess the current market value of debt. A discrepancy between fair value and carrying value may signal changes in the company's credit risk or broader market conditions.
+\end{itemize}
+
+\Red{Early retirement of debt} (aka. buying back bond)
+Market value of debt can differ from book value:
+\begin{itemize}
+    \item Firm's economic conditions (credit quality) $MV > BV \rightarrow$ loss
+    \item Macroeconomic conditions (interest rates) $MV < BV \rightarrow$ gain
+\end{itemize}
+
+\Green{E.g. Repurchase the zero coupon bond in the open market on 12/31/22 (2 yrs to maturity) when the firm's mkt rate is 6\% (inc.d from 5\%)} when the balances in the respective accounts are:
+
+\begin{tabular}{crrl}
+    \multicolumn{1}{c}{\textbf{}} & \multicolumn{1}{c}{B/P (L)} & \multicolumn{1}{c}{-Discount (XL)} \\ \hline
+    12/31/22 & 10,000 & 930
+\end{tabular}
+PV of \$10,000 2 yrs from now $= \frac{\$10,000}{(1+6\%)^2} = \$8,900$ which is less than the NBV of $10,000-930=\$9,070$. The
+market value of the liability went down, meaning that they can pay off their obligations for less than the amount
+recorded on the books.
+
+\begin{tabular}{rcrrcr|r}
+    \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Cash\\ (A)\end{tabular}} & = & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}B/P\\ (L)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}-Discount\\ (XL)\end{tabular}} & + & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}R/E\\ (E)\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Inc. Stat.\\ Caption\end{tabular}} \\ \hline
+     -8,900 &  & -10,000 & -930 &  & 170 & Gain on retirement of debt
+\end{tabular}
+\Hint{Gain/loss on early retirement of debt reported on the income statement.}
+
+\Red{Marking bond to market} At issuance 1/1/21, FV = \$10k, CR = 10\%, MR = 10\%. 12/31/21, bond's MV is \$9.6k. Either BSE:
+\begin{tabular}{rr}
+    \multicolumn{1}{c}{-Discount (XL)} & \multicolumn{1}{c}{FMV Adju. (E)} \\ \hline
+    400 & 400 (change in FMV)
+\end{tabular}
+\begin{tabular}{rrr|l}
+    \multicolumn{1}{c}{-Discount (XL)} & \multicolumn{1}{c}{-FMV Adj. (XL)} & \multicolumn{1}{c}{R/E(E)} & \multicolumn{1}{c}{Inc. Stat. Caption} \\ \hline
+    0 & 400 & 400 & FMV adj.; unreal. gain
+\end{tabular}
+
+
+\end{multicols}
+\end{document}
