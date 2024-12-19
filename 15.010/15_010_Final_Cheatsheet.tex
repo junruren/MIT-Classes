@@ -82,8 +82,8 @@
 \usepackage{draftwatermark}
 % Configure the watermark
 \SetWatermarkText{Made with love by \texttt{junruren}} % Set the watermark text
-\SetWatermarkScale{2}            % Adjust the scale of the watermark
-\SetWatermarkLightness{0.97}      % Set the lightness (closer to 1 is more faded)
+\SetWatermarkScale{2.5}            % Adjust the scale of the watermark
+\SetWatermarkLightness{0.9}      % Set the lightness (closer to 1 is more faded)
 % -----------------------------------------------------------------------
 
 \begin{document}
@@ -129,12 +129,14 @@ elastic} so an aggressive pricing strategy becomes more profitable.
 \Blue{Marginal Cost (MC)} How cost changes as output $Q$ changes: for 1 unit, $Cost(Q) - Cost(Q-1)$ ; for more units,
 $\frac{\Delta Cost}{\Delta Q}$; and for small changes, $\frac{d Cost}{d Q}$. \Hint{Fixed costs don't enter MC.}
 
-\Blue{Marginal Revenue (MR)} in order to sell more units, the price must be lowered for all units.
-\fbox{$MR = \frac{\Delta Rev(Q)}{\Delta Q} = P(Q) + Q \frac{\Delta P(Q)}{\Delta Q}$}
+\Blue{Marginal Revenue (MR)}
 
 \begin{multicols}{2}
+$MR = \frac{\Delta Rev(Q)}{\Delta Q} = P(Q) + Q \frac{\Delta P(Q)}{\Delta Q}$
 
-Decrease price results in: \textbf{\textcolor{Green}{gain}} in Rev from Q increases + \textbf{\textcolor{Red}{loss}} in Revenue from P reduction for all units.
+In order to sell more units, the price must be lowered for all units.  Decrease price results in:
+\textbf{\textcolor{Green}{gain}} in Rev from Q increases + \textbf{\textcolor{Red}{loss}} in Revenue from P reduction
+for all units.
 
 \begin{tikzpicture}
     % Loss
@@ -199,6 +201,15 @@ If demand curve linear, \Hint{MR has same intercept and twice the slope. $P(Q) =
 \Green{Mark-up Formula} resulting from profit-max, $P^*$ satisfies: $\frac{P-MC}{P} = -\frac{1}{\epsilon}$ ($\epsilon$ is the demand elasticity).
 \Hint{Relatively more elastic markets (markets with more price-sensitive consumers) will face smaller markups} (i.e., lower prices if costs are the same across markets).
 \end{multicols}
+
+\subsubsection{Costs}
+
+\Blue{Fixed Cost} costs that don't vary with the level of output (Q).
+\Blue{Variable Cost} costs that vary with the level of output (Q).
+The fixed vs variable cost distinction depends on the business question and on the time horizon. E.g., all inputs
+(including capacity) are variable in the ``Long Run''
+
+\Red{Economies of Scale} average cost ($\frac{\text{TC}}{Q}$) falls with higher Q.
 
 \subsection{H2}
 \subsubsection{Supply and Demand}
@@ -447,6 +458,17 @@ $Q_{\text{private},d} = 100 - 2P$; supply: $Q_s = \frac{P}{2}$.
 
 \Red{Nash Equilibrium} a set of strategies, one for each player, such that no player has an incentive to change their strategy given what the other players are doing. \Ie \Hint{each player's strategy is a best response to the strategies chosen by the other players.}
 
+\begin{enumerate}
+    \item For Player 1: In each column, mark the largest payoff for Player 1.
+    \item For Player 2: In each row, mark the largest payoff for Player 2.
+    \item A cell is a Nash equilibrium if both payoffs in that cell are marked.
+    \item \textbf{Verify:} For each candidate cell, confirm that:
+        $\begin{cases}
+            P_1(\text{row}) &\geq P_1(\text{other rows}) \\
+            P_2(\text{col}) &\geq P_2(\text{other cols})
+        \end{cases}$
+\end{enumerate}
+
 \Green{Schwab vs E-Trade pricing game}
 \begin{tabular}{cccc}
     & \begin{tabular}[c]{@{}c@{}}Monopoly\\ Price\end{tabular} & \begin{tabular}[c]{@{}c@{}}Lower\\ Price\end{tabular} & \begin{tabular}[c]{@{}c@{}}Lowest\\ Price\end{tabular} \\ \cline{2-4} 
@@ -461,8 +483,8 @@ $Q_{\text{private},d} = 100 - 2P$; supply: $Q_s = \frac{P}{2}$.
 
 \Red{Bertrand model/trap of price competition} Each firm's best response is to undercut its rival $\Rightarrow$ N.E. = price = MC (\ie a price war). \Green{Sol.}
 \begin{itemize}
-    \item \Blue{Product differentiation} when consumers have heterogeneous preferences; can be both \Hint{horizontal} (differentiated by quality; \eg Coke vs Pepsi) and \Hint{vertical} (differentiated by price; \eg faster vs slower computers).
     \item \Blue{Repeated interactions} (later)\dots
+    \item \Blue{Product differentiation} when consumers have heterogeneous preferences; can be both \Hint{horizontal} (differentiated by quality; \eg Coke vs Pepsi) and \Hint{vertical} (differentiated by price; \eg faster vs slower computers).
 \end{itemize}
 
 \Green{Horizontal Differentiation: Linear City/Hotelling Model} Each consumer has a location \(x\) and these locations are evenly distributed along a line from \(0\) to \(100\). One firm is located at each end of the line, and each firm sells a product that every consumer values at \(v\).
@@ -635,6 +657,13 @@ More generally, \Hint{collusion is possible when:
     \item Simultaneous: A's dominant strategy is ``Skimp'' (\ie save money). N.E. is (Skimp, No Trust).
     \item A would pay up to $8-5=3$ to go first reaching N.E.: (A: Honor, then B: Trust); 8 is the first-mover payoff; 5 is the simultaneous payoff.
 \end{itemize}
+
+\Red{Cournot (quantity competition) vs Bertrand (price competition)} Price is lower (= MC) under Bertrand, resulting in greater CS thanl Cournot.
+
+\Red{Stackelberg Model} A sequential game where the leader chooses its output first, and the the follower chooses its output after observing the leader's decision.
+\Blue{Key Idea} The leader commits to a production level, anticipating the follower's best response.
+\Blue{Assumptions} Both firms produce homogeneous goods and face the same market demand.
+\Blue{Result} The leader often earns higher profits by influencing the follower's behavior; total output exceeds Cournot equilibrium output.
 
 \end{multicols}
 \end{document}
