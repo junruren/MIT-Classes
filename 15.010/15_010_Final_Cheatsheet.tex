@@ -490,10 +490,44 @@ cooperation (for example, \textbf{tit-for-tat}).
 \Hint{If the punishment for undercutting is Nash reversion, cooperation forever happens when: $NPV_{\text{cooperating}} > NPV_{\text{undercutting}}$}:
 $450 + \frac{450}{r} > 650 + \frac{300}{r} \quad \implies \quad r < 0.75$
 
-More generally, \Hint{collusion is possible when:}
-\fbox{$\pi_{\text{cooperate}} - \pi_{\text{war}} > r (\pi_{\text{deviate}} - \pi_{\text{cooperate}})$}
+More generally, \Hint{collusion is possible when:
+\fbox{$r < \frac{\pi_{\text{cooperate}} - \pi_{\text{war}}}{\pi_{\text{deviate}} - \pi_{\text{cooperate}}}$}}
 
-\Red{Antitrust Laws} regulate market competition, focusing on practices that tend to reduce rivalry between firms (e.g., price fixing and horizontal mergers) as well as those that can foreclose competition, furthering a dominant firm's position (e.g., vertical mergers and exclusive dealing). Price fixing is \textit{per se} illegal, and punishments typically include time in jail.
+\Red{Antitrust Laws} regulate market competition, focusing on practices that tend to reduce rivalry between firms (e.g., price fixing and horizontal mergers) as well as those that can foreclose competition, furthering a dominant firm's position (e.g., vertical mergers and exclusive dealing). Price fixing is \textit{per se} illegal, and punishments typically include time in jail. \Green{\Eg} \begin{itemize}
+    \item Sherman Act (1890)
+    \item Clayton Act (1914)
+    \item Federal Trade Commission Act (1914)
+\end{itemize}
+
+\Blue{Mergers} reduce the amount of competition, prices trend up. Can also lead to cost efficiencies, prices trend down. Anti-trust policy must weigh these two countervailing effects.
+
+\Blue{Unilateral Behavior} \begin{itemize}
+    \item \textbf{Predatory Pricing} a firm sets prices below cost to drive rivals out of business. Illegal.
+    \item \textbf{Exclusive Dealing} a firm requires a buyer to purchase all of its needs from the seller.
+    \item \textbf{Tying} leveraging market power in one market (\eg operating systems) to gain market power in another (\eg browser).
+\end{itemize}
+
+\Red{Dynamic Games} where players take actions at different points in time. Need to think about what will happen in the future given their current choices.
+
+\Blue{Backward induction} (in finite games that stop at some point) 1. figure out what will happen at the end of the game, and (2) then work backwards to determine players' earlier choices. Identifies \Hint{Nash equilibria} that don't involve non-credible threats.
+\includegraphics[width=\columnwidth]{tree1.png}
+
+\begin{wrapfigure}{r}{0.5\columnwidth}
+    \includegraphics[width=0.5\columnwidth]{tree2.png}
+\end{wrapfigure}
+\Blue{Strategic Pre-commitment} a player makes a choice that commits them to a certain strategy in the future \Hint{to get rivals to respond in desirable ways}. \Green{Eg.} a firm that builds a large factory to signal that it will produce a large quantity in the future.
+
+\begin{itemize}
+    \item pre-committing aggressive actions: when rivals'll respond by being less aggressive (\eg capacity)
+    \item vice versa (\eg price)
+\end{itemize}
+
+\Green{Practice Problem: simultaneous vs A pays to move first}
+\includegraphics[width=\columnwidth]{game_theory_practice_problem.png}
+\begin{itemize}
+    \item Simultaneous: A's dominant strategy is ``Skimp'' (\ie save money). N.E. is (Skimp, No Trust).
+    \item A would pay up to $8-5=3$ to go first reaching N.E.: (A: Honor, then B: Trust); 8 is the first-mover payoff; 5 is the simultaneous payoff.
+\end{itemize}
 
 \end{multicols}
 \end{document}
