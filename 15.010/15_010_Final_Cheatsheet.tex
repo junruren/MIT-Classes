@@ -98,6 +98,108 @@
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
 
+\subsection{H1 (selected)}
+
+\Red{Elasticity} meansure of price sensitivity
+\Blue{Own-price elasticity of demand $\frac{\% \Delta Q_1^D}{\% \Delta P_1}$} the \% change in quantity demanded for a
+1\% change in its price. Always negative by Law of Demand. $|E| \begin{cases}
+    < 1 & \text{Inelastic} \\
+    > 1 & \text{Elastic}
+\end{cases}$
+
+\Blue{Cross-price elasticity of demand $\frac{\% \Delta Q_1^D}{\% \Delta P_2}$} the \% change in quantity demanded for a
+1\% change in \underline{another good's} price. $\begin{cases}
+    > 0 & \text{SUBSTITUTES (wine \& beer)} \\
+    < 0 & \text{COMPLEMENTS (popcorn \& beer)}
+\end{cases}$
+
+\Red{Network Externality} The product is more valuable to you if it is used by others. To maintain n.e., (1) establish
+switching costs (2) interoperability (weakens direct n.e.)
+\begin{itemize}
+    \item Direct n.e.: Emails -- requires other users
+    \item Indirect n.e.: Windows -- requires complements like software developed for Win.
+\end{itemize}
+\Blue{Positive N.E.} the value of a product increases with the \# of users (higher WTP). Network goods. Makes demand \textit{more
+elastic} so an aggressive pricing strategy becomes more profitable.
+\Blue{Negative N.E.} e.g. luxury goods.
+
+\Red{Monopoly} a single firm is in the market.
+
+\Blue{Marginal Cost (MC)} How cost changes as output $Q$ changes: for 1 unit, $Cost(Q) - Cost(Q-1)$ ; for more units,
+$\frac{\Delta Cost}{\Delta Q}$; and for small changes, $\frac{d Cost}{d Q}$. \Hint{Fixed costs don't enter MC.}
+
+\Blue{Marginal Revenue (MR)} in order to sell more units, the price must be lowered for all units.
+\fbox{$MR = \frac{\Delta Rev(Q)}{\Delta Q} = P(Q) + Q \frac{\Delta P(Q)}{\Delta Q}$}
+
+\begin{multicols}{2}
+
+Decrease price results in: \textbf{\textcolor{Green}{gain}} in Rev from Q increases + \textbf{\textcolor{Red}{loss}} in Revenue from P reduction for all units.
+
+\begin{tikzpicture}
+    % Loss
+    \fill[red!30] (0, 1.3) -- (0.7, 1.3) -- (0.7, 0.5) -- (0, 0.5) -- cycle;
+    \draw[<-] (0.5, 1.1) -- (1, 1.6) node[right,red!30] {\tiny Loss $=Q_0 (P_0 - P_1)$};
+    % Gain
+    \fill[green!30] (0.7, 0) -- (0.7, 0.5) -- (1.5, 0.5) -- (1.5, 0) -- cycle;
+    \draw[<-] (1.3, 0.3) -- (1.8, 0.8) node[right,green!30] {\tiny Gain $= 1 \cdot P_1$};
+
+    \draw[dashed,gray] (0, 1.3) -- (0.7, 1.3);
+    \draw[dashed,gray] (0.7, 0) -- (0.7, 1.3);
+    \draw[dashed,gray] (0, 0.5) -- (1.5, 0.5);
+    \draw[dashed,gray] (1.5, 0) -- (1.5, 0.5);
+    \draw[thick,blue!90] (0,2) -- (2,0) node[above] {\tiny Demand}; % D
+    % Draw axes
+    \draw[->] (0,0) -- (2.5,0) node[anchor=north] {$Q$};
+    \draw[->] (0,0) -- (0,2.5) node[anchor=east] {$P$};
+    
+    % Label values
+    \node[anchor=north] at (0.7,0) {\tiny $Q_0$};
+    \node[anchor=east] at (0,1.3) {\tiny $P_0$};
+    \node[anchor=north] at (1.5,0) {\tiny $Q_0 + 1$};
+    \node[anchor=east] at (0,0.5) {\tiny $P_1$};
+
+\end{tikzpicture}
+\end{multicols}
+
+If demand curve linear, \Hint{MR has same intercept and twice the slope. $P(Q) = 100 - Q \rightarrow MR = 100 - 2 Q$}
+
+\begin{multicols}{2}
+\begin{tikzpicture}
+    % CS
+    \fill[yellow!30] (0, 1.3) -- (0.7, 1.3) -- (0, 2) -- cycle;
+
+    %DWL
+    \fill[red!30] (0.7, 0.6) -- (0.7, 1.3) -- (1.167, 0.833) -- cycle;
+
+    %PS
+    \fill[orange!30] (0, 0.25) -- (0, 1.3) -- (0.7, 1.3) -- (0.7, 0.6) -- cycle;
+
+    \draw[dashed,gray] (0, 1.3) -- (0.7, 1.3);
+    \draw[dashed,gray] (0.7, 0) -- (0.7, 1.3);
+    \draw[thick,blue!90] (0,2) -- (2,0) node[anchor=south] {\tiny Demand}; % D
+    \draw[thick, blue!70] (0,2) -- (1,0) node[anchor=south] {\tiny MR}; % MR
+    \draw[thick, green!70] (0,0.25) -- (2,1.25) node[anchor=west] {\tiny MC}; % MC
+    % Draw axes
+    \draw[->] (0,0) -- (2.5,0) node[anchor=north] {$Q$};
+    \draw[->] (0,0) -- (0,2.5) node[anchor=east] {$P$};
+    
+    % Label values
+    \node[anchor=north] at (0.7,0) {\tiny $Q^*$};
+    \node[anchor=east] at (0,1.3) {\tiny $P^*$};
+    \node at (0.2,1.5) {\tiny CS};
+    \node at (0.3,1) {\tiny PS};
+    \node at (1,0.9) {\tiny DWL};
+
+\end{tikzpicture}
+
+\Green{Profix Maximization} optimal $Q^*$ when $MC(Q^*) = MR(Q^*)$. Then solve for optimal price $P^* =P(Q^*)$
+\Hint{Does not depend on the level of demand.}
+
+\Green{Mark-up Formula} resulting from profit-max, $P^*$ satisfies: $\frac{P-MC}{P} = -\frac{1}{\epsilon}$ ($\epsilon$ is the demand elasticity).
+\Hint{Relatively more elastic markets (markets with more price-sensitive consumers) will face smaller markups} (i.e., lower prices if costs are the same across markets).
+\end{multicols}
+
+\subsection{H2}
 \subsubsection{Supply and Demand}
 
 \Red{Demand} how much consumers will buy at a particular price; describes consumers' willingness to pay (WTP).
