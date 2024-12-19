@@ -356,7 +356,11 @@ $Q_{\text{private},d} = 100 - 2P$; supply: $Q_s = \frac{P}{2}$.
     \item One N.E.: (Lowest Price, Lowest Price). \Hint{There may be more than one N.E. if both colored!}
 \end{itemize}
 
-\Red{Bertrand model/trap of price competition} Each firm's best response is to undercut its rival $\Rightarrow$ N.E. = price = MC (\ie a price war). \Green{Sol.} \Blue{product differentiation} when consumers have heterogeneous preferences; can be both \Hint{horizontal} (differentiated by quality; \eg Coke vs Pepsi) and \Hint{vertical} (differentiated by price; \eg faster vs slower computers).
+\Red{Bertrand model/trap of price competition} Each firm's best response is to undercut its rival $\Rightarrow$ N.E. = price = MC (\ie a price war). \Green{Sol.}
+\begin{itemize}
+    \item \Blue{Product differentiation} when consumers have heterogeneous preferences; can be both \Hint{horizontal} (differentiated by quality; \eg Coke vs Pepsi) and \Hint{vertical} (differentiated by price; \eg faster vs slower computers).
+    \item \Blue{Repeated interactions} (later)\dots
+\end{itemize}
 
 \Green{Horizontal Differentiation: Linear City/Hotelling Model} Each consumer has a location \(x\) and these locations are evenly distributed along a line from \(0\) to \(100\). One firm is located at each end of the line, and each firm sells a product that every consumer values at \(v\).
 (\textit{Note:} We can also allow for vertical differentiation in this model by setting a different \(v\) for each firm.)
@@ -445,6 +449,51 @@ its quality so that it doesn't compete as hard with British Airways.
     \item \textbf{Implication:} Increasing the quality of your product offering isn’t always a good thing! If your rival is selling a high-quality good, it may be better to sell a lower-quality good.
 \end{itemize}
 
+\Red{Repeated interactions} can facilitate \textbf{cooridnation/collusion}, even w/o explicit communication. \Hint{Another possibility for escaping the Bertrand trap.}
+\begin{itemize}
+    \item N.E. outcome will arise; \ie when firms are unable to achieve or sustain coodination, then each firm will best respond to the pricing strategy of the other firm.
+    \item If the firms can perfectly coordinate, then market outcome conincides with the monopoly outcome. (\ie as if two firms merged into one monopoly) \Hint{Best the firms can do.}
+    \item In simulation, prices mainly were above the N.E. but below the monopoly price.
+\end{itemize}
+
+\Green{Coordination is easier to sustain when}
+\begin{enumerate}
+    \item Firms can easily observe the prices set by their rivals.
+    \item Market demand is known and doesn't change over time.
+    \item The number of firms in the market is small.
+\end{enumerate}
+
+\Red{Repeated Price Competition} firms will cooperate if \fbox{$NPV_{\text{cooperating}} > NPV_{\text{undercutting}}$} because:
+\begin{itemize}
+    \item Cooperation is particularly rewarding (\eg high monopoly mark-ups)
+    \item Price wars are particularly costly (\eg commodities which have low demand elasticities)
+    \item Parties are similar enough to agree with one another on the optimal price
+    \item Parties can monitor and punish undercutting
+    \item Parties care about the future as cooperation provides longer-run benefits
+\end{itemize}
+
+\Blue{Grim Trigger / Nash Reversion} Cooperate with your rivals but revert to the static Nash equilibrium forever should
+any firm deviate from the cooperative price. (\ie If one firm undercuts, the other firm will undercut in the next
+period.) Less-harsh strategies where parties punish and cooperate over shorter time horizons can also support
+cooperation (for example, \textbf{tit-for-tat}).
+
+\begin{tabular}{|c|c|c|}
+\hline
+\colorbox{YellowGreen}{$\downarrow$ Firm 1} \colorbox{Salmon}{Firm 2 $\rightarrow$} & \textbf{Coordinate} & \textbf{Price War} \\
+\hline
+\textbf{Coordinate} & 450, 450 & 200,\colorbox{Salmon}{650} \\
+\hline
+\textbf{Price War} & \colorbox{YellowGreen}{650},200 & \colorbox{YellowGreen}{300},\colorbox{Salmon}{300} \\
+\hline
+\end{tabular}
+
+\Hint{If the punishment for undercutting is Nash reversion, cooperation forever happens when: $NPV_{\text{cooperating}} > NPV_{\text{undercutting}}$}:
+$450 + \frac{450}{r} > 650 + \frac{300}{r} \quad \implies \quad r < 0.75$
+
+More generally, \Hint{collusion is possible when:}
+\fbox{$\pi_{\text{cooperate}} - \pi_{\text{war}} > r (\pi_{\text{deviate}} - \pi_{\text{cooperate}})$}
+
+\Red{Antitrust Laws} regulate market competition, focusing on practices that tend to reduce rivalry between firms (e.g., price fixing and horizontal mergers) as well as those that can foreclose competition, furthering a dominant firm's position (e.g., vertical mergers and exclusive dealing). Price fixing is \textit{per se} illegal, and punishments typically include time in jail.
 
 \end{multicols}
 \end{document}
