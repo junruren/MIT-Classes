@@ -328,5 +328,123 @@ $Q_{\text{private},d} = 100 - 2P$; supply: $Q_s = \frac{P}{2}$.
     \end{enumerate}
 \end{enumerate}
 
+\subsubsection{Game Theory}
+
+\Hint{Each player's objective is to maximize their payoff}, not to beat their opponent.
+
+\Red{Situation of strategic interdependence} a firm's best choice depends on what its rivals do and how it expects rivals to react to its actions.
+
+\Blue{Strategy} a ``complete contingent plan'' that specifies what a player will do at every possible decision node.
+
+\Blue{Best response} the strategy with the highest payoff in response to the strategies its rivals can take.
+
+\Blue{Dominant Strategy} a strategy that is best for a player to follow regardless of the strategies chosen by other players. \Hint{It's a player's best response to any strategy the other player might choose.}
+
+\Blue{Iterated dominance} sometimes it's possible to narrow things down by eliminating strategies that known never a best choice for rival, and also strategies that are never a best choice for rival if they eliminate the possibility that you will play something that's never a best choice for you \dots \Green{\Eg} guess half of thge median game.
+
+\Red{Nash Equilibrium} a set of strategies, one for each player, such that no player has an incentive to change their strategy given what the other players are doing. \Ie \Hint{each player's strategy is a best response to the strategies chosen by the other players.}
+
+\Green{Schwab vs E-Trade pricing game}
+\begin{tabular}{cccc}
+    & \begin{tabular}[c]{@{}c@{}}Monopoly\\ Price\end{tabular} & \begin{tabular}[c]{@{}c@{}}Lower\\ Price\end{tabular} & \begin{tabular}[c]{@{}c@{}}Lowest\\ Price\end{tabular} \\ \cline{2-4} 
+   \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Monopoly\\ Price\end{tabular}} & \multicolumn{1}{c|}{10, 10} & \multicolumn{1}{c|}{5, \colorbox{Salmon}{12}} & \multicolumn{1}{c|}{0, 9} \\ \cline{2-4} 
+   \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Lower\\ Price\end{tabular}} & \multicolumn{1}{c|}{\colorbox{YellowGreen}{12}, 5} & \multicolumn{1}{c|}{6, 6} & \multicolumn{1}{c|}{2, \colorbox{Salmon}{8}} \\ \cline{2-4} 
+   \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Lowest\\ Price\end{tabular}} & \multicolumn{1}{c|}{9, 0} & \multicolumn{1}{c|}{\colorbox{YellowGreen}{8}, 2} & \multicolumn{1}{c|}{\colorbox{YellowGreen}{3}, \colorbox{Salmon}{3}} \\ \cline{2-4} 
+\end{tabular}
+\begin{itemize}
+    \item \textbf{No dominant strategy} for either firm. \Hint{All colors would be in one row/column.}
+    \item One N.E.: (Lowest Price, Lowest Price). \Hint{There may be more than one N.E. if both colored!}
+\end{itemize}
+
+\Red{Bertrand model/trap of price competition} Each firm's best response is to undercut its rival $\Rightarrow$ N.E. = price = MC (\ie a price war). \Green{Sol.} \Blue{product differentiation} when consumers have heterogeneous preferences; can be both \Hint{horizontal} (differentiated by quality; \eg Coke vs Pepsi) and \Hint{vertical} (differentiated by price; \eg faster vs slower computers).
+
+\Green{Horizontal Differentiation: Linear City/Hotelling Model} Each consumer has a location \(x\) and these locations are evenly distributed along a line from \(0\) to \(100\). One firm is located at each end of the line, and each firm sells a product that every consumer values at \(v\).
+(\textit{Note:} We can also allow for vertical differentiation in this model by setting a different \(v\) for each firm.)
+\begin{itemize}
+    \item Consumers choose where to buy based on price and travel cost; \(t\) is the marginal cost of travel.
+    \item To solve this model, we identify the indifferent consumer at location \(x^*\). All consumers with \(x \leq x^*\) will visit firm 1 (i.e., the firm at location \(0\)) and all consumers with \(x \geq x^*\) will visit firm 2 (i.e., the firm at location \(100\)).
+    \begin{itemize}
+        \item Consequently, \(x^*\) is the \textit{market share} (in percentage terms) for firm 1, and \(100 - x^*\) is the market share (in percentage terms) for firm 2.
+    \end{itemize}
+
+    \item The consumer at \(x^*\) receives a payoff of \(v - (p_1 + t x^*)\) if they buy from firm 1 and a payoff of \(v - (p_2 + t (100 - x^*))\) if they visit firm 2. We therefore have:
+    $v - (p_1 + t x^*) = v - (p_2 + t (100 - x^*)) \Rightarrow \Hint{x^* = 50 + \frac{p_2 - p_1}{2t}}$
+    \item \underline{\textbf{Normalized} demand}: $\begin{cases}
+        Q_1(p_1, p_2) = x^* = 50 + \frac{p_2 - p_1}{2t} \\
+        Q_2(p_2, p_1) = x^* = 50 + \frac{p_1 - p_2}{2t}
+    \end{cases}$
+    \item \underline{Profit}: $\begin{cases}
+        \Pi_1(p_1, p_2) = p_1 \left( 50 + \frac{p_2 - p_1}{2t} \right) \\
+        \Pi_2(p_2, p_1) = p_2 \left( 50 + \frac{p_1 - p_2}{2t} \right)
+    \end{cases}$
+
+    \item \textit{Note:} If you are told that there are \(N\) consumers evenly distributed along the line, you can compute the actual demand and profits by multiplying these expressions by \(N / 100\).
+
+    \item Given the price chosen by its competitor, each firm then \textbf{best responds} by choosing a price that maximizes its profits.
+\end{itemize}
+
+\Green{Variation of horizontal diff.} two food trucks are located at the endpoints of a ``linear city.'' Truck 1 is
+located at position 0, and truck 2 is at position 100. The gross value two trucks' products: $v_1 = 300$, $v_2 = 260$.
+Assume the cost of walking is $t = 1$ per step.
+\begin{enumerate}
+    \item Total cost for the 2 products of consumer at position $x$: Firm 1's product: $300 - p_1 - x$; Firm 2's product: $260 - p_2 - (100 - x) = 160 + x - p_2 \implies$ \begin{itemize}
+        \item indifferent customer position: $x^*(p_1, p_2) = 70 + \frac{p_2 - p_1}{2}$
+        \item market shares: $\begin{cases}
+            X_1(p_1, p_2) = 70 + \frac{p_2 - p_1}{2} \\
+            X_2(p_2, p_1) = 30 - \frac{p_2 - p_1}{2}
+        \end{cases}$
+        \item profits: $\begin{cases}
+            \Pi_1(p_1, p_2) = p_1 \left( 70 + \frac{p_2 - p_1}{2} \right) \\
+            \Pi_2(p_2, p_1) = p_2 \left( 30 - \frac{p_2 - p_1}{2} \right)
+        \end{cases}$
+    \end{itemize}
+    \item If the two trucks charge identical prices, indifferent consumer: $300 - p - x^* = 160 + x^* - p \Rightarrow x^* = 70$
+    \item Payoff matrix associated with following price choices: $\begin{cases}
+        p_1 = (110, 160, 210) \\
+        p_2 = (50, 100, 150)
+    \end{cases}$: \Hint{Plug prices into $\Pi_1(p_1, p_2)$ and $\Pi_2(p_2, p_1)$ as payoffs}
+\end{enumerate}
+\begin{tabular}{clcc}
+    $\downarrow p_1$ & $p_2 \rightarrow$ 50 & 100 & 150 \\ \cline{2-4} 
+    \multicolumn{1}{c|}{110} & \multicolumn{1}{c|}{\colorbox{YellowGreen}{4400}, 3000} & \multicolumn{1}{c|}{\colorbox{YellowGreen}{7150},\colorbox{Salmon}{3500}} & \multicolumn{1}{c|}{9900, 1500} \\ \cline{2-4} 
+    \multicolumn{1}{c|}{160} & \multicolumn{1}{c|}{2400, 4250} & \multicolumn{1}{c|}{6400,\colorbox{Salmon}{6000}} & \multicolumn{1}{c|}{\colorbox{YellowGreen}{10400}, 5250} \\ \cline{2-4} 
+    \multicolumn{1}{c|}{210} & \multicolumn{1}{c|}{-2100, 5500} & \multicolumn{1}{c|}{3150, 8500} & \multicolumn{1}{c|}{8400, \colorbox{Salmon}{9000}} \\ \cline{2-4} 
+\end{tabular}
+\begin{enumerate}[resume]
+    \item Only N.E.: $(p_1 = 110, p_2 = 100)$
+    \item Firm 1 chooses a higher price because firm 1 transfers some of its quality advantage into a greater margin,
+        and some into a larger market share
+\end{enumerate}
+
+\Hint{Why would a company pay to make their product lower quality?} 1. By crimping the product designed for the low WTP
+consumers, we were able to extract more surplus from the high WTP consumers.  2. Ryan Air may be willing to pay to lower
+its quality so that it doesn't compete as hard with British Airways.
+
+\Green{Vertical Differentiation: Vertical City Model} Consumers now have heterogeneous preferences for \textbf{quality}. This is captured by a parameter \(\theta\), which is evenly distributed along a vertical line from \(0\) to \(1\).
+\begin{itemize}
+    \item Each firm now chooses a quality level \(q\) and a price \(p\).
+    \item A consumer with quality preference \(\theta\) that buys quality \(q\) and at price \(p\) receives a payoff of \(\theta q - p\).
+    \item Suppose that one firm sets a high price \(p_H\) and quality \(q_H\), and the other firm sets a low price \(p_L\) and quality \(q_L\).
+    \item We solve this model by identifying \textbf{two indifferent consumers:}
+    \begin{itemize}
+        \item A consumer with preference for quality \(\theta_L\) that is indifferent between buying from \textbf{the low-quality} firm and not buying anything.
+        \item A consumer with preference for quality \(\theta_H\) that is indifferent between buying from \textbf{the low-quality and the high-quality} firm.
+    \end{itemize}
+    \item The consumer with quality preference \(\theta_L\) receives a payoff of \(\theta_L q_L - p_L\) if they buy from the low-quality firm and a payoff of \(0\) if they buy nothing. Consequently, we have:
+    $\theta_L q_L - p_L = 0 \implies \theta_L = \frac{p_L}{q_L}$.
+    \item The consumer with quality preference \(\theta_H\) receives a payoff of \(\theta_H q_H - p_H\) if they buy from the high-quality firm and a payoff of \(\theta_H q_L - p_L\) if they buy from the low-quality firm. Consequently, we have:
+    $\theta_H q_H - p_H = \theta_H q_L - p_L \implies \theta_H = \frac{p_H - p_L}{q_H - q_L}$.
+    \item Putting everything together: consumers with:
+    \begin{itemize}
+        \item \(\theta < \theta_L\) will buy nothing.
+        \item \(\theta_L < \theta < \theta_H\) will buy from the low-quality firm.
+        \item \(\theta > \theta_H\) will buy from the high-quality firm.
+    \end{itemize}
+    \item \textbf{Low-quality firm's market share}: \(100(\theta_H - \theta_L)\%\)
+    \item \textbf{High-quality firm's market share}: $100(1 - \theta_H)\%$
+    \item \textbf{Implication:} Increasing the quality of your product offering isn’t always a good thing! If your rival is selling a high-quality good, it may be better to sell a lower-quality good.
+\end{itemize}
+
+
 \end{multicols}
 \end{document}
