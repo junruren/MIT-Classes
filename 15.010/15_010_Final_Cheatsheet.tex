@@ -211,7 +211,7 @@ Distortion \eg: Pricing with market power
     \draw[thick,->] (0,0) -- (0,2.5) node[anchor=east] {$P$};
     
     % Demand Curve
-    \draw[thick,blue!90] (1,2) -- (2,0) node[right] {$D$};
+    \draw[thick,blue!90] (1,2) -- (2,0) node[above] {$D$};
     
     % Supply Curves
     \draw[thick,green!70] (1.25,0) -- (2,2) node[above] {$\leftarrow S_0$};
@@ -228,7 +228,7 @@ Distortion \eg: Pricing with market power
     \draw[thick,->] (0,0) -- (0,2.5) node[anchor=east] {$P$};
     
     % Demand Curve
-    \draw[thick,blue!90] (0.5,1.5) -- (2,1) node[right] {$D$};
+    \draw[thick,blue!90] (0.5,1.5) -- (2,1) node[above] {$D$};
     
     % Supply Curves
     \draw[thick,green!70] (1.25,0) -- (2,2) node[above] {$\leftarrow S_0$};
@@ -240,6 +240,93 @@ Distortion \eg: Pricing with market power
     
     \end{scope}
 \end{tikzpicture}
+
+\subsubsection{Externalities}
+
+\Red{Externality} an activity generates it when it imposes a cost or benefit on a third party not involved in the activity. An externality is a \textbf{market failure} because the market does not account for the full cost or benefit of the activity -- left alone the perfectly competitive market will not maximize welfare.
+\begin{itemize}
+    \item \Blue{Negative ext.} costs born by society; \eg pollution, congestion, noise, contagion. External costs (negative ext.) $\Rightarrow$ firms produce too much. \Green{Sol.} tax the product by the externaltiy amount (to shift \textbf{up the \underline{supply} curve}); \Hint{taxes ``internalize'' the externality and reduce quantity.}
+    \item \Blue{Positive ext.} benefits born by society; \eg education, vaccines, R\&D (ideas). External benefits (positive ext.) $\Rightarrow$ firms produce too little. \Green{Sol.} subsidize \underline{customers} the externaltiy amount (to shift \textbf{up the \underline{demand curve}})
+\end{itemize}
+Without solutions (\eg regulation, taxes, subsidies, property rights), externalities create DWL.
+
+\begin{tikzpicture}
+    % LEFT GRAPH
+    % Axes
+    \draw[thick,->] (0,0) -- (2.5,0) node[anchor=north] {$Q$};
+    \draw[thick,->] (0,0) -- (0,2.5) node[anchor=east] {$P$};
+
+    % DWL
+    \fill[red!30] (1.1666666667, 0.8333333333) -- (1.1666666667, 1.3333333333) -- (0.8333333333, 1.1666666667) -- cycle;
+    
+    % Demand Curve
+    \draw[thick,blue!90] (0,2) -- (2,0) node[above] {$D$};
+    
+    % Supply Curves
+    \draw[thick,green!70] (0, 0.75) -- (2, 1.75) node[above] {\tiny Social MC};
+    \draw[thick,green!70] (0, 0.25) -- (2,1.25) node[above] {\tiny $S_0$ (Private MC)};
+    
+    % Price levels
+    \draw[dashed] (0,1.1666666667) -- (0.8333333333,1.1666666667) node[left] at (0,1.1666666667) {$P^*$};
+    \draw[dashed] (0,0.8333333333) -- (1.1666666667,0.8333333333) node[left] at (0,0.8333333333) {$P_0$};
+    \draw[dashed] (0.8333333333,0) -- (0.8333333333,1.1666666667) node[below] at (0.8333333333,0) {$Q^*$};
+    \draw[dashed] (1.1666666667,0) -- (1.1666666667,0.8333333333) node[below] at (1.1666666667,0) {$Q_0$};
+    
+    % RIGHT GRAPH
+    \begin{scope}[shift={(3,0)}] % Shift to the right for the second plot
+    \draw[thick,->] (0,0) -- (2.5,0) node[anchor=north] {$Q$};
+    \draw[thick,->] (0,0) -- (0,2.5) node[anchor=east] {$P$};
+
+    % DWL
+    \fill[red!30] (1.1666666667, 0.8333333333) -- (0.8333333333, 0.6666666667) -- (0.8333333333, 1.1666666667) -- cycle;
+    
+    % Demand Curve
+    \draw[thick,blue!90] (0,2) -- (1.75,0.25) node[above] {SWTP};
+    \draw[thick,blue!90] (0,1.5) -- (1.45,0.05) node[right] {Pri WTP};
+    
+    % Supply Curves
+    \draw[thick,green!70] (0, 0.25) -- (2,1.25) node[above] {\tiny Social MC};
+    
+    % Price levels
+    \draw[dashed] (0,0.6666666667) -- (0.8333333333,0.6666666667) node[left] at (0,0.6666666667) {$P_0$};
+    \draw[dashed] (0,0.8333333333) -- (1.1666666667,0.8333333333) node[left] at (0,0.8333333333) {$P^*$};
+    \draw[dashed] (0.8333333333,0) -- (0.8333333333,0.6666666667) node[below] at (0.8333333333,0) {$Q_0$};
+    \draw[dashed] (1.1666666667,0) -- (1.1666666667,0.8333333333) node[below] at (1.1666666667,0) {$Q^*$};
+    \end{scope}
+\end{tikzpicture}
+
+\Blue{Tragedy of the Commons} When a resource is held in common, individuals have no incentive to conserve it. This is
+an example of a negative externality since others' access impairs everyone's use of the resource. Individual will
+overuse. \Green{Solution} assign property rights, regulate, or tax; joint ventures also allow for collaboration that
+``internalizes'' the externality.
+
+\Blue{Coase Theorem} If property rights are well-defined and \underline{transaction costs} are low (or none), the
+efficient solution occurs regardless of who holds the property rights. Cap and Trade policies set up a market to make
+this bargaining easier.
+
+\Blue{Distributional Consequences}
+\begin{enumerate}
+    \item the distribution of the burden of the externality,
+    \item distribution of the costs to correct the externality, and
+    \item distribution of the burden of externality after policy intervention.
+\end{enumerate}
+
+\Green{\Eg the R\&D market} think of the demand curve originating from the profits that firms here would get from
+innovating, and thus representing the \textbf{private} demand for R\&D. The MC curve (supply) represents the private MC
+of research and development. We will assume that the private MC of R\&D equals the social MC. Demand:
+$Q_{\text{private},d} = 100 - 2P$; supply: $Q_s = \frac{P}{2}$.
+\begin{enumerate}
+    \item \Green{Competitive market equilibrium} $Q_{\text{private},d} = Q_s \Rightarrow 100-2P = \frac{P}{2} \Rightarrow \begin{cases}
+        P^* = 40 \\
+        Q_s^* = 20
+    \end{cases}$
+    \item \Green{Total amount spent on R\&D} $P^* \cdot Q_s^* = 40 \cdot 20 = 800$
+    \item Now suppose that not only does the firm paying for the research and development benefit from the R\&D, but some of these benefits spillover to other firms. In particular, economists have calculated that every unit of R\&D done by a firm benefits other firms by \$30. \Green{What is the \textbf{society} demand curve for R\&D} Inverse demand curve: $P = 50 - \frac{Q}{2}$. The positive externality implies that the willingness to pay for R\&D increases by \$30 everywhere. So the social inverse demand curve (SWTP) is $P = 80 - \frac{Q}{2} \xRightarrow{\text{inverse}} Q_{\text{society},d} = 160 - 2P$
+    \item \Green{Ways to overcome this positive externality} \begin{enumerate}
+        \item Implementing patent system to allow the innovating firm to capture more of the benefits from their R\&D.
+        \item Subsidizing R\&D; \esp for hard, basic science.
+    \end{enumerate}
+\end{enumerate}
 
 \end{multicols}
 \end{document}
