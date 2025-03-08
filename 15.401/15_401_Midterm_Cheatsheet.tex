@@ -98,6 +98,45 @@
 \setlength{\postmulticols}{1pt}
 \setlength{\multicolsep}{1pt}
 \setlength{\columnsep}{2pt}
-TODO
+\subsection{Net Present Value (NPV)}
+\Blue{Discoint rate $r$} you're indifferent between receiving \$1 today and $\$\frac{1}{1+r}$ in one period.
+
+\Blue{Present Value (PV)} \fbox{$PV(CF_t) = \frac{CF_t}{(1+r)^t}$}
+how much a cash flow (CF) at time $t$ is worth at time 0 (today). Computing a PV is often called \Hint{``discounting''}.
+
+\Red{NPV} \fbox{$NPV = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t}$} summs over PVs of all cash flows in a project.
+\begin{itemize}
+    \item \Green{Scalability} $NPV(\alpha CF_1, \dots, \alpha CF_T) = \alpha NPV(CF_1, \dots, CF_T)$
+    \item \Green{Additivity} $NPV(X_1 + Y_1, \dots, X_T + Y_T) = NPV(X_1, \dots, X_T) + NPV(Y_1, \dots, Y_T)$
+    \item \Green{Breaking up by time} $NPV(CF_1, \dots, CF_T) = NPV(CF_1, \dots, CF_j) + NPV(CF_{j+1}, \dots, CF_T)$
+\end{itemize}
+
+\Blue{Future Value (FV)}
+\fbox{{$FV_T(CF_0) = CF_0(1+r)^T$}}
+how much a cash flow at time 0 (today) is worth in $T$ periods.
+
+\Blue{Perpetuity}
+\begin{itemize}
+    \item \underline{Constant} recurring cash flow $A$ forever starting \textbf{1 period from now}: \fbox{$PV = \frac{A}{r}$}
+    \item \underline{Growing} perpetuity starting \textbf{1 period from now} with cash flow $A$, growth rate $g$: \fbox{$PV = \frac{A}{r-g} (r > g)$}
+\end{itemize}
+
+\Blue{Annuity}
+\begin{itemize}
+    \item \underline{Constant} recurring cash flow $A$ for $T$ periods starting \textbf{1 period from now}:
+        \Hint{(\Eg a loan)}
+        \fbox{$PV = \frac{A}{r} \left(1 - \frac{1}{(1+r)^T}\right)$}
+        \fbox{$FV = PV \cdot (1+r)^T = A \frac{(1+r)^T - 1}{r}$}
+    \item \underline{Growing} annuity starting \textbf{1 period from now} with cash flow $A$, growth rate $g$ for $T$ periods.
+        \begin{itemize}
+            \item If $r \neq g$
+                \fbox{$PV = \frac{A}{r-g} \left(1 - \frac{(1+g)^T}{(1+r)^T}\right)$};
+                \fbox{$FV = A \left(\frac{(1+r)^T - (1+g)^T}{r-g}\right)$}
+            \item If $r = g$
+                \fbox{$PV = T \left(\frac{A}{1+r}\right)$};
+                \fbox{$FV = T \cdot A \cdot (1+r)^{T-1}$}
+        \end{itemize}
+\end{itemize}
+
 \end{multicols}
 \end{document}
