@@ -138,5 +138,52 @@ how much a cash flow at time 0 (today) is worth in $T$ periods.
         \end{itemize}
 \end{itemize}
 
+\Red{Annual Percentage Rate (APR) \& Effective Annual Rate (EAR)}
+\fbox{$(1+EAR) = \left(1 + \frac{APR}{k}\right)^k = (1 + r)^k$}
+where $k$ is the number of compounding periods per year and $r$ is the per-period (\eg monthly) interest rate.
+\begin{itemize}
+    \item \underline{APR} $= r \cdot k$
+    \item \underline{EAR} \ie Annual Percentage Yield (APY)
+\end{itemize}
+
+\subsubsection{Mortgage-related terms}
+
+\Blue{Principal} the amount of \$ \underline{borrowed} in a lending agreement.
+\Eg Buy a \$1,000,000 house with a 20\% down payment, the principal is \$800,000.
+
+\Blue{Interest}
+\begin{itemize}
+    \item \Green{Fixed rate} No matter what happens to interest rates around the world, you would still be charged
+        interest at this same rate.
+    \item \Green{Adjustable rate (ARM)} \Eg an adjustable rate of 3\% \underline{above} the federal funds rate (the
+        Fed's benchmark rate). If this rate is around 4.5\%, you would be charged a 7.5\% interest rate. If in the next
+        month the Fed raises to 5\%, you would be charged an 8\% interest rate.
+\end{itemize}
+
+\Blue{Amortization schedule} sequence of payments made through the loan's lifetime. A part of the payments goes to
+reduce (\ie amortize) the principal owed, and the rest goes to pay the interest on the loan.
+
+\section{TODO: Mortgage Example needed}
+
+\Blue{Collateral} An asset offered by the borrower as a guarantee in a loan. If you fail to make payments, the bank can
+take the collateral.
+
+\Blue{Refinancing} Paying off an existing loan with a new loan that has better terms. \Eg lower interest rate, lower
+monthly payment, shorter loan term.
+
+\Red{Inflation $i$} the change in CPI $1 + i_{t+1} = \frac{CPI_{t+1}}{CPI_t}$
+\begin{itemize}
+    \item \Green{``Nominal''} not adjusted for inflation
+    \item \Green{``Real''} adjusted for inflation
+\end{itemize}
+
+\Blue{Real rate of return} $r_{\text{real}} = \frac{1 + r_{\text{nominal}}}{1 + i} - 1$
+\fbox{$r_{\text{real}} \approx r_{\text{nominal}} - i$}
+
+\Blue{Treat inflation consistently for NPV}
+
+\fbox{$PV(CF_T) = \frac{CF_{\text{nominal,T}}}{(1 + r_{\text{nominal,T}})^T} = \frac{CF_{\text{real,T}}}{(1+r_{\text{real,T}})^T}$}
+(``$_{,T}$'' denotes the cash flow at time $T$)
+
 \end{multicols}
 \end{document}
