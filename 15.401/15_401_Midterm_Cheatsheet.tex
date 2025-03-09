@@ -163,17 +163,35 @@ where $k$ is the number of compounding periods per year and $r$ is the per-perio
 \Blue{Amortization schedule} sequence of payments made through the loan's lifetime. A part of the payments goes to
 reduce (\ie amortize) the principal owed, and the rest goes to pay the interest on the loan.
 
-\section{TODO: Mortgage Example needed}
-
 \Blue{Collateral} An asset offered by the borrower as a guarantee in a loan. If you fail to make payments, the bank can
 take the collateral.
 
 \Blue{Refinancing} Paying off an existing loan with a new loan that has better terms. \Eg lower interest rate, lower
 monthly payment, shorter loan term.
 
-\Red{Inflation $i$} the change in CPI $1 + i_{t+1} = \frac{CPI_{t+1}}{CPI_t}$
+\Green{\Eg} a 30-year fixed-rate mortgage, APR 9\% compounded monthly. Fixed monthly payment $= \$3000$. First payment
+will start next month and last until the contract expires in 30 years.
 \begin{itemize}
-    \item \Green{``Nominal''} not adjusted for inflation
+    \item \Green{How much borrowed when took out the mortgage?}
+        use the constant annuity formula, where
+        \Hint{$A = \mathdollar 3000$, $r = \frac{0.09}{12} = 0.0075$, $T = 30 \times 12 = 360$}.
+        $PV = \frac{A}{r} \left(1 - \frac{1}{(1+r)^T}\right) = \frac{3000}{0.0075} \left(1 - \frac{1}{(1+0.0075)^{360}}\right) = \mathdollar 372,845.60$
+    \item \Green{10 years later, how much must pay back to the bank if sell the house?}
+        (\ie NPV of the remaining principal amount as of this future date.)
+        \Hint{$T = 20 \times 12 = 240$}
+        $PV = \frac{3000}{0.0075} \left(1 - \frac{1}{(1+0.0075)^{240}}\right) = \mathdollar 333,434.86$
+    \item \Green{Why the remaining principal is still so high after 10 years' worth of repayments?}
+        \Hint{Because the amortization schedule is front-loaded.} \Ie Early on in the life of the mortgage, the vast majority
+        of each monthly payment is interest: interest is applied to the remaining principal amount, and this remaining
+        principal is highest in month 1 and decreases over time. Because the majority of each monthly payment in the
+        early years is interest, the principal repayment amounts are small, and the remaining principal de-creases very
+        slowly. (It's only toward the end of the mortgage that interest payments decline enough to repay the principal
+        more quickly.)
+\end{itemize}
+
+\Red{Inflation $i$} the change in CPI \fbox{$1 + i_{t+1} = \frac{CPI_{t+1}}{CPI_t}$}
+\begin{itemize}
+    \item \Green{``Nominal''} \underline{not} adjusted for inflation
     \item \Green{``Real''} adjusted for inflation
 \end{itemize}
 
