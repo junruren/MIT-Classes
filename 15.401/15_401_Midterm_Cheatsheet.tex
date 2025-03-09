@@ -203,5 +203,80 @@ will start next month and last until the contract expires in 30 years.
 \fbox{$PV(CF_T) = \frac{CF_{\text{nominal,T}}}{(1 + r_{\text{nominal,T}})^T} = \frac{CF_{\text{real,T}}}{(1+r_{\text{real,T}})^T}$}
 (``$_{,T}$'' denotes the cash flow at time $T$)
 
+\subsection{Capital Budgeting}
+
+To maximize value, take on \Hint{only projects with positive NPV}.
+\begin{itemize}
+    \item \Green{Single} take it only if it has positive NPV.
+    \item \Green{Independent} take all with positive NPV.
+    \item \Green{Mutually exclusive} take the one with the highest positive NPV.
+    \item \Hint{Ignore} sunk costs, including opportunity costs.
+\end{itemize}
+
+\Red{\underline{Cash} operating expenses}
+\begin{itemize}
+    \item \Blue{COGS} direct costs attributable to the production of the goods sold by a business.
+    \item \Blue{R\&D} costs associated with discovering new knowledge or develop new products, processes, and services.
+    \item \Blue{SG\&A} costs not directly tied to the production of goods. \eg ``S'': advertising and sales commissions. ``G'': salaries of non-production personnel. ``A'': legal, accounting, and exec salaries.
+\end{itemize}
+
+\Blue{Depreciation} \underline{non-cash} expense that reduces the value of an asset over time. \Hint{For most finance
+problems, we want to strip out effects of depreciation to get back to free cash flow.} Exception: if depreciation
+affects free cash flows through taxes.
+
+\Red{EBITDA} \fbox{$= (\text{Op. Rev.}) - (\text{All Op. Exp. w/o depreciation})$}
+
+\Red{EBIT} \fbox{$= \text{EBITDA} - \text{Depreciation (\& Amort.)}$}
+
+\Red{Cash Flows} from accounting statements
+\fbox{$CF = (1 - \tau) (\text{EBITDA}) + \tau (\text{Dep.}) - (\text{CapEx}) - \Delta \text{WC}$}
+\fbox{$CF = (1 - \tau) (\text{EBIT}) + (\text{Dep.}) - (\text{CapEx}) - \Delta \text{WC}$}
+
+\Red{Working Capital (WC)} \fbox{$= \text{Inventory} + \text{A/R} - \text{A/P}$}
+We are about \Hint{changes (\ie $\Delta$) in WC, not levels} because if keeping WC constant, no new cash flow required.
+
+\section{TODO: CB example needed}
+
+\subsubsection{Alternatives to NPV}
+
+\Red{Internal rate of return} discount rate that makes zero NPV.
+\fbox{$NPV = \sum_{t=0}^{T} \frac{CF_t}{(1+IRR)^t} = 0$}
+Determine some fixed $IRR^*$ \ie ``threshold rate'':
+\begin{itemize}
+    \item \Green{Independent} take if $IRR > IRR^*$.
+    \item \Green{Mutually exclusive} take the one with the highest $IRR$ among projects $IRR > IRR^*$.
+\end{itemize}
+IRR leads to the same decision as NPV if:
+\begin{itemize}
+    \item Cash outflow occurs only at time 0
+    \item Only one project is being considered
+    \item Opportunity cost of capital (discount rate $r$) remains constant for all periods
+    \item $IRR^* = r$
+\end{itemize}
+
+\Hint{Shortcomings}: no solution, multiple solutions, project size not accounted for, different projects' horizons
+not fully considered.
+
+\Red{Payback period} min. length of time $k$ such that sum of CFs from a project is positive.
+\fbox{$\sum_{t=1}^{k} CF_t \ge - CF_0 = I_0$} Determine some fixed threshold $k^*$:
+\begin{itemize}
+    \item \Green{Independent} take if $k \le k^*$.
+    \item \Green{Mutually exclusive} take the one with the minnimum $k$ among projects $k \le k^*$.
+\end{itemize}
+
+\Red{Discounted payback period} ditto but discount CFs.
+\fbox{$\sum_{t=1}^{k} \frac{CF_t}{(1+IRR)^t} \ge - CF_0 = I_0$}
+
+\Hint{Shortcomings}: ignores CFs after $k$.
+
+\Red{Profitability index (PI)} ratio of the NPV of future CFs to the initial investment.
+\fbox{$PI = \frac{NPV}{I_0}$}
+\begin{itemize}
+    \item \Green{Independent} take all $PI > 1$.
+    \item \Green{Mutually exclusive} take the one with the highest $PI$ and $PI > 1$.
+\end{itemize}
+
+\Hint{Shortcomings}: doesn't account for project size.
+
 \end{multicols}
 \end{document}
