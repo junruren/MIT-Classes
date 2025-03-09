@@ -203,6 +203,10 @@ will start next month and last until the contract expires in 30 years.
 \fbox{$PV(CF_T) = \frac{CF_{\text{nominal,T}}}{(1 + r_{\text{nominal,T}})^T} = \frac{CF_{\text{real,T}}}{(1+r_{\text{real,T}})^T}$}
 (``$_{,T}$'' denotes the cash flow at time $T$)
 
+\Green{\Eg \underline{False} statement}
+\textit{If inflation is zero, two projects paying \$100 in different years have the same NPV.}
+\Hint{Time value of money still applies; later payments are worth less.}
+
 \subsection{Capital Budgeting}
 
 To maximize value, take on \Hint{only projects with positive NPV}.
@@ -271,6 +275,17 @@ IRR leads to the same decision as NPV if:
 
 \Hint{Shortcomings}: no solution, multiple solutions, project size not accounted for, different projects' horizons
 not fully considered.
+
+\Green{\Eg \underline{False} statement}
+\textit{If project A's NPV is larger than project B's, then the IRR of investing in project A is always higher than that
+of project B.}
+\Hint{The IRR could yield incongruent predictions in capital budgeting compared to the NPV rule.}
+
+\Green{\Eg \underline{False} statement}
+\textit{XZ Company is considering purchasing a copper mine, which requires an initial investment in the first year,
+followed by positive cash flows for 30 years, but a large closure cost in year 31. IRR is a good method for analyzing
+this investment.}
+\Hint{Not a good metric when there are negative CFs after time 0, as it may yield multiple IRRs}
 
 \Red{Payback period} min. length of time $k$ such that sum of CFs from a project is positive.
 \fbox{$\sum_{t=1}^{k} CF_t \ge - CF_0 = I_0$} Determine some fixed threshold $k^*$:
