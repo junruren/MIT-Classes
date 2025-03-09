@@ -8,7 +8,7 @@
 \usepackage{mathtools}
 \usepackage{color,graphicx,overpic}
 \usepackage{hyperref}
-\usepackage[dvipsnames]{xcolor}
+\usepackage[table, dvipsnames]{xcolor} % for \colorbox and named colors
 \usepackage{transparent}
 
 \usepackage{MnSymbol}
@@ -235,7 +235,22 @@ affects free cash flows through taxes.
 \Red{Working Capital (WC)} \fbox{$= \text{Inventory} + \text{A/R} - \text{A/P}$}
 We are about \Hint{changes (\ie $\Delta$) in WC, not levels} because if keeping WC constant, no new cash flow required.
 
-\section{TODO: CB example needed}
+\subsubsection{Hotspur example}
+\Hint{Not considering CF in year 0}
+\includegraphics[width=\columnwidth]{CF.png}
+\includegraphics[width=\columnwidth]{Terminal.png}
+\includegraphics[width=\columnwidth]{DCF.png}
+\Red{Enterprise Value (EV)} PV of future CFs
+$EV = \sum_{t=1}^{\infty} PV(CF_t)$
+\ie estimated via discounted CF (DCF) analysis.
+
+\Blue{From EV to Equity Value}
+$\colorbox{orange!25}{\text{MV of Equity}}
+= \colorbox{blue!25}{\text{Value of operations (EV) + Non-operational assets}}
+- \colorbox{red!25}{\text{MV of Debt}}$
+
+For Hotspur, $\colorbox{blue!25}{Value of Assets} = EV + \text{(Cash \& equivalents)} + \text{(Investments available for sale)}$
+$\colorbox{red!25}{\text{MV of Debt}} = \text{(Long-term debt)}$
 
 \subsubsection{Alternatives to NPV}
 
