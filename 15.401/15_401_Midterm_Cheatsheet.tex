@@ -308,5 +308,27 @@ this investment.}
 
 \Hint{Shortcomings}: doesn't account for project size.
 
+\subsection{Bonds}
+
+\Red{Face value \ie ``par value'' / ``principal''} the value of a bond that appears on its face and that will be paid to the investor by the issuer at
+maturity.
+
+\Red{Coupon} interest paid on a bond's face value on a periodic basis prior to maturity.
+
+\Red{Spot interest rate $r_t$} the market interest rate for discounting a signle risk-free cash flow
+\underline{at horizon $t$}.
+
+\Blue{Zero coupon bond} a bond that pays no coupons and is sold at a discount to its face value.
+Price of a \$1 ZC bond with maturity $T$ is \fbox{$P_T = \frac{\mathdollar 1}{(1+r_T)^T}$}.
+\Hint{We can infer spot interest rates from different ZC bond prices.}
+Given $P_T$, \fbox{$r_T = \left(\frac{\mathdollar 1}{P_T}\right)^{\frac{1}{T}} - 1$}.
+
+\Blue{Coupon bonds} with periodic coupon payments of $C_t$ and face value $F$.
+Price of a coupon bond is
+\fbox{$P = \left(\sum_{t=1}^{T} \frac{C_t}{(1+r_t)^t}\right) + \frac{F}{(1+r_T)^T} = \left(\sum_{t=1}^{T} C_t \cdot P_t^{\text{ZC}}\right) + F \cdot P_T^{\text{ZC}}$}.
+
+\Red{Yield to maturity (YTM)} the discount rate $y$ that makes the PV of a bond's future cash flows equal to its price.
+\fbox{$P = \left(\sum_{t=1}^{T} \frac{C_t}{(1+y)^t}\right) + \frac{F}{(1+y)^T}$} For ZC bonds, the YTM is equal to the spot interest rate \fbox{$y = r_T$}.
+
 \end{multicols}
 \end{document}
