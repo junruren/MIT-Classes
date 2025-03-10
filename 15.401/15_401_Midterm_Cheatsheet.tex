@@ -101,8 +101,10 @@
 \subsection{Net Present Value (NPV)}
 \Blue{Discoint rate $r$} you're indifferent between receiving \$1 today and $\$\frac{1}{1+r}$ in one period.
 
-\Blue{Present Value (PV)} \fbox{$PV(CF_t) = \frac{CF_t}{(1+r)^t}$}
+\Blue{Present Value (PV)} \fbox{$PV(CF_t) = \frac{\colorbox{PineGreen!30}{$CF_t$}}{(1+\colorbox{Blue!30}{$r$})^{\colorbox{BrickRed!30}{$t$}}}$}
 how much a cash flow (CF) at time $t$ is worth at time 0 (today). Computing a PV is often called \Hint{``discounting''}.
+\textbf{Investors prefer payoffs that are \colorbox{PineGreen!30}{larger}, \colorbox{Blue!30}{safer}, and
+\colorbox{BrickRed!30}{sooner}.}
 
 \Red{NPV} \fbox{$NPV = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t}$} summs over PVs of all cash flows in a project.
 \begin{itemize}
