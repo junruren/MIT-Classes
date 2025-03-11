@@ -250,12 +250,51 @@ affects free cash flows through taxes.
 \Red{Working Capital (WC)} \fbox{$= \text{Inventory} + \text{A/R} - \text{A/P}$}
 We are about \Hint{changes (\ie $\Delta$) in WC, not levels} because if keeping WC constant, no new cash flow required.
 
-\TODO{include ``valuing firms'' example from midterm review}
-\subsubsection{Hotspur example}
-\Hint{Not considering CF in year 0}
+\subsubsection{Valuing Firms (usual approach)}
+
+\begin{itemize}
+    \item Forecasted $CF_1$ through $CF_N$
+    \item Assume constant growth at rate $g$ after year $N$.
+\end{itemize}
+
+Then enterprise value as of today ($t = 0$):
+\fbox{$EV = \colorbox{blue!30}{$\left(\sum_{t=1}^{N} \frac{CF_t}{(1+r)^t}\right)$} + \colorbox{purple!30}{$\frac{\textcolor{PineGreen}{TV_N}}{(1+r)^N}$}$}
+
+\begin{tikzpicture}
+    % Loss
+    \fill[gray!10] (4, 0) -- (4, 0.75) -- (6, 1.25) -- (6, 0) -- cycle;
+    \draw[->,blue!75,dashed] (1,0.8) -- (0,0.8);
+    \draw[->,blue!75,dashed] (2,1.15) -- (0,1.15);
+    \draw[->,blue!75,dashed] (4,0.75) -- (0,0.75);
+    \draw[->,purple!75,dashed] (4,1.5) -- (0,1.5);
+    % Draw lines
+    \draw[->,thick] (0,0) -- (6,0) node[anchor=north] {\tiny Time}; % Time axis
+
+    \draw[->] (1,0) -- (1,0.8) node[anchor=south] {\tiny $CF_1$};
+    \draw[->] (2,0) -- (2,1.15) node[anchor=south] {\tiny $CF_2$};
+    \draw[->] (4,0) -- (4,0.75) node[anchor=south] {\tiny $CF_N$};
+    \draw[->] (5,0) -- (5,1) node[anchor=west] {\tiny $CF_N \cdot (1+g)$};
+
+    \draw[->,PineGreen,thick] (5,1.5) to [out=150, in=30] (4,1.5) node[anchor=north] {\tiny $TV_N = \frac{CF_N(1+g)}{r-g}$};
+    
+
+    \draw[dashed,gray] (4.5, -0.25) -- (4.5, 1.5) node[anchor=west] {\tiny Const. growth};
+    
+    % Label values
+    \node[anchor=north] at (0,0) {\tiny $t = 0$};
+    \node[anchor=north] at (1,0) {\tiny $t = 1$};
+    \node[anchor=north] at (2,0) {\tiny $t = 2$};
+    \node[anchor=north] at (4,0) {\tiny $t = N$};
+    \node[anchor=north] at (5,0) {\tiny $t = N + 1$};
+
+\end{tikzpicture}
+
+\Green{Hotspur example}
+$N = 12$ (2019) \ie year 13 begins the constant growth.
 \includegraphics[width=\columnwidth]{CF.png}
 \includegraphics[width=\columnwidth]{Terminal.png}
 \includegraphics[width=\columnwidth]{DCF.png}
+Also \Hint{CF in year 0 is not added to the EV.}
 \Red{Enterprise Value (EV)} PV of future CFs
 $EV = \sum_{t=1}^{\infty} PV(CF_t)$
 \ie estimated via discounted CF (DCF) analysis.
