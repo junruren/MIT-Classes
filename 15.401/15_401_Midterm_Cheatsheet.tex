@@ -424,5 +424,64 @@ Price of a coupon bond is
         and sell 1 coupon bond (earning \$106). This generates \$2 arbitrage profit.
 \end{enumerate}
 
+\Red{Expectations hypothesis (EH)} the yield curve reflects the market's expectations of future interest rates.
+\Ie Long-term interest rates are equal to the \underline{geometric average} of short-term interest rates until maturity.
+\Hint{Intuition: investors indifferent between long bond and rolling over short bond.}
+\Green{\Eg 2-year rate should be given by}
+\fbox{$(1 + \textcolor{violet}{r_{t,2}})^2 = (1 + \textcolor{purple}{r_{t,1}})\left(1 + \textcolor{NavyBlue}{E_t(r_{t+1,1})}\right)$},
+where \begin{itemize}
+    \item \textcolor{purple}{$r_{t,1}$: the 1-year rate at time $t$ (\eg today)}
+    \item \textcolor{violet}{$r_{t,2}$: the 2-year rate at time $t$ (\eg today)}
+    \item \textcolor{NavyBlue}{$E_t(r_{t+1,1})$: expectation at time $t$ (\eg today) of the 1-year rate that will exist at time $t+1$}
+\end{itemize}
+
+\Blue{More generally} yields reflect a component related to expectations about future short-term interest rates plus an
+additional term reflecting a risk premium reflecting the uncertainty about fluctuations in future interest rates:
+\fbox{$(1 + r_{t,2})^2 = (1 + r_{t,1})\left(1 + E_t(r_{t+1,1})\right) + \text{Risk Premium}$},
+
+\Green{\Eg bond risks} interest rate changes, inflation, credit/default
+
+\subsubsection{Duration}
+
+\Red{(Macaulay) Duration} the weighted average time to receive the bond's cash flows.
+Tells how long you have to wait to receive the average dollar from owning that bond in PV-weighted terms.
+\fbox{$D = \frac{1}{P} \sum_{t=1}^{T} t \cdot PV(CF_t) = \frac{1}{P} \sum_{t=1}^{T} t \cdot \frac{CF_t}{(1+y)^t}$}
+\Hint{Zero-coupon bonds' duration is equal to their maturity.}
+All else equal, \Hint{coupon bond has shorter duration than zero-coupon bond; higher coupon means lower duration}.
+
+\Red{Modified duration}
+\fbox{$MD = \frac{D}{(1+y)}$} the sensitivity of a bond's price to changes in interest rates.
+
+\Blue{Price change estimate} accurate for small changes in $y$ \fbox{$\frac{\Delta P}{P} \approx -MD \times \Delta y$}
+which shows that \Hint{duration measures bond exposure to interest-rate risk}.
+The higher the (modified) duration of a bond, the more its price moves ($\Delta P$) given a small change in interest
+rates ($\Delta y$).
+\Hint{Longer duration $\Rightarrow$ more sensitive to interest rate changes.}
+
+\Red{Duration matching (\ie immunization)} matching the duration of assets and liabilities to eliminate interest rate risk.
+\fbox{$\frac{D^{\text{Assets}}\cdot \Delta y}{1 + y} P^{\text{Assets}} \approx \frac{D^{\text{Liab.}}\cdot \Delta y}{1 + y} P^{\text{Liab.}}$}
+If the value of assets ($P^A$) equal to value of liabilities ($P^L$) (usually the case), then \Hint{matching durations of two immunizes
+portfolio from interest-rate risk}.
+\begin{itemize}
+    \item \fbox{If $P^A \neq P^L$, we need to set $D^A P^A = D^L P^L$} to immunize.
+    \item Value of portfolio unchanged for small movements in $y \Rightarrow$ hedged against interest-rate risk.
+    \item $D^A > D^L$ bets rates will stay constant or decrease
+    \item $D^A < D^L$ bets rates will increase.
+    \item This is only a \Hint{local} approximation. If interest rates change, need to \Hint{rebalance} the portfolio.
+\end{itemize}
+
+\Green{\Eg \underline{False} statement}
+\textit{You're uncertain about future interest rates, but your expectation is that they will stay unchanged relative to
+today. It's therefore risk-free to issue short-term bonds and invest the proceeds in long-term bonds with higher yields,
+and no bank that follows this strategy will ever go bankrupt.}
+\Hint{\textbf{Think SVB.} If the duration of assets exceeds the duration of liabilities, then the bank is exposed to
+interest-rate risk. If interest rates increase, then the value of assets will decrease more than the value of
+liabilities, and the bank may not be able to repay its short-term debt.}
+
+\Red{Default risk} a debt issuer fails to make interest or principal payments when due.
+Consider a ZCB. Let $q$ be the probability of the bond pays the promised payoff (\ie $(1-q)$ it defaults), the price of
+this bond:
+\fbox{$P = \frac{q \times \mathdollar 1 + (1-q) \times 0}{1 + r}$}.
+\Blue{Ratings} assess the probability of default of bonds, by agencies like Moody's, S\&P, Fitch.
 \end{multicols}
 \end{document}
