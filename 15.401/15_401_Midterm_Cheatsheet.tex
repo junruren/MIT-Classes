@@ -71,6 +71,12 @@
 \newcommand{\Green}[1]{\noindent{\textcolor{PineGreen}{\textbf{#1}}}:}
 \newcommand{\Hint}[1]{\noindent{\textcolor{Orange}{#1}}}
 
+\newcommand{\TODO}[1]{%
+  \vspace{1em}%
+  \noindent\textbf{\Large\textcolor{BrickRed}{TODO: #1}}%
+  \vspace{1em}%
+}
+
 \newcommand*{\eg}{e.g.\@\xspace}
 \newcommand*{\ie}{i.e.\@\xspace}
 \newcommand*{\Eg}{E.g.\@\xspace}
@@ -119,8 +125,9 @@ how much a cash flow at time 0 (today) is worth in $T$ periods.
 
 \Blue{Perpetuity}
 \begin{itemize}
-    \item \underline{Constant} recurring cash flow $A$ forever starting \textbf{1 period from now}: \fbox{$PV = \frac{A}{r}$}
-    \item \underline{Growing} perpetuity starting \textbf{1 period from now} with cash flow $A$, growth rate $g$: \fbox{$PV = \frac{A}{r-g} (r > g)$}
+    \item \underline{Constant} recurring cash flow $A$ forever starting \textbf{1 period from now \ie $t = 1$}: \fbox{$PV = \frac{A}{r}$}
+    \item \underline{Growing} perpetuity starting \textbf{1 period from now \ie $t = 1$} with cash flow $A$, growth rate $g$: \fbox{$PV = \frac{A}{r-g} (r > g)$}
+    \item \Hint{To include the cash flow at time 0, add $A$ to the PV formula above.}
 \end{itemize}
 
 \Blue{Annuity}
@@ -147,6 +154,7 @@ where $k$ is the number of compounding periods per year and $r$ is the per-perio
     \item \underline{APR} $= r \cdot k$
     \item \underline{EAR} \ie Annual Percentage Yield (APY)
 \end{itemize}
+\Hint{If $APR = EAR$ between two savings accounts, APR (the one with more frequent compounding) is better.}
 
 \subsubsection{Mortgage-related terms}
 
@@ -197,8 +205,9 @@ will start next month and last until the contract expires in 30 years.
     \item \Green{``Real''} adjusted for inflation
 \end{itemize}
 
-\Blue{Real rate of return} $r_{\text{real}} = \frac{1 + r_{\text{nominal}}}{1 + i} - 1$
-\fbox{$r_{\text{real}} \approx r_{\text{nominal}} - i$}
+\Blue{Real rate of return}
+\fbox{$r_{\text{real}} = \left(\frac{1 + r_{\text{nominal}}}{1 + i} - 1\right) \approx \left(r_{\text{nominal}} - i\right)$}
+\Hint{If $i$ is too high, don't use the approximation (too off).}
 
 \Blue{Treat inflation consistently for NPV}
 
@@ -241,6 +250,7 @@ affects free cash flows through taxes.
 \Red{Working Capital (WC)} \fbox{$= \text{Inventory} + \text{A/R} - \text{A/P}$}
 We are about \Hint{changes (\ie $\Delta$) in WC, not levels} because if keeping WC constant, no new cash flow required.
 
+\TODO{include ``valuing firms'' example from midterm review}
 \subsubsection{Hotspur example}
 \Hint{Not considering CF in year 0}
 \includegraphics[width=\columnwidth]{CF.png}
@@ -299,7 +309,7 @@ this investment.}
 \Red{Discounted payback period} ditto but discount CFs.
 \fbox{$\sum_{t=1}^{k} \frac{CF_t}{(1+IRR)^t} \ge - CF_0 = I_0$}
 
-\Hint{Shortcomings}: ignores CFs after $k$.
+\Hint{Shortcomings}: ignores CFs after $k$ and project size.
 
 \Red{Profitability index (PI)} ratio of the NPV of future CFs to the initial investment.
 \fbox{$PI = \frac{NPV}{I_0}$}
@@ -312,6 +322,8 @@ this investment.}
 
 \subsection{Bonds}
 
+\TODO{include ``Bond Arbitrage'' example from midterm review}
+
 \Red{Face value \ie ``par value'' / ``principal''} the value of a bond that appears on its face and that will be paid to the investor by the issuer at
 maturity.
 
@@ -323,7 +335,7 @@ maturity.
 \Blue{Zero coupon bond} a bond that pays no coupons and is sold at a discount to its face value.
 Price of a \$1 ZC bond with maturity $T$ is \fbox{$P_T = \frac{\mathdollar 1}{(1+r_T)^T}$}.
 \Hint{We can infer spot interest rates from different ZC bond prices.}
-Given $P_T$, \fbox{$r_T = \left(\frac{\mathdollar 1}{P_T}\right)^{\frac{1}{T}} - 1$}.
+\fbox{Given $P_T \Rightarrow r_T = \left(\frac{\mathdollar 1}{P_T}\right)^{\frac{1}{T}} - 1$}.
 
 \Blue{Coupon bonds} with periodic coupon payments of $C_t$ and face value $F$.
 Price of a coupon bond is
