@@ -483,5 +483,60 @@ Consider a ZCB. Let $q$ be the probability of the bond pays the promised payoff 
 this bond:
 \fbox{$P = \frac{q \times \mathdollar 1 + (1-q) \times 0}{1 + r}$}.
 \Blue{Ratings} assess the probability of default of bonds, by agencies like Moody's, S\&P, Fitch.
+
+\subsection{Stocks}
+
+\Red{Common stocks} equity or ownership shares in a corporation. Give right to payments; uncertain in timing and magnitude.
+\begin{itemize}
+    \item \Blue{Dividends} periodic payments to shareholders.
+    \item \Blue{Residual claim} to assets and cash flows after all other creditors (\eg debtholders) have been paid.
+    \item \Blue{Voting rights} elect board of directors, approve major corporate actions.
+    \item \Blue{Limited liability} shareholders not personally liable for company's debts.
+\end{itemize}
+
+\Red{Primary market} where firms issue securities.
+\begin{itemize}
+    \item \Blue{Underwriting} in an IPO, investment bank buys securities from issuer and resells to public while taking the underwriting spread as profits.
+    \item \Blue{Venture capital} is raised from investment partnerships, investment institutions, or wealthy individuals.
+    \item \Blue{Secondary (seasoned) offering} when a public company issues additional shares to the public.
+\end{itemize}
+
+\Red{Secondary market} where investors trade previously issued securities.
+\begin{itemize}
+    \item \Blue{Exchanges} \eg NYSE, NASDAQ
+    \item \Blue{Over-the-counter (OTC)} markets
+\end{itemize}
+
+\subsubsection{Stock Valuation}
+
+\Red{Discounted Dividend Model (DDM)} price equals discounted future dividends.
+\fbox{$P_0 = \sum_{t=1}^{\infty} \frac{D_t}{(1+r_t)^t}$}
+
+\Blue{Gordon growth model} a special case of DDM where dividends grow at a constant rate $g$.
+\fbox{$P_0 = \frac{D_0 \cdot (1+g)}{r-g} = \frac{D_1}{r-g}$}
+
+\Hint{If stock's growth pattern is forecasted to change over time, typically compute early-stage PV explicitly and then terminal value.}
+
+\Red{Forcasting dividends $D_t$} firm investment determines dividend growth. Always a trade-off between (1) growning the
+firm and (2) paying out dividends.
+\begin{itemize}
+    \item \Blue{Earnings Per Share (EPS)} net profit after taxes
+    \item \Blue{Dividend Payout Ratio} \fbox{$p = \frac{\text{Dividends}}{\text{Net Income}} = 1 - b$}
+    \item \Blue{Retained earnings} \fbox{$\text{Net Income} - \text{Dividends}$}
+    \item \Blue{Plowback Ratio} \fbox{$b = \frac{\text{Retained Earnings}}{\text{Net Income}}$}
+    \item \Blue{Book value of Equity} cumulative retained earnings \fbox{$\text{BV} = \text{Assets} - \text{Liabilities}$}
+    \item \Blue{Return on Equity (ROE)} \fbox{$\frac{\text{Net Income}}{\text{BV}}$}
+    \item \Blue{Dividend growth rate} BV grows from R.E. If $ROE$ and $b$ are constant, $g$ is constant.
+        \fbox{$g = b \cdot ROE = \frac{\Delta BV}{BV} = \frac{\text{Retained Earnings}}{\text{Net Income}} \times \frac{\text{Net Income}}{BV}$}.
+    \item \Blue{Change in book value} \fbox{$\Delta \text{BV} = b \cdot ROE \cdot  \text{BV}$}
+\end{itemize}
+\begin{align*}
+        \text{Dividends} &= \text{Net Income} - \text{Retained Earnings} \\
+        &= BV \cdot ROE - \Delta BV \\
+        &= BV \cdot ROE - b \cdot ROE \cdot BV \\
+        &= (1-b) \cdot ROE \cdot BV \\
+        &= p \cdot ROE \cdot BV
+\end{align*}
+
 \end{multicols}
 \end{document}
