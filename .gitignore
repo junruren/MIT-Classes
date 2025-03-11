@@ -2,4 +2,5 @@
 *.log
 *.out
 *.synctex
+*.synctex(busy)
 *.synctex.gz
