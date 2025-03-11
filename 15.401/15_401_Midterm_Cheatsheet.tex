@@ -512,8 +512,17 @@ this bond:
 \Red{Discounted Dividend Model (DDM)} price equals discounted future dividends.
 \fbox{$P_0 = \sum_{t=1}^{\infty} \frac{D_t}{(1+r_t)^t}$}
 
-\Blue{Gordon growth model} a special case of DDM where dividends grow at a constant rate $g$.
-\fbox{$P_0 = \frac{D_0 \cdot (1+g)}{r-g} = \frac{D_1}{r-g}$}
+\Red{Gordon growth model} a special case of DDM where dividends grow at a constant rate $g$.
+\fbox{$P_0 = \frac{D_0 \cdot (1+g)}{r-g} = \frac{D_1}{r-g} = \textcolor{orange}{\frac{ROE - g}{r-g} \cdot BV_0}$}
+Current stock price depends on the firm's BV, ROE, growth rate, and discount rate.
+\begin{itemize}
+    \item \Hint{If $ROE = r$}, then the price of the stock is exactly equal to the book value of equity.
+    \item \Hint{If $ROE > r$}, reinvesting more increases shareholder value. \Hint{Optimal to reinvest} \ie investment
+        opportunities that earn expected returns higher than the cost of capital. More common early in the life cycle of
+        the firm.
+    \item \Hint{If $ROE < r$}, reinvesting more destroys shareholder value. \Hint{Optimal not to reinvest} \ie return
+        excess cash to shareholders. More common later in the life cycle of the firm where higher growth can be costly.
+\end{itemize}
 
 \Hint{If stock's growth pattern is forecasted to change over time, typically compute early-stage PV explicitly and then terminal value.}
 
@@ -525,7 +534,7 @@ firm and (2) paying out dividends.
     \item \Blue{Retained earnings} \fbox{$\text{Net Income} - \text{Dividends}$}
     \item \Blue{Plowback Ratio} \fbox{$b = \frac{\text{Retained Earnings}}{\text{Net Income}}$}
     \item \Blue{Book value of Equity} cumulative retained earnings \fbox{$\text{BV} = \text{Assets} - \text{Liabilities}$}
-    \item \Blue{Return on Equity (ROE)} \fbox{$\frac{\text{Net Income}}{\text{BV}}$}
+    \item \Blue{Return on Equity (ROE)} how efficiently firm uses equity to generate profits \fbox{$\frac{\text{Net Income}}{\text{BV}}$}
     \item \Blue{Dividend growth rate} BV grows from R.E. If $ROE$ and $b$ are constant, $g$ is constant.
         \fbox{$g = b \cdot ROE = \frac{\Delta BV}{BV} = \frac{\text{Retained Earnings}}{\text{Net Income}} \times \frac{\text{Net Income}}{BV}$}.
     \item \Blue{Change in book value} \fbox{$\Delta \text{BV} = b \cdot ROE \cdot  \text{BV}$}
@@ -537,6 +546,7 @@ firm and (2) paying out dividends.
         &= (1-b) \cdot ROE \cdot BV \\
         &= p \cdot ROE \cdot BV
 \end{align*}
+\includegraphics[width=1\columnwidth]{organic_growth.png}
 
 \end{multicols}
 \end{document}
