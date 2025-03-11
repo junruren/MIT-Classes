@@ -361,8 +361,6 @@ this investment.}
 
 \subsection{Bonds}
 
-\TODO{include ``Bond Arbitrage'' example from midterm review}
-
 \Red{Face value \ie ``par value'' / ``principal''} the value of a bond that appears on its face and that will be paid to the investor by the issuer at
 maturity.
 
@@ -382,6 +380,49 @@ Price of a coupon bond is
 
 \Red{Yield to maturity (YTM)} the discount rate $y$ that makes the PV of a bond's future cash flows equal to its price.
 \fbox{$P = \left(\sum_{t=1}^{T} \frac{C_t}{(1+y)^t}\right) + \frac{F}{(1+y)^T}$} For ZC bonds, the YTM is equal to the spot interest rate \fbox{$y = r_T$}.
+
+\Green{\Eg Bond Arbitrage} construct a trading strategy based on a mixture of bonds to generate an arbitrage profit.
+\begin{enumerate}[label=\Alph*.]
+    \item 1-year ZC bond: FV: \$1, price \$0.8
+    \item 2-year ZC bond: FV: \$105, price \$100
+    \item 2-year 5\% bond: FV: \$100, price \$106
+\end{enumerate}
+\begin{enumerate}
+    \item Infer spot rates from ZCBs:
+        \begin{tabular}{cc}
+            \hline
+            Maturity & Spot Rate \\
+            \hline
+            1 & $\frac{1}{0.8} - 1 = 0.25$ \\
+            2 & $\left(\frac{105}{100}\right)^{\frac{1}{2}} - 1 \approx 0.0247$ \\
+            \hline
+        \end{tabular}
+    \item Calculate the no-arbitrage price of the coupon bond using spot rates:
+        $P = \frac{5}{(1+0.25)} + \frac{105}{(1+0.0247)^2} \approx 103.999$
+        which is less than the market price of \$106.
+    \item \Hint{Intuition: The coupon bond is \underline{overpriced}, so sell it and buy the ZC bonds.}
+    \item Goal: Use ZC bonds to replicate the coupon bond's \underline{future} cash flows.
+        \begin{tabular}{c|ccc}
+            \hline
+            Assume Buying & Bond & $CF_1$ & $CF_2$ \\
+            \hline
+            $x$ & 1-year ZC & 1 & 0 \\
+            $y$ & 2-year ZC & 0 & 105 \\
+            \hline
+            1 & 5\% bond & 5 & 105 \\
+            \hline
+        \end{tabular}
+    \item Solve for $x$ and $y$:
+        $\begin{cases}
+            1 x + 0 y &= 5 \\
+            0 x + 105 y &= 105
+        \end{cases} \Rightarrow \begin{cases}
+            x = 5 \\
+            y = 1
+        \end{cases}$
+    \item At $t = 0$, buy 5 1-year ZC bonds and 1 2-year ZC bond (costs $5 \times \mathdollar 0.8 + 1 \times \mathdollar 100 = 104$)
+        and sell 1 coupon bond (earning \$106). This generates \$2 arbitrage profit.
+\end{enumerate}
 
 \end{multicols}
 \end{document}
