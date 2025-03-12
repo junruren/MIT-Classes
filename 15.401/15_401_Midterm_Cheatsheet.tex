@@ -8,7 +8,7 @@
 \usepackage{mathtools}
 \usepackage{color,graphicx,overpic}
 \usepackage{hyperref}
-\usepackage[table, dvipsnames]{xcolor} % for \colorbox and named colors
+\usepackage[table, dvipsnames, xcdraw]{xcolor} % for \colorbox and named colors
 \usepackage{transparent}
 
 \usepackage{MnSymbol}
@@ -529,7 +529,7 @@ Current stock price depends on the firm's BV, ROE, growth rate, and discount rat
 \Red{Forcasting dividends $D_t$} firm investment determines dividend growth. Always a trade-off between (1) growning the
 firm and (2) paying out dividends.
 \begin{itemize}
-    \item \Blue{Earnings Per Share (EPS)} net profit after taxes
+    \item \Blue{Earnings Per Share (EPS)} net profit after taxes \fbox{$EPS = BV \times ROE$}
     \item \Blue{Dividend Payout Ratio} \fbox{$p = \frac{\text{Dividends}}{\text{Net Income}} = 1 - b$}
     \item \Blue{Retained earnings} \fbox{$\text{Net Income} - \text{Dividends}$}
     \item \Blue{Plowback Ratio} \fbox{$b = \frac{\text{Retained Earnings}}{\text{Net Income}}$}
@@ -547,6 +547,35 @@ firm and (2) paying out dividends.
         &= p \cdot ROE \cdot BV
 \end{align*}
 \includegraphics[width=1\columnwidth]{organic_growth.png}
+
+\Green{\Eg What should be Firm ABC's stock price today} (last day of year 0)
+\begin{itemize}
+    \item Book value of \$37.80 (per share) at the end of year 0.
+    \item Growth plan is to reinvest 80\% of its earnings next year.
+    \item After that, it will focus on returning cash to shareholder beginning in year 2, paying out 60\% of its
+        earnings as dividends.
+    \item From year 3 onwards, ABC will pay out 80\% of earnings and plans to maintain this payout policy forever.
+    \item Assume that the market is expecting an ROE of 10\% for years 1 and 2, and an ROE of 8\% from year 3 onwards,
+    \item Assume a constant discount rate of 8\%.
+\end{itemize}
+
+\newcommand{\calc}[1]{\textcolor{red}{#1}}
+\begin{tabular}{r|cccc}
+    & 0 & 1 & 2 & 3 \\
+    \hline
+    ROE & \cellcolor[HTML]{EFEFEF} & 10\% & 10\% & 8\% \\
+    EPS & \cellcolor[HTML]{EFEFEF} & \calc{\$3.78} & \calc{\$4.08} & \calc{\$3.40} \\
+    Begin BV & \cellcolor[HTML]{EFEFEF} & \calc{\$37.80} & \calc{\$40.28} & \calc{\$42.46} \\
+    Payout $p$ & \cellcolor[HTML]{EFEFEF} & \calc{20\%} & 60\% & 60\% \\
+    Plowback $b$ & \cellcolor[HTML]{EFEFEF} & 80\% & \calc{40\%} & \calc{40\%} \\
+    End BV & \$37.80 \tikz[baseline, overlay]{\draw[->, thick, purple] (0,0.1) to node[above, font=\scriptsize] {} (0.5,0.8);} & \calc{\$40.82} \tikz[baseline, overlay]{\draw[->, thick, purple] (0,0.1) to node[above, font=\scriptsize] {} (0.5,0.8);} & \calc{\$42.46} \tikz[baseline, overlay]{\draw[->, thick, purple] (0,0.1) to node[above, font=\scriptsize] {} (0.5,0.8);} & \calc{\$43.14} \\
+    Div./share & \cellcolor[HTML]{EFEFEF} & \calc{\$0.76} & \calc{\$2.45} & \calc{\$2.72} \\
+    Term. Val. & \cellcolor[HTML]{EFEFEF} &  & \calc{\$42.46} &  \\
+    $\sum$ CFs & \cellcolor[HTML]{EFEFEF} & \calc{\$0.76} & \calc{\$44.91} &  \\
+    Discnt Fac & \cellcolor[HTML]{EFEFEF} & \calc{1.08} & \calc{1.17} &  \\
+    $PV(CFs)$ & \cellcolor[HTML]{EFEFEF} & \calc{\$0.70} & \calc{\$38.50} &  \\
+    Stock Price &  & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} & \cellcolor[HTML]{EFEFEF} \\
+\end{tabular}
 
 \end{multicols}
 \end{document}
