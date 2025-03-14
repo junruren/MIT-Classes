@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\title{Study Notes: 15.535 Business Analysis Using Financial Statements}
+\author{MIT Sloan School of Management}
+\date{Spring 2022 - 2024 Quizzes}
+
+\begin{document}
+\maketitle
+
+\section{Accruals and Earnings Quality}
+\subsection{Calculating Accruals}
+\begin{itemize}
+    \item \textbf{Total Accruals}: 
+    \[
+    \text{Total Accruals} = \text{Net Income (NI)} - \text{Cash Flow from Operations (CFO)}
+    \]
+    \item \textbf{Split Components}:
+    \begin{itemize}
+        \item \textit{Working Capital Accruals}: Related to changes in current assets/liabilities (e.g., accounts receivable, inventory, prepaid expenses).
+        \item \textit{Non-Working Capital Accruals}: Related to long-term items (e.g., depreciation, amortization, deferred taxes).
+    \end{itemize}
+    \item \textbf{Economic Rationale}: Working capital accruals are volatile and short-term, while non-working capital accruals are stable but larger (e.g., depreciation).
+\end{itemize}
+
+\subsection{Days Metrics}
+\begin{itemize}
+    \item \textbf{Days Inventory}:
+    \[
+    \text{Days Inventory} = \frac{365}{\text{Inventory Turnover}} = \frac{365}{\text{COGS} / \text{Average Inventory}}
+    \]
+    \item \textbf{Days Receivables}:
+    \[
+    \text{Days Receivables} = \frac{365}{\text{Receivables Turnover}} = \frac{365}{\text{Net Sales} / \text{Average Accounts Receivable}}
+    \]
+    \item \textbf{Interpretation}: Declining days inventory/receivables may indicate efficiency or demand-driven sales growth.
+\end{itemize}
+
+\subsection{Earnings Quality Concerns}
+\begin{itemize}
+    \item Positive total accruals suggest lower earnings quality.
+    \item Analyze trends in days metrics:
+    \begin{itemize}
+        \item Declining days receivables with booming sales = healthy growth.
+        \item Rising days inventory with high backlog = production ramp-up (not necessarily negative).
+    \end{itemize}
+\end{itemize}
+
+\section{Valuation Multiples}
+\subsection{Key Ratios}
+\begin{itemize}
+    \item \textbf{Trailing P/E}:
+    \[
+    \text{Trailing P/E} = \frac{\text{Stock Price (P)}}{\text{Trailing Twelve Months (TTM) EPS}}
+    \]
+    \item \textbf{Forward P/E}:
+    \[
+    \text{Forward P/E} = \frac{\text{Stock Price (P)}}{\text{Next Twelve Months (NTM) EPS Forecast}}
+    \]
+    \item \textbf{PEG Ratio}:
+    \[
+    \text{PEG} = \frac{\text{P/E Ratio}}{\text{Long-Term EPS Growth Rate}}
+    \]
+\end{itemize}
+
+\subsection{Special Items Impact}
+\begin{itemize}
+    \item Special items (e.g., impairments, restructuring) distort P/E ratios. 
+    \item Over-/Under-valuation depends on whether special items are transitory or recurring.
+\end{itemize}
+
+\section{Bankruptcy Risk \& Altman Z''-Score}
+\subsection{Calculation}
+\[
+Z'' = 6.56 \times \frac{\text{Working Capital}}{\text{Total Assets}} + 3.26 \times \frac{\text{Retained Earnings}}{\text{Total Assets}} + 6.72 \times \frac{\text{EBIT}}{\text{Total Assets}} + 1.05 \times \frac{\text{Book Value Equity}}{\text{Total Liabilities}}
+\]
+\begin{itemize}
+    \item \textbf{Interpretation}:
+    \begin{itemize}
+        \item $Z'' > 2.60$: Low bankruptcy risk (AAA rating).
+        \item $Z'' < 1.10$: High bankruptcy risk (CCC rating).
+    \end{itemize}
+    \item \textbf{IPO Impact}: Reduces current assets, total assets, and equity, lowering $Z''$ significantly (e.g., Rivian’s post-IPO $Z''$ dropped from 13.23 to 2.03).
+\end{itemize}
+
+\section{Special Items \& Cash Flow Analysis}
+\subsection{Categorization}
+\begin{itemize}
+    \item \textbf{Core Items}: SG\&A, R\&D, amortization (recurring).
+    \item \textbf{Special Items}: Impairments, restructuring, litigation (non-recurring).
+    \item \textbf{Gray Areas}: Contingent consideration (depends on acquisition strategy).
+\end{itemize}
+
+\subsection{Cash Flow vs. Net Income}
+\begin{itemize}
+    \item Asset-light companies (e.g., Skechers) have less depreciation, so CFO often exceeds NI.
+    \item High D\&A in asset-heavy firms reduces NI but not CFO.
+\end{itemize}
+
+\section{Cookie Jar Accounting}
+\subsection{Depreciable Life}
+\[
+\text{Depreciable Life} = \frac{\text{Gross PPE}}{\text{Depreciation Expense}}
+\]
+\begin{itemize}
+    \item \textbf{Manipulation}: Shortening life increases depreciation expense, reducing earnings (but negligible impact during extreme losses, e.g., NCL’s \$4B losses).
+\end{itemize}
+
+\section{Beneish M-Score \& Dechow F-Score}
+\subsection{Beneish M-Score}
+\[
+M = -4.84 + 0.92 \times \text{DSRI} + 0.528 \times \text{GMI} + 0.404 \times \text{AQI} + 0.892 \times \text{SGI} + 0.115 \times \text{DEPI} - 0.172 \times \text{SGAI} + 4.679 \times \text{TATA} - 0.327 \times \text{LVGI}
+\]
+\begin{itemize}
+    \item \textbf{Limitations}: Fails to detect intersegment manipulation (e.g., ADM’s nutrition segment) as transactions net to zero in consolidated statements.
+\end{itemize}
+
+\subsection{Dechow F-Score}
+\begin{itemize}
+    \item Variables include accruals, receivables/inventory changes, and soft assets.
+    \item \textbf{Interpretation}: 
+    \begin{itemize}
+        \item $F\text{-Score} \approx 1$: Normal risk (e.g., Skechers’ 1.07 implies low manipulation risk).
+    \end{itemize}
+\end{itemize}
+
+\section{Days Unearned Revenue}
+\[
+\text{Days Unearned Revenue} = \frac{365}{\text{Net Sales} / \text{Average Unearned Revenue}}
+\]
+\begin{itemize}
+    \item \textbf{Trend Analysis}: Stable days unearned revenue (e.g., Apple’s 11–13 days) suggests new services offsetting commission revenue recognition.
+\end{itemize}
+
+\section{Case Studies}
+\subsection{Nvidia (2024)}
+\begin{itemize}
+    \item \textbf{Accrual Ratio}: 
+    \[
+    \frac{\text{NI} - \text{CFO} - \text{CFI}}{\text{Avg. Total Assets}} = \frac{29,760 - 28,090 - (-10,566)}{53,455} = 3.12\%
+    \]
+    \item \textbf{Inventory Accrual}: +98 (small accrual implies meeting demand without inventory drawdown).
+\end{itemize}
+
+\subsection{ADM (2023)}
+\begin{itemize}
+    \item \textbf{Beneish M-Score Errors}: Misclassification of AQI (net PPE vs. buildings), DEPI (D\&A vs. depreciation), LVGI (excluding liabilities), TATA (using wrong denominators).
+    \item \textbf{SEC Inquiry}: Intersegment transactions not detectable in consolidated scores.
+\end{itemize}
+
+\end{document}
