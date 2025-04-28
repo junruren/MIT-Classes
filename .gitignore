@@ -4,3 +4,6 @@
 *.synctex
 *.synctex(busy)
 *.synctex.gz
+*.fdb_latexmk
+*.fls
+*.xdv

@@ -88,7 +88,7 @@
 \usepackage{draftwatermark}
 % Configure the watermark
 \SetWatermarkText{Made with love by \texttt{junruren}} % Set the watermark text
-\SetWatermarkScale{2.5}            % Adjust the scale of the watermark
+\SetWatermarkScale{0.35}            % Adjust the scale of the watermark
 \SetWatermarkLightness{0.9}      % Set the lightness (closer to 1 is more faded)
 % -----------------------------------------------------------------------
 
@@ -131,6 +131,141 @@ Returns comes from both dividends and capital gains.
 \Red{Mean (average) return}
 \fbox{$\bar{r} = E[r] = \frac{1}{T} \sum_{t=1}^T r_t$}
 Would be same as the expected return $E[r_t]$ if expected returns are constant for all $t$.
+
+\subsection{Options}
+
+\Red{Options}
+Derivative contracts specifying \textbf{a right} to \textbf{buy (call option)} or \textbf{sell (put option)} an underlying asset at a specified price $K$ (the \textbf{strike/exercise price}) on or before a specified date $T$ (the \textbf{expiration/maturity date}).
+
+\begin{itemize}
+    \item \Blue{Call option}: right to buy the underlying asset at the strike price.
+    \item \Blue{Put option}: right to sell the underlying asset at the strike price.
+\end{itemize}
+
+Exercise style:
+\begin{itemize}
+    \item \Blue{American option}: can be exercised at any time before expiration.
+    \item \Blue{European option}: can only be exercised at expiration.
+\end{itemize}
+
+\subsubsection{Option Payoff curves}
+
+\begin{itemize}
+    \item \Blue{$S$} Price of the underlying asset at expiration
+    \item \Blue{$K$} Strike price of option
+    \item \Hint{Payoff $\neq$ Profit}. To get profit (net payoff), need to subtract the option's cost.
+\end{itemize}
+
+\begin{multicols}{2}
+\tiny \textbf{Payoff of buying a Call}
+$\max(0, S - K)$
+\begin{tikzpicture}
+    % Draw lines
+    \draw[->,thick] (0,0) -- (2,0) node[anchor=north] {\tiny $S$}; % Asset Price axis
+    \draw[->,thick] (0,0) -- (0,1.25) node[anchor=east] {\tiny $K$}; % Strike Price axis
+    % Draw payoff lines
+    \draw[-,thick,red] (0,0) -- (1,0) -- (2,1);
+
+    % Label values
+    \node[anchor=north] at (1,0) {\tiny $100$};
+    \node[anchor=east] at (0,1) {\tiny $100$};
+\end{tikzpicture}
+
+\tiny \textbf{Payoff of buying a Put}
+$\max(0, K - S)$
+\begin{tikzpicture}
+    % Draw lines
+    \draw[->,thick] (0,0) -- (2,0) node[anchor=north] {\tiny $S$}; % Asset Price axis
+    \draw[->,thick] (0,0) -- (0,1.25) node[anchor=east] {\tiny $K$}; % Strike Price axis
+    % Draw payoff lines
+    \draw[-,thick,red] (0,1) -- (1,0) -- (2,0);
+
+    % Label values
+    \node[anchor=north] at (1,0) {\tiny $100$};
+    \node[anchor=east] at (0,1) {\tiny $100$};
+\end{tikzpicture}
+
+\tiny \textbf{Payoff of selling a Call}
+$-\max(0, S - K)$
+\begin{tikzpicture}
+    % Draw lines
+    \draw[->,thick] (0,0) -- (2,0) node[anchor=north] {\tiny $S$}; % Asset Price axis
+    \draw[->,thick] (0,0) -- (0,-1.25) node[anchor=east] {\tiny $K$}; % Strike Price axis
+    % Draw payoff lines
+    \draw[-,thick,red] (0,0) -- (1,0) -- (2,-1);
+
+    % Label values
+    \node[anchor=south] at (1,0) {\tiny $100$};
+    \node[anchor=east] at (0,-1) {\tiny $100$};
+\end{tikzpicture}
+
+\tiny \textbf{Payoff of selling a Put}
+$-\max(0, K - S)$
+\begin{tikzpicture}
+    % Draw lines
+    \draw[->,thick] (0,0) -- (2,0) node[anchor=north] {\tiny $S$}; % Asset Price axis
+    \draw[->,thick] (0,0) -- (0,-1.25) node[anchor=east] {\tiny $K$}; % Strike Price axis
+    % Draw payoff lines
+    \draw[-,thick,red] (0,-1) -- (1,0) -- (2,0);
+
+    % Label values
+    \node[anchor=south] at (1,0) {\tiny $100$};
+    \node[anchor=east] at (0,-1) {\tiny $100$};
+\end{tikzpicture}
+\end{multicols}
+
+Payoff curves of other assets that can be used with options:
+\begin{multicols}{2}
+\tiny Payoff of underlying asset
+\begin{tikzpicture}
+    % Draw lines
+    \draw[->,thick] (0,0) -- (1.5,0) node[anchor=north] {\tiny $S$}; % Asset Price axis
+    \draw[->,thick] (0,0) -- (0,1.25) node[anchor=east] {\tiny $K$}; % Strike Price axis
+    % Draw payoff lines
+    \draw[-,thick,red] (0,0) -- (1,1);
+
+    % Label values
+    \node[anchor=north] at (1,0) {\tiny $100$};
+    \node[anchor=east] at (0,1) {\tiny $100$};
+\end{tikzpicture}
+
+\tiny Payoff of a \$100 FV ZC Bond
+\begin{tikzpicture}
+    % Draw lines
+    \draw[->,thick] (0,0) -- (1.5,0) node[anchor=north] {\tiny $S$}; % Asset Price axis
+    \draw[->,thick] (0,0) -- (0,1.25) node[anchor=east] {\tiny $K$}; % Strike Price axis
+    % Draw payoff lines
+    \draw[-,thick,red] (0,1) -- (1,1);
+
+    % Label values
+    \node[anchor=north] at (1,0) {\tiny $100$};
+    \node[anchor=east] at (0,1) {\tiny $100$};
+\end{tikzpicture}
+\end{multicols}
+
+\subsubsection{Option payoff and profit}
+
+\begin{itemize}
+    \item \Blue{$r$} Risk-free interest rate (EAR)
+    \item \Blue{$C$} Call option price
+    \item \Blue{$P$} Put option price
+\end{itemize}
+
+Call option:
+\begin{tabular}{c|c|c|c}
+    & $S < K$ & $S = K$ & $S > K$ \\
+    \hline
+    Payoff & $0$ & $0$ & $S - K$ \\
+    Profit & $-C (1+r)^T$ & $-C (1+r)^T$ & $S - K - C (1+r)^T$ \\
+\end{tabular}
+
+Put option:
+\begin{tabular}{c|c|c|c}
+    & $S < K$ & $S = K$ & $S > K$ \\
+    \hline
+    Payoff & $K - S$ & $0$ & $0$ \\
+    Profit & $K - S - P(1+r)^T$ & $- P(1+r)^T$ & $- P(1+r)^T$ \\
+\end{tabular}
 
 \end{multicols}
 \end{document}
