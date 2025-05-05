@@ -251,7 +251,7 @@ Payoff curves of other assets that can be used with options:
     \item \Blue{$P$} Put option price
 \end{itemize}
 
-Call option:
+\Blue{Call option}
 \begin{tabular}{c|c|c|c}
     & $S < K$ & $S = K$ & $S > K$ \\
     \hline
@@ -259,13 +259,108 @@ Call option:
     Profit & $-C (1+r)^T$ & $-C (1+r)^T$ & $S - K - C (1+r)^T$ \\
 \end{tabular}
 
-Put option:
+\Blue{Put option}
 \begin{tabular}{c|c|c|c}
     & $S < K$ & $S = K$ & $S > K$ \\
     \hline
     Payoff & $K - S$ & $0$ & $0$ \\
     Profit & $K - S - P(1+r)^T$ & $- P(1+r)^T$ & $- P(1+r)^T$ \\
 \end{tabular}
+
+An option is
+\begin{itemize}
+    \item \Blue{in-the-money} if it has positive payoff at expiration. A call option is in-the-money if $S > K$, and a put option is in-the-money if $S < K$.
+    \item \Blue{out-of-the-money} if it has zero payoff at expiration. A call option is out-of-the-money if $S < K$, and a put option is out-of-the-money if $S > K$.
+    \item \Blue{at-the-money} if it has zero payoff at expiration. A call option is at-the-money if $S = K$, and a put option is at-the-money if $S = K$.
+\end{itemize}
+
+\Red{Put-call parity} following portfolios have the same payoff at expiration:
+\begin{enumerate}
+    \item \Blue{Long call with strike price $K$ + Bond with face value $K$}
+
+    \begin{tikzpicture}
+        % Draw lines
+        \draw[->] (0,0) -- (1,0); % Asset Price axis
+        \draw[->] (0,0) -- (0,1) node[anchor=south] {\tiny Call}; % Strike Price axis
+        % Draw payoff lines
+        \draw[-,thick,red] (0,0) -- (0.5,0) -- (1,0.5);
+    \end{tikzpicture}
+    \raisebox{4ex}{+}
+    \begin{tikzpicture}
+        % Draw lines
+        \draw[->] (0,0) -- (1,0); % Asset Price axis
+        \draw[->] (0,0) -- (0,1) node[anchor=south] {\tiny Bond}; % Strike Price axis
+        % Draw payoff lines
+        \draw[-,thick,red] (0,0.5) -- (1,0.5);
+    \end{tikzpicture}
+    \raisebox{4ex}{=}
+    \begin{tikzpicture}
+        % Draw lines
+        \draw[->] (0,0) -- (1,0); % Asset Price axis
+        \draw[->] (0,0) -- (0,1); % Strike Price axis
+        % Draw payoff lines
+        \draw[-,thick,red] (0,0.5) -- (0.5,0.5) -- (1,1);
+    \end{tikzpicture}
+    \item \Blue{Long put with strike price $K$ + Underlying asset}
+
+    \begin{tikzpicture}
+        % Draw lines
+        \draw[->] (0,0) -- (1,0); % Asset Price axis
+        \draw[->] (0,0) -- (0,1) node[anchor=south] {\tiny Put}; % Strike Price axis
+        % Draw payoff lines
+        \draw[-,thick,red] (0,0.5) -- (0.5,0) -- (1,0);
+    \end{tikzpicture}
+    \raisebox{4ex}{+}
+    \begin{tikzpicture}
+        % Draw lines
+        \draw[->] (0,0) -- (1,0); % Asset Price axis
+        \draw[->] (0,0) -- (0,1) node[anchor=south] {\tiny Asset}; % Strike Price axis
+        % Draw payoff lines
+        \draw[-,thick,red] (0,0) -- (1,1);
+    \end{tikzpicture}
+    \raisebox{4ex}{=}
+    \begin{tikzpicture}
+        % Draw lines
+        \draw[->] (0,0) -- (1,0); % Asset Price axis
+        \draw[->] (0,0) -- (0,1); % Strike Price axis
+        % Draw payoff lines
+        \draw[-,thick,red] (0,0.5) -- (0.5,0.5) -- (1,1);
+    \end{tikzpicture}
+\end{enumerate}
+
+Given their identical payoffs, under no-arbitrage, they should have the same price:
+\begin{itemize}
+    \item $P_{call} + P_{bond} = P_{put} + P_{asset}$
+    \item $C + K(1+r)^{-T} = P + S$
+\end{itemize}
+
+\Red{Binomial option pricing model} Iterative approach to price options that makes the following simplifications:
+\begin{itemize}
+    \item Discrete periods, in which stock price can either go up or down.
+    \item We find the option price by a \textit{no arbitrage} argument. Price is equal to the cost of purchasing a \textit{replicating portfolio} whose payoffs match the option payoff in each state. \Eg, for a call, we solve: $\begin{cases}
+        a S_u + b B_u &= C_u \\
+        a S_d + b B_d &= C_d
+    \end{cases}$ where $a$ is the number of shares of stock, $b$ is the number of bonds, $S_u$ and $S_d$ are the stock prices if it goes up or down, and $C_u$ and $C_d$ are the call option prices if stock goes up or down.
+    \item  Under the binomial assumptions, \Hint{the probability of a stock moves up or down is irrelevant}, and the price of options can be determined solely using: \begin{itemize}
+        \item Current stock price $S_0$, interest rate $r$, strike price $K$ and time to maturity $T$;
+        \item Magnitude of possible future changes of stock price (volatility), captured implicitly by the possible values the stock can take $S_u$ and $S_d$.
+    \end{itemize}
+\end{itemize}
+
+\Red{Black-Scholes formula} Taking the limit of binomial model as the number of periods gets large, we obtain the B-S formula for the price of a European call option without dividends:
+\fbox{$C(S, K, T, r, \sigma) = S \cdot N(x) - K(1 + r)^{-T} \cdot N(x - \sigma \sqrt{T})$}
+\begin{itemize}
+    \item \Blue{$S$} current value of the underlying asset (in \$)
+    \item \Blue{$K$} strike price of the option (in \$)
+    \item \Blue{$T$} option maturity (in years)
+    \item \Blue{$r$} annual risk-free interest rate
+    \item \Blue{$\sigma$} annualized standard deviation of the underlying asset's return (volatility)
+    \item \Blue{$N(\cdot)$} cumulative normal distribution function (\texttt{NORM.S.DIST(x, TRUE)}). These $N(\cdot)$ terms \Hint{capture the replicating portfolio weights}.
+    \item \Blue{$x$} \fbox{$x = \frac{\ln\left(\frac{S}{K(1+r)^{-T}}\right)}{\sigma \sqrt{T}} + \frac{1}{2} \sigma \sqrt{T}$}
+\end{itemize}
+
+\subsubsection{Real options}
+Option-like payoffs appear in many contexts outside of financial markets. Management can be thought of as the act of creating and optimally exercising real options. \Green{\Eg} follow-on products, R\&D  investments, delaying product launches, abandoning projects, etc.
 
 \end{multicols}
 \end{document}
