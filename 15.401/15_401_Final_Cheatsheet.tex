@@ -132,6 +132,20 @@ Returns comes from both dividends and capital gains.
 \fbox{$\bar{r} = E[r] = \frac{1}{T} \sum_{t=1}^T r_t$}
 Would be same as the expected return $E[r_t]$ if expected returns are constant for all $t$.
 
+\Red{Estimate Expected Return}
+\begin{itemize}
+    \item if have multiple possible scenarios for returns and know the probability of each scenario, use:
+    \fbox{$E[r] = \sum_{i=1}^N p_i r_i$}
+    \item if have a time series of past $T$ observations of returns, estimate sample estimate of expected return $\bar{r}$ as:
+    \fbox{$\hat{r} = \frac{1}{T} \sum_{t=1}^T r_t$}
+\end{itemize}
+
+\Red{Variance} measures the volatility or deviation of returns from the mean.
+\fbox{$\text{Var}(r) = \sigma^2 = E\left[(r - E[r])^2\right]$}
+If given (past) data sample of $T$ returns, the sample variance is:
+\fbox{$\hat{\sigma}^2 = \frac{1}{T-1} \sum_{t=1}^T (r_t - \bar{r})^2$}
+where the expected return $\bar{r}$ can be estimated by the sample mean $\bar{r}$ as defined above.
+
 \subsection{Options}
 
 \Red{Options}
