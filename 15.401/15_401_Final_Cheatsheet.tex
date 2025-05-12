@@ -132,7 +132,7 @@ Returns comes from both dividends and capital gains.
 \fbox{$\bar{r} = E[r] = \frac{1}{T} \sum_{t=1}^T r_t$}
 Would be same as the expected return $E[r_t]$ if expected returns are constant for all $t$.
 
-\Red{Estimate Expected Return}
+\Blue{Estimate Expected Return}
 \begin{itemize}
     \item if have multiple possible scenarios for returns and know the probability of each scenario, use:
     \fbox{$E[r] = \sum_{i=1}^N p_i r_i$}
@@ -145,6 +145,87 @@ Would be same as the expected return $E[r_t]$ if expected returns are constant f
 If given (past) data sample of $T$ returns, the sample variance is:
 \fbox{$\hat{\sigma}^2 = \frac{1}{T-1} \sum_{t=1}^T (r_t - \bar{r})^2$}
 where the expected return $\bar{r}$ can be estimated by the sample mean $\bar{r}$ as defined above.
+
+\Red{Standard deviation} \fbox{$\sigma = \sqrt{\text{Var}(r)}$} measures the risk of the asset. Gives a magnitude in percent.
+
+\Red{Covariance} measures the degree to which two random variables move together.
+\fbox{$\sigma_{ij} = \text{Cov}(r_i, r_j) = E[(r_i - \bar{r_i})(r_j - \bar{r_j})]$}
+
+\Blue{Estimate Cov} given (past) data sample of $T$ returns, the sample covariance is:
+\fbox{$\hat{\sigma}_{ij} = \frac{1}{T-1} \sum_{t=1}^T (r_{i,t} - \bar{r_i})(r_{j,t} - \bar{r_j})$}
+
+Covariance can be:
+\begin{itemize}
+    \item positive (\Hint{both variables move in the same direction}),
+    \item negative (\Hint{two variables move in the opposite direction}), or
+    \item zero (no relationship).
+\end{itemize}
+\Hint{Variance is a special case of covariance, where the two variables are the same.}
+\fbox{$\text{Var}(r_i) = \sigma_{ii} = \text{Cov}(r_i, r_i)$}
+
+\Red{Correlation} measures the strength of the linear relationship between two random variables.
+\Hint{Always between -1 and 1.}
+\fbox{$\text{Corr}(r_i, r_j) = \rho_{ij} = \frac{\text{Cov}(r_i, r_j)}{\sigma_i \sigma_j}$}
+
+\Red{Beta} measures the sensitivity of an asset's return to the return of the market portfolio.
+\fbox{$\beta_i = \frac{\text{Cov}(r_i, r_m)}{\text{Var}(r_m)}$}
+where $r_m$ is the return of the market portfolio.
+
+Other measures of risk:
+\begin{itemize}
+    \item \Blue{Skewness} captures the asymmetry of the distribution of returns.
+    \item \Blue{Kurtosis} captures the "tailedness" of the distribution of returns. Higher kurtosis means more extreme values (outliers) in the distribution. \ie the distribution has ``fat tails''.
+\end{itemize}
+
+\Red{Mean-variance investors} care about the expected return (higher is better) and variance (lower is better) of the return. They are risk-averse with a risk-aversion coefficient of $A$.
+\Blue{Mean-variance utility function} captures the preferences of mean-variance investors
+\fbox{${U(r) = E[r] - \frac{1}{2} A \cdot \text{Var}(r)}$} where $U(r)$ is the utility of the return $r$.
+
+\Blue{Indifference curve} is a curve that represents all combinations of expected return and variance that give the same utility to the investor. The slope of the indifference curve is given by:
+\fbox{$\frac{dE[r]}{d\sigma^2} = -A$}
+The slope is negative, meaning that as variance increases, the expected return must also increase to maintain the same utility.
+
+\subsubsection{Portfolio}
+
+\Red{Portfolio} a combination of different assets or securities. Defined by number $N_i$ and the price $P_i$ of each asset $i$ in the portfolio. The total value of the portfolio is:
+\fbox{$V = \sum_{i=1}^n N_i P_i$}
+
+\Blue{Portfolio weight} of asset $i$ in the portfolio is:
+\fbox{$w_i = \frac{N_i P_i}{V}$}
+The portfolio weight represents the proportion of the total portfolio value that is invested in asset $i$.
+Weights can be \Hint{positive (long position)} or \Hint{negative (short position)}. $\sum_{i=1}^{n} w_i = 1$
+
+\Red{Mean and variance of a portfolio} with weights: $w_1, \dots, w_n$ and returns $r_1, \dots, r_n$:
+\begin{itemize}
+    \item \Blue{Random variable} $R_p = \sum_{i=1}^n w_i r_i$
+    \item \Blue{Expected return}
+    \fbox{$E[R_p] = \sum_{i=1}^N w_i E[r_i]$}
+    \item \Blue{Variance}
+    \fbox{$\text{Var}(R_p) = \sum_{i=1}^n \sum_{j=1}^n w_i w_j \text{Cov}(r_i, r_j)$}
+\end{itemize}
+\Green{Special case - two assets}
+\begin{itemize}
+    \item $E[R_p] = w_1 E[r_1] + w_2 E[r_2]$
+    \item $\text{Var}(R_p) = w_1^2 \text{Var}(r_1) + w_2^2 \text{Var}(r_2) + 2 w_1 w_2 \text{Cov}(r_1, r_2)$ (\Hint{Note: $w_2 = 1 - w_1$})
+\end{itemize}
+
+\Green{Special case - $n$ equally-weighted assets} with returns $r_1, \dots, r_n$:
+\begin{itemize}
+    \item $E[R_p] = \frac{1}{n} \sum_{i=1}^n E[r_i]$
+    \item $\text{Var}(R_p) = \frac{1}{n^2} \sum_{i=1}^n \sum_{j=1}^n \text{Cov}(r_i, r_j)$
+\end{itemize}
+
+\Blue{Portfolio beta} is the sensitivity of the portfolio return to the return of the market portfolio.
+
+\Red{Efficient frontier and the tangency portfolio}
+\begin{itemize}
+    \item \Blue{Mean-variance frontier portfolio} minimizes risk (measured by variance) for a given expected return.
+    \item \Blue{Efficient frontier} is the set of portfolios that offer the highest expected return for a given level of risk. (Upper part of the mean-variance frontier)
+    \item \Blue{Sharpe ratio}
+    \fbox{$= \frac{E[R_p] - r_f}{\sigma_p}$}
+    is the slope of the line from the risk-free rate to the portfolio. It measures the risk-adjusted return of the portfolio.
+    \item \Blue{Capital Market Line} represents the risk-return trade-off of efficient portfolios. It starts at the risk-free rate and is tangent to the efficient frontier. The slope of the CML is equal to the Sharpe ratio of the tangency portfolio.
+\end{itemize}
 
 \subsection{Options}
 
