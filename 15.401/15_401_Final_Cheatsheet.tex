@@ -227,6 +227,45 @@ Weights can be \Hint{positive (long position)} or \Hint{negative (short position
     \item \Blue{Capital Market Line} represents the risk-return trade-off of efficient portfolios. It starts at the risk-free rate and is tangent to the efficient frontier. The slope of the CML is equal to the Sharpe ratio of the tangency portfolio.
 \end{itemize}
 
+\subsection{Risk and Return}
+
+\Red{Basic Principles}
+\begin{itemize}
+    \item Investors prefer higher expected returns and lower risk
+    \item \Blue{Idiosyncratic (diversifiable)} risks specific to that asset; can be eliminated through proper diversification.
+    \item \Blue{Systematic (non-diversifiable)} risks inherent in the entire market; cannot be diversified away.
+\end{itemize}
+
+\Red{CAPM implication} investors are \Hint{only compensated for exposure to systematic risk}.
+
+CAPM implies that we can measure systematic risk using $\beta$.
+
+\Blue{Estimate $\beta$} as the slope coefficient when running this regression equation:
+\fbox{$r_{it} - r_{ft} = \alpha_i + \beta_i (r_{mt} - r_{ft}) + \epsilon_{it}$}
+We can use $\beta_i$ to calculate the expected return of stock $i$ implied by the CAPM:
+\fbox{$E(r_i) = r_f + \beta_i (r_M - r_f)$} where
+\begin{itemize}
+    \item $r_f$ is the risk-free rate
+    \item $r_M$ (also denoted $\bar{r}_M$) is the \textbf{expected return} on the market (here, $r_M = E[r_m]$)
+    \item $(\bar{r}_M - r_f)$ is the \textbf{expected excess return}, aka \textbf{``market risk premium''}.
+\end{itemize}
+
+\Blue{Market portfolio} According to the CAPM, since all investors hold risky assets in the same proportions, the tangency portfolio is the market portfolio -- a value weighted index of all investors' risky positions (\ie it excludes risk-free borrowing/lending). \Hint{Market portfolio's $\beta = 1$}.
+
+\Blue{Risk-free portfolio} Since the risk-free asset has no risk, it cannot remove any other assets. Therefore:
+\fbox{$\beta_f = 0 \Rightarrow \bar{r}_f = r_f = 0 (\bar{r}_m - r_f)$}
+
+\Blue{CAPM formula for a portfolio of assets}
+\fbox{$E[R_p] = R_f + \beta_p \cdot (E[R_m] - R_f)$}
+The beta of a portfolio of assets is equal to the weighted average of its constituents' $\beta$'s:
+$\beta_p = w_1 \beta_1 + \dots w_n \beta_n$.
+
+\Blue{Unlevering Betas} a special case of the formula for the beta of portfolio is frequently used to get estimates of the cost of capital for an entire firm, whose assets can be viewed as a portfolio of debt and equity.
+\begin{itemize}
+    \item We usually estimate firm-level \underline{equity betas} ($\beta_E$) using the stock returns of the firm.
+    \item Recover \underline{asset betas} ($\beta_A$, aka \underline{unlevered betas} $\beta_U$) using the following formula:
+\end{itemize}
+
 \subsection{Options}
 
 \Red{Options}
