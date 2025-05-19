@@ -236,11 +236,23 @@ Weights can be \Hint{positive (long position)} or \Hint{negative (short position
     \item \Blue{Systematic (non-diversifiable)} risks inherent in the entire market; cannot be diversified away.
 \end{itemize}
 
-\Red{CAPM implication} investors are \Hint{only compensated for exposure to systematic risk}.
+\Red{Capital Asset Pricing Model (CAPM)} describes the relationship between risk and expected return. It states that the expected return of an asset is equal to the risk-free rate plus a risk premium that is proportional to the asset's beta.
 
-CAPM implies that we can measure systematic risk using $\beta$.
+\Blue{CAPM implications}
+\begin{itemize}
+    \item investors are \Hint{only compensated for exposure to systematic risk}.
+    \item we can measure systematic risk using $\beta$.
+    \item \Blue{Alpha $\alpha$} (intercept in the regression equation used to estimate $\beta$) \Hint{should be zero} because $\beta$ alone should explain all differences in expected returns among assets.
+\end{itemize}
 
-\Blue{Estimate $\beta$} as the slope coefficient when running this regression equation:
+\Blue{CAPM assumptions}
+\begin{itemize}
+    \item No asymmetric information (everyone has the same information), and everyone agrees on the distribution of all assets' returns.
+    \item Investors are rational and risk-averse.
+    \item There exists a risk-free asset for both borrowing and investing.
+\end{itemize}
+
+\Red{Estimate $\beta$} as the slope coefficient when running this regression equation:
 \fbox{$r_{it} - r_{ft} = \alpha_i + \beta_i (r_{mt} - r_{ft}) + \epsilon_{it}$}
 We can use $\beta_i$ to calculate the expected return of stock $i$ implied by the CAPM:
 \fbox{$E(r_i) = r_f + \beta_i (r_M - r_f)$} where
@@ -262,9 +274,45 @@ $\beta_p = w_1 \beta_1 + \dots w_n \beta_n$.
 
 \Blue{Unlevering Betas} a special case of the formula for the beta of portfolio is frequently used to get estimates of the cost of capital for an entire firm, whose assets can be viewed as a portfolio of debt and equity.
 \begin{itemize}
-    \item We usually estimate firm-level \underline{equity betas} ($\beta_E$) using the stock returns of the firm.
+    \item Usually estimate firm-level \underline{equity betas} ($\beta_E$) using the stock returns of the firm.
     \item Recover \underline{asset betas} ($\beta_A$, aka \underline{unlevered betas} $\beta_U$) using the following formula:
+        \fbox{$\beta_U = \beta_A = \frac{D}{D+E} \beta_D + \frac{E}{D+E} \beta_E$}
+    \item Investment-grade debt (rated > BBB): assume \Hint{$\beta_D = 0$, cost of debt = risk-free rate}.
 \end{itemize}
+
+\Red{Security Market Line (SML)} CAPM's graphical representation. Plots returns (Y) on $\beta$ (X).
+\Hint{If CAPM holds, all assets should lie on the SML.}
+\begin{multicols}{2}
+\begin{tikzpicture}
+    % Draw axises
+    \draw[->] (-1,0) -- (2,0) node[anchor=north] {\tiny $\beta$}; % X (beta) axis
+    \draw[->] (0,0) -- (0,2) node[anchor=east] {\tiny Returns}; % Strike Price axis
+    % Draw SML
+    \draw[-,thick,red] (-0.5,0.5) -- (1.5,1.5) node[anchor=south] {\tiny SML};
+
+    \draw[dashed] (1,0) -- (1,1.25) -- (0,1.25);
+
+    % Label values
+    \node[anchor=north] at (0,0) {\tiny $0$};
+    \node[anchor=north] at (1,0) {\tiny $1$};
+    \node[anchor=east] at (0,0.75) {\tiny $r_f$};
+    \node[anchor=east] at (0,1.25) {\tiny $r_m$};
+\end{tikzpicture}
+\begin{itemize}
+    \item Slope = market risk premium $(E[r_m] - r_f)$.
+    \item An asset with a $\beta$ of 0 has an expected return = the risk-free rate $r_f$.
+    \item An asset with a $\beta$ of 1 has an expected return = the market return $E[r_m]$.
+\end{itemize}
+\end{multicols}
+\begin{tabular}{l|l}
+    \textbf{CML} & \textbf{SML} \\
+    \hline
+    Plots $E[r]$ vs $\sigma$ & $E[r]$ vs asset $\beta$ \\
+    \multicolumn{2}{l}{Passes thru risk-free asset \& tangency portfolio} \\
+    Slope = Maximum Sharpe ratio & Market risk premium \\
+    All individual risky assets lie below & lie on \\
+    \hline
+\end{tabular}
 
 \subsection{Options}
 
