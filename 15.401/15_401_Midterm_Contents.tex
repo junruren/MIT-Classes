@@ -112,6 +112,25 @@ will start next month and last until the contract expires in 30 years.
 \textit{If inflation is zero, two projects paying \$100 in different years have the same NPV.}
 \Hint{Time value of money still applies; later payments are worth less.}
 
+\Green{\Eg} Now 25 yo ($t=0$) and wants to retire at 65 yo ($t=40$) with \$3 milion. Will make first deposit next year ($t=1$) and continue until last deposit at $t=40$. Income expected to increase at 3\% per year (nominal) (\ie $g$). Savings will earn an annual return of 8\% (nominal) (\ie $r$).
+\begin{enumerate}
+    \item \label{ref:a} \Green{What should be first deposit $X$ to achieve the goal?}
+    \Hint{Perpetuity value of $X$ from today minus perpetuity value of the balance at $t = 41$'s PV should be \$3m's PV.}
+    $\frac{3 \times 10^6}{(1+r)^{40}} = \frac{X}{r - g} - \frac{X (1+g)^{40}}{r-g} \cdot \frac{1}{(1+r)^{40}} \Rightarrow X = 8124.58$
+    \item \Green{If inflation is 2\% per year. What would be the real value of the savings balance at $t=40$}
+    \Hint{Deflate the nominal future value:}
+    $FV_{\text{real}} = 3 \times 10^6 \times 1.02^{-40} = 1,358,671.25$.
+    (Alt. calculate $r_{\text{real}} = \frac{1.08}{1.02} - 1 = 5.88\%$ and then
+    $FV_{\text{real}} = 3 \times 10^6 \times \frac{(1 + r_{\text{real}})^{40}}{(1 + r_{\text{nominal}})^{-40}}$.)
+    \item \Green{If inflation is instead 3\% and there's no change in nominal income growth or expected nominal return on savings, what would the first deposi be to achieve the same real value balance goal at $t=40$ (\ie previous question's $FV_{\text{real}}$ value)?}
+    \Hint{Let $Y$ be the nominal amount at $t=40$ to achive the same $FV_{\text{real}}$.}
+    $Y \times \frac{(1 + r_{\text{real}}')^{40}}{(1 + r_{\text{nominal}})^{40}} = 1,358,671.25$
+    $\Rightarrow$
+    $Y \times \frac{(1 + (\frac{1.08}{1.03}) - 1)^{40}}{(1.08)^{40}} = 1,358,671.25$
+    $\Rightarrow$ $Y = 4,432,036.95$. \Hint{Then, similar to q\ref{ref:a}:}
+    $\frac{Y}{(1.08)^{40}} = \frac{X'}{0.08 - 0.03} - \frac{X' (1.03)^{40}}{0.08 - 0.03} \cdot \frac{1}{(1.08)^{40}} \Rightarrow X' = 12,002.75$
+\end{enumerate}
+
 \subsection{Capital Budgeting}
 
 To maximize value, take on \Hint{only projects with positive NPV}.
