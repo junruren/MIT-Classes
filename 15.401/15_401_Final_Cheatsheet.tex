@@ -620,6 +620,42 @@ Given their identical payoffs, under no-arbitrage, they should have the same pri
     \item \Blue{$x$} \fbox{$x = \frac{\ln\left(\frac{S}{K(1+r)^{-T}}\right)}{\sigma \sqrt{T}} + \frac{1}{2} \sigma \sqrt{T}$}
 \end{itemize}
 
+\Green{\Eg \underline{True} statement} \textit{According to the Black-Scholes model, holding all else equal, an increase in the expected idiosyncratic volatility of Apple's stock return will increase the value of a call option on Apple stock.} \Hint{The B\&S formula considers the volatility of the underlying
+asset's price, which includes idiosyncratic volatility. The value of a call option increases with volatility because it increases the possible upside for the option holder without affecting the downside, which is limited by design.}
+
+\Green{\Eg Harvesting and selling a large volume of wheat in three months' time.} Worries about market price $S_t$ may drop further between now and harvest. Consider 2 possible derivatives strategies to hedge against this risk. Underlying asset is 1 bushel of wheat. Expiration date $T$ is in 3 months.
+\begin{enumerate}
+    \item \Green{First possibility is to take a short position in (\ie sell) a forward contract, with a forward price $F = \$6$ per bushel.} Draw a diagram of wheat revenue per bushel (Y) vs market price of wheat $S_t$ (X) after buying this contract. \begin{multicols}{2}
+        \Hint{The forward contract locks in the price of wheat at $F = \$6$ per bushel, so this is your date-$T$ revenue per bushel regardless of the future price of wheat.}
+        \begin{tikzpicture}
+            % Draw lines
+            \draw[->,thick] (0,0) -- (1.5,0) node[anchor=north] {\tiny $S_T$};
+            \draw[->,thick] (0,0) -- (0,1.5) node[anchor=south] {\tiny Rev}; % Strike Price axis
+            % Draw payoff lines
+            \draw[-,thick,red] (0,0.5) -- (1.5,0.5);
+            % Label values
+            \node[anchor=east] at (0,0.5) {\tiny $F = 6$};
+        \end{tikzpicture}
+    \end{multicols}
+    \item \Green{Second possibility is to buy a European put option with a strike price $K = \$6$ per bushel.} Draw a diagram of wheat revenue per bushel (Y) vs market price of wheat $S_t$ (X) after buying this contract. \begin{multicols}{2}
+        \Hint{The put opt gives you the right to sell wheat at $K = \$6$, so this is the min rev in 3mo. If price above $K$, will sell on the spot market and receive rev equal to the market price $S_T$.}
+        \begin{tikzpicture}
+            % Draw lines
+            \draw[->,thick] (0,0) -- (1.5,0) node[anchor=north] {\tiny $S_T$};
+            \draw[->,thick] (0,0) -- (0,1.5) node[anchor=south] {\tiny Rev}; % Strike Price axis
+            % Draw payoff lines
+            \draw[-,thick,red] (0,0.5) -- (0.5,0.5) -- (1.5,1.5);
+            % Label values
+            \node[anchor=north] at (0.5,0) {\tiny $K = 6$};
+            \node[anchor=east] at (0,0.5) {\tiny $6$};
+            \node[anchor=east] at (0,1) {\tiny $10$};
+            \node[anchor=north] at (1,0) {\tiny $10$};
+        \end{tikzpicture}
+    \end{multicols}
+    \item \Green{Consioder the \underline{net} payoff (rev - hedging costs) under the 2 possible strategies}. If the price of wheat in 3mo is $S_T = \$3$ per bushel, which of the two strategies will provide a higher net payoff?
+    \Hint{The forward contract yields a higher net payoff as it has no upfront premium, unlike the put option. The put's premium, paid for potential upside if prices exceed \$6, results in a lower net payoff if prices remain below \$6 and this upside is not realized.}
+\end{enumerate}
+
 \subsubsection{Real options}
 Option-like payoffs appear in many contexts outside of financial markets. Management can be thought of as the act of creating and optimally exercising real options. \Green{\Eg} follow-on products, R\&D  investments, delaying product launches, abandoning projects, etc.
 
