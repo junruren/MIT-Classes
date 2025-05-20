@@ -395,7 +395,25 @@ liabilities, and the bank may not be able to repay its short-term debt.}
 Consider a ZCB. Let $q$ be the probability of the bond pays the promised payoff (\ie $(1-q)$ it defaults), the price of
 this bond:
 \fbox{$P = \frac{q \times \mathdollar 1 + (1-q) \times 0}{1 + r}$}.
+
 \Blue{Ratings} assess the probability of default of bonds, by agencies like Moody's, S\&P, Fitch.
+
+\Green{\Eg default-free bonds, pay coupons annually}
+\begin{tabular}{c|c|c|c|c}
+    Bond & Coupon & YTM & Price & Face Value\\
+    \hline
+    A & 0\% & 1 & \$95.238 & \$100 \\
+    B & \textcolor{violet}{4\%} & 2 & \$90.045 & \$100\\
+\end{tabular}
+\begin{enumerate}
+    \item \Green{What's the current 2-yr spot interest rate?}
+    \Hint{Bond A to get 1-yr spot rate $r_1$:}
+    $\$95.238 = \frac{\$100}{(1 + r_1)^1} \Rightarrow \textcolor{purple}{r_1 = 5\%}$.
+    \Hint{Then, express bond B:}
+    $\$90.045 = \frac{\textcolor{violet}{4\%} \cdot \$100}{(1 + \textcolor{purple}{5\%})^1} + \frac{(1+\textcolor{violet}{4\%}) \cdot \$100}{(1 + r_2)^2} \Rightarrow \textcolor{NavyBlue}{r_2 = 4.5\%}$.
+    \item \Green{What's the no arbitrage price of a ZC default-free w/ FV \$100 maturing 2yrs from now?}
+    $P = \frac{\$100}{(1 + \textcolor{NavyBlue}{r_2})^2}=91.573$.
+\end{enumerate}
 
 \subsection{Stocks}
 
