@@ -107,6 +107,48 @@
 
 \input{15_401_Midterm_Contents}
 
+\subsection{Capital Structure}
+Structure of investors' claims to the firm's assets and future cashflows.
+
+\Red{Modigliani-Miller Theorem} Capital structure is irrelevant to the firm's value. The
+theorem requires strong assumptions:
+\begin{itemize}
+    \item No taxes
+    \item No transaction costs or bankruptcy (or financial distress) costs
+    \item Markets are efficient (rational investors, no information asymmetries)
+    \item Markets are complete (for any risk, can buy/sell a contract on it)
+    \item Investment decisions are fixed (regardless of choice of financing)
+\end{itemize}
+Under M\&M
+\begin{itemize}
+    \item \Blue{Market value of the firm} is unaffected by cap struct, so \fbox{$E = A - D$}
+    \item \Blue{Discount rate of the firm (\ie ``risk of the firm's assets'')} weighted average of the discount rates of debt and equity:
+    \fbox{$r_A = r_D \frac{D}{D + E} + r_E \frac{E}{D + E}$} where \begin{itemize}
+        \item \Green{$D$} market value of debt (\$); \Green{$E = A - D$} MV of equity (\$)
+        \item \Green{$r_D$} cost of debt
+        \item \Green{$r_E$} cost of equity
+    \end{itemize}
+    \item \Blue{M\&M Proposition 2} \Hint{Higher the leverage, risker equity becomes.}
+    $r_E = r_A + \frac{D}{A-D}(r_A - r_D)$
+\end{itemize}
+
+\Red{Weighted Average Cost of Capital (WACC)} weighted avg of the costs of debt and equity \Hint{after taking into account the tax shield benefit of debt}:
+\fbox{$r_{\text{WACC}} = (1- \tau) r_D \frac{D}{D+E} + r_E \frac{E}{D+E}$} where $\tau$ is marginal corporate tax rate.
+
+\Blue{Valuation using WACC}
+\fbox{$V_0 = \sum_{t=1}^{\infty} \frac{CF_t}{(1 + r_{\text{WACC}})^t}$}
+where \Green{$CF_t$} cashflows using standard formula assuming no tax shield benefit od debt.
+
+\Red{Leverage costs} more leverage has costs becayse of the potential for financial distress and/or bankruptcy, which increase the cost of borrowing.
+
+\Red{Optimal capital structure} in theory, when WACC is minimized and firm value is maximized.
+\begin{itemize}
+    \item Initially, the value of the firm increases in leverage, as interest pymts are tax deductible and there's little likelihood of experiencing financial distress costs.
+    \item As leverage increases, the risk of the firm increases and distress costs becomes large.
+    \item At the firm's optimal lverage ratio, the gain from tax shield is just offset by the cost of distress, \Hint{maximizing the value of the levered firm $V_L$}.
+\end{itemize}
+\includegraphics[width=0.95\columnwidth]{Optimal_Capital_Structure.png}
+
 \subsection{Financing a Startup}
 
 \Red{Venture Capital (VC)} provides funds to build companies from the earliest stages to freestanding, mature orgs; provides managerial advice.
@@ -260,6 +302,9 @@ Weights can be \Hint{positive (long position)} or \Hint{negative (short position
     is the slope of the line from the risk-free rate to the portfolio. It measures the risk-adjusted return of the portfolio.
     \item \Blue{Capital Market Line} represents the risk-return trade-off of efficient portfolios. It starts at the risk-free rate and is tangent to the efficient frontier. The slope of the CML is equal to the Sharpe ratio of the tangency portfolio.
 \end{itemize}
+
+\Green{\Eg \underline{False} statement} \textit{The S\&P 500 index is less volatile than an individual stock but still quite volatile. This is because the S\&P includes only 500 stocks and is missing thousands of others. An equity portfolio that diversified across all possible stocks would have close to zero risk.}
+\Hint{Stocks contain some degree of systematic risk that cannot be diversified away no matter how many stocks are in the portfolio, and the market portfolio (which holds everything) is far from risk-free.}
 
 \subsection{Risk and Return}
 
