@@ -1,0 +1,1055 @@
+\documentclass[8pt]{extarticle}
+
+\usepackage[letterpaper,margin=0.35in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\setlength{\columnsep}{0.18in}
+\setlength{\columnseprule}{0.2pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+\titlespacing*{\subsection}{0pt}{3pt}{1pt}
+\titlespacing*{\subsubsection}{0pt}{2pt}{1pt}
+
+\titleformat{\section}{\bfseries\normalsize}{}{0pt}{}
+\titleformat{\subsection}{\bfseries\small}{}{0pt}{}
+\titleformat{\subsubsection}{\bfseries\footnotesize}{}{0pt}{}
+
+\setlist[itemize]{leftmargin=*,nosep,topsep=1pt,itemsep=1pt}
+\setlist[enumerate]{leftmargin=*,nosep,topsep=1pt,itemsep=1pt}
+
+
+
+\begin{document}
+\footnotesize
+\raggedcolumns
+
+\begin{center}
+{\bfseries 10.65 Chemical Reactor Engineering}
+\end{center}
+
+\author{AAG}
+\date{April 22, 2026.}
+
+\small
+{\large Midterm 2 Formula Sheet \hfill April 22, 2026.\par}
+{\large V0.1 \hfill AAG\par}
+
+
+
+\begin{multicols*}{3}
+
+\section*{1. Generalized Reactor Continuity \& Energy Equations}
+
+\subsection*{1.1 Generalized Species Continuity Equation (Tubular Reactor)}
+
+\textbf{Name of the equation:} Generalized Species Continuity Equation (Tubular Reactor)
+
+\textbf{The equation:}
+\[
+u_z(r)\frac{\partial C_j}{\partial z}
+=
+D_{e,z}(r)\frac{\partial^2 C_j}{\partial z^2}
++...
+\]
+\[
+...\frac{1}{r}\frac{\partial}{\partial r}\left(r\,D_{e,r}(r)\frac{\partial C_j}{\partial r}\right)
++
+R_j
+\]
+
+\textbf{What the equation represents/how it's used:} The steady-state mass balance on species \(j\) in a tubular reactor. It accounts for axial convection (left side), axial and radial dispersion, and reaction.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(u_z(r)\): axial fluid velocity at radial position \(r\) --- units: \(\mathrm{m/s}\) or \(\mathrm{cm/s}\)
+\item \(C_j\): molar concentration of species \(j\) --- units: \(\mathrm{mol/m^3}\) or \(\mathrm{mol/L}\)
+\item \(z\): axial coordinate along reactor length --- units: \(\mathrm{m}\)
+\item \(D_{e,z}(r)\): effective (dispersion) coefficient in the axial direction --- units: \(\mathrm{m^2/s}\)
+\item \(r\): radial coordinate --- units: \(\mathrm{m}\)
+\item \(D_{e,r}(r)\): effective (dispersion) coefficient in the radial direction --- units: \(\mathrm{m^2/s}\)
+\item \(R_j\): volumetric reaction rate of species \(j\) (positive for formation, negative for consumption) --- units: \(\mathrm{mol/(m^3\cdot s)}\)
+\end{itemize}
+
+\subsection*{1.2 Generalized Energy Balance (Tubular Reactor)}
+
+\textbf{Name of the equation:} Generalized Energy Balance (Tubular Reactor)
+
+\textbf{The equation:}
+\[
+\sum_j M_j C_{p,j} C_j\,u_z(r)\frac{\partial T}{\partial z}
+=...
+\]
+\[
+...\lambda_{e,z}(r)\frac{\partial^2 T}{\partial z^2}
++
+\frac{1}{r}\frac{\partial}{\partial r}\left(r\,\lambda_{e,r}(r)\frac{\partial T}{\partial r}\right)
++
+\sum_i (-\Delta H_i)R_i
+\]
+
+\textbf{What the equation represents/how it's used:} The steady-state thermal energy balance in a tubular reactor. The left side is heat carried by convection; the right side has axial/radial conduction (dispersion) and heat generated (or absorbed) by reactions.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(M_j\): molecular weight of species \(j\) --- units: \(\mathrm{kg/mol}\)
+\item \(C_{p,j}\): specific heat capacity of species \(j\) --- units: \(\mathrm{J/(kg\cdot K)}\)
+\item \(T\): temperature --- units: \(\mathrm{K}\)
+\item \(\lambda_{e,z}(r)\), \(\lambda_{e,r}(r)\): effective thermal conductivity in axial and radial directions --- units: \(\mathrm{W/(m\cdot K)}\)
+\item \(\Delta H_i\): enthalpy of reaction \(i\) --- units: \(\mathrm{J/mol}\)
+\item \(R_i\): rate of reaction \(i\) --- units: \(\mathrm{mol/(m^3\cdot s)}\)
+\end{itemize}
+
+\subsection*{1.3 Danckwerts Boundary Conditions}
+
+\textbf{Name of the equation:} Danckwerts Boundary Conditions
+
+\textbf{The equation:}
+
+At inlet (\(z=0\)):
+\[
+u_z(r)\,C_{j,0}
+=
+u_z(r)\,C_j(0,r)
+-
+D_{e,z}(r)\frac{\partial C_j(0,r)}{\partial z}
+\]
+
+At outlet (\(z=L\)):
+\[
+\frac{\partial C_j}{\partial z}(z=L)=0
+\]
+
+\textbf{What the equation represents/how it's used:} The physically correct boundary conditions for a reactor with dispersion. At the inlet, they account for the fact that diffusive flux can carry material back upstream (back-mixing). At the outlet, they enforce no concentration gradient (fully developed flow exits).
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(C_{j,0}\): feed concentration of species \(j\) --- units: \(\mathrm{mol/m^3}\)
+\item \(L\): reactor length --- units: \(\mathrm{m}\)
+\item All other terms defined above.
+\end{itemize}
+
+\subsection*{1.4 Laminar Velocity Profile (Hagen--Poiseuille)}
+
+\textbf{Name of the equation:} Laminar Velocity Profile (Hagen--Poiseuille)
+
+\textbf{The equation:}
+\[
+u_z(r)=2\bar{u}\left(1-\left(\frac{r}{R_t}\right)^2\right)
+\]
+
+\textbf{What the equation represents/how it's used:} The parabolic, fully-developed laminar velocity profile inside a tube. The velocity is maximum at the center (\(r=0\)) and zero at the wall (\(r=R_t\)).
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(\bar{u}\): mean (cross-sectionally averaged) axial velocity --- units: \(\mathrm{m/s}\)
+\item \(r\): radial position --- units: \(\mathrm{m}\)
+\item \(R_t\): tube radius --- units: \(\mathrm{m}\)
+\end{itemize}
+
+\section*{2. Residence Time Distribution (RTD)}
+
+\subsection*{2.1 Exit Age Distribution Function \(E(t)\)}
+
+\textbf{Name of the equation:} Exit Age Distribution Function \(E(t)\)
+
+\textbf{The equation:}
+\[
+E(t)=\frac{C(t)}{\int_0^\infty C(t)\,dt}=\frac{C(t)}{M_0}
+\]
+
+\textbf{What the equation represents/how it's used:} The probability density function of residence times. \(E(t)\,dt\) gives the fraction of fluid that spent between \(t\) and \(t+dt\) in the reactor. Measured from a tracer pulse experiment.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(C(t)\): tracer concentration measured at reactor outlet as a function of time --- units: \(\mathrm{mol/m^3}\)
+\item \(M_0=\int_0^\infty C(t)\,dt\): zeroth moment (total area under the tracer curve) --- units: \(\mathrm{mol\cdot s/m^3}\)
+\end{itemize}
+
+\subsection*{2.2 Mean Residence Time}
+
+\textbf{Name of the equation:} Mean Residence Time
+
+\textbf{The equation:}
+\[
+\bar{t}=\int_0^\infty t\,E(t)\,dt=\frac{M_1}{M_0}
+\]
+
+\textbf{What the equation represents/how it's used:} The average time a fluid element spends inside the reactor. For an ideal reactor with no dead zones, \(\bar{t}=\tau=V/Q\).
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(M_1=\int_0^\infty t\,C(t)\,dt\): first moment of the tracer curve --- units: \(\mathrm{mol\cdot s^2/m^3}\)
+\item \(\tau=V/Q\): space time --- \(V\) is reactor volume (\(\mathrm{m^3}\)), \(Q\) is volumetric flow rate (\(\mathrm{m^3/s}\))
+\end{itemize}
+
+\subsection*{2.3 Variance of the RTD}
+
+\textbf{Name of the equation:} Variance of the RTD
+
+\textbf{The equation:}
+\[
+\sigma^2=\int_0^\infty (t-\bar{t})^2\,E(t)\,dt=\frac{M_2}{M_0}-\bar{t}^2
+\]
+
+\textbf{What the equation represents/how it's used:} Measures how spread out (wide) the RTD is. A PFR has \(\sigma^2=0\) (no spread); a CSTR has \(\sigma^2=\tau^2\). More spreading means more deviation from ideal plug flow.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(M_2=\int_0^\infty t^2\,C(t)\,dt\): second moment of the tracer curve --- units: \(\mathrm{mol\cdot s^3/m^3}\)
+\end{itemize}
+
+\subsection*{2.4 Dimensionless Variance}
+
+\textbf{Name of the equation:} Dimensionless Variance
+
+\textbf{The equation:}
+\[
+\sigma_\theta^2=\frac{\sigma^2}{\bar{t}^2}
+\]
+
+\textbf{What the equation represents/how it's used:} A normalized measure of RTD spread used to diagnose reactor non-idealities and fit models. For an ideal PFR: \(\sigma_\theta^2=0\). For an ideal CSTR: \(\sigma_\theta^2=1\).
+
+\subsection*{2.5 Dead Volume Diagnostic}
+
+\textbf{Name of the equation:} Dead Volume Diagnostic
+
+\textbf{The equation:}
+\[
+V_{dead}=V_{total}\left(1-\frac{\bar{t}}{\tau}\right)
+\]
+
+\textbf{What the equation represents/how it's used:} If the measured mean residence time \(\bar{t}\) is less than the nominal space time \(\tau\), some fraction of the reactor volume is stagnant (dead) and not participating in the flow.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(V_{total}\): total physical reactor volume --- units: \(\mathrm{m^3}\) or \(\mathrm{L}\)
+\item \(\bar{t}\): measured mean residence time --- units: \(\mathrm{s}\)
+\item \(\tau\): nominal space time \(=V_{total}/Q\) --- units: \(\mathrm{s}\)
+\end{itemize}
+
+\subsection*{2.6 RTD of Ideal CSTR}
+
+\textbf{Name of the equation:} RTD of Ideal CSTR
+
+\textbf{The equation:}
+\[
+E(t)=\frac{1}{\tau}e^{-t/\tau}, \qquad t\ge 0
+\]
+
+\textbf{What the equation represents/how it's used:} The RTD of a perfectly mixed tank (CSTR) is an exponential decay. There is a large probability of short residence times and a long exponential tail of long ones.
+
+\subsection*{2.7 RTD of Ideal PFR}
+
+\textbf{Name of the equation:} RTD of Ideal PFR
+
+\textbf{The equation:}
+\[
+E(t)=\delta(t-\tau)
+\]
+
+\textbf{What the equation represents/how it's used:} In a perfect plug flow reactor, all fluid elements spend exactly time \(\tau\) in the reactor. The RTD is a Dirac delta function (spike) at \(t=\tau\).
+
+\subsection*{2.8 RTD of Two CSTRs in Series}
+
+\textbf{Name of the equation:} RTD of Two CSTRs in Series
+
+\textbf{The equation:}
+\[
+E(t)=\frac{1}{\tau_2-\tau_1}\left(e^{-t/\tau_2}-e^{-t/\tau_1}\right)
+\]
+
+\textbf{What the equation represents/how it's used:} The RTD of two CSTRs with different space times connected in series is the convolution of their individual RTDs. Crucially, this result is symmetric in \(\tau_1\) and \(\tau_2\) --- the order does not matter for the RTD.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(\tau_1,\tau_2\): space times of each CSTR (\(=V_i/Q\)) --- units: \(\mathrm{s}\)
+\end{itemize}
+
+\section*{3. Tanks-in-Series (TIS) Model}
+
+\subsection*{3.1 TIS RTD}
+
+\textbf{Name of the equation:} TIS RTD
+
+\textbf{The equation:}
+\[
+E_n(t)
+=
+\frac{n}{\bar{t}}
+\cdot
+\frac{\left(\frac{nt}{\bar{t}}\right)^{n-1}}{(n-1)!}
+\,e^{-nt/\bar{t}}
+\]
+
+\textbf{What the equation represents/how it's used:} The RTD of \(n\) equal-volume CSTRs in series. As \(n\to\infty\), this approaches the PFR delta function. This is the tanks-in-series model used to represent non-ideal reactors with a unimodal RTD.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(n\): number of equivalent tanks (does NOT need to be an integer; can be fitted from \(\sigma_\theta^2\)) --- dimensionless
+\item \(\bar{t}\): mean residence time --- units: \(\mathrm{s}\)
+\end{itemize}
+
+\subsection*{3.2 Number of Equivalent Tanks from Variance}
+
+\textbf{Name of the equation:} Number of Equivalent Tanks from Variance
+
+\textbf{The equation:}
+\[
+n=\frac{1}{\sigma_\theta^2}
+\]
+
+\textbf{What the equation represents/how it's used:} Directly links the measured dimensionless variance of the RTD to the number of equivalent CSTRs needed to model the reactor. A large \(\sigma_\theta^2\) means few tanks (well-mixed); a small \(\sigma_\theta^2\) means many tanks (approaching PFR).
+
+\section*{4. Ideal Reactor Design Equations \& Damk\"ohler Number}
+
+\subsection*{4.1 Damk\"ohler Number}
+
+\textbf{Name of the equation:} Damk\"ohler Number
+
+\textbf{The equation (1st order):}
+\[
+Da=k\bar{t}
+\]
+
+\textbf{The equation (2nd order):}
+\[
+Da=kC_{A0}\bar{t}
+\]
+
+\textbf{What the equation represents/how it's used:} The Damk\"ohler number is the ratio of the characteristic reaction timescale to the characteristic residence time. \(Da\gg 1\) means reaction is fast (high conversion); \(Da\ll 1\) means reaction is slow (low conversion).
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(k\): rate constant --- units: \(\mathrm{s^{-1}}\) (1st order) or \(\mathrm{m^3/(mol\cdot s)}\) (2nd order)
+\item \(\bar{t}\): mean residence time --- units: \(\mathrm{s}\)
+\item \(C_{A0}\): inlet concentration of A --- units: \(\mathrm{mol/m^3}\)
+\end{itemize}
+
+\subsection*{4.2 Conversion in a Batch Reactor}
+
+\textbf{Name of the equation:} Conversion in a Batch Reactor
+
+\textbf{The equation (1st order):}
+\[
+X_{batch}(t)=1-e^{-kt}
+\]
+
+\textbf{The equation (2nd order):}
+\[
+X_{batch}(t)=1-\frac{1}{1+kC_{A0}t}
+\]
+
+\textbf{What the equation represents/how it's used:} Fractional conversion \(X\) of reactant A in a well-mixed batch reactor as a function of time \(t\).
+
+\subsection*{4.3 Conversion in a CSTR}
+
+\textbf{Name of the equation:} Conversion in a CSTR
+
+\textbf{The equation (1st order):}
+\[
+X_{CSTR}=1-\frac{1}{1+Da}
+\]
+
+\textbf{The equation (2nd order):}
+\[
+X_{CSTR}=1-\frac{-1+\sqrt{1+4Da}}{2Da}
+\]
+
+\textbf{What the equation represents/how it's used:} Steady-state fractional conversion in a single ideal CSTR, derived from the CSTR design equation (mole balance on a perfectly mixed tank).
+
+\subsection*{4.4 CSTR Design Equation (Quadratic Form for 2nd Order)}
+
+\textbf{Name of the equation:} CSTR Design Equation (Quadratic Form for 2nd Order)
+
+\textbf{The equation:}
+\[
+k\tau C_{out}^2+C_{out}-C_{in}=0
+\]
+
+\textbf{Solving for \(C_{out}\):}
+\[
+C_{out}=\frac{-1+\sqrt{1+4k\tau C_{in}}}{2k\tau}
+\]
+
+\textbf{What the equation represents/how it's used:} The mole balance on a CSTR for a 2nd-order reaction. When solving two CSTRs in series, you apply this equation sequentially: the outlet of stage 1 becomes the inlet of stage 2.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(\tau=V/Q\): space time of the CSTR --- units: \(\mathrm{s}\) or \(\mathrm{min}\)
+\item \(C_{in}\): concentration entering the tank --- units: \(\mathrm{mol/L}\)
+\item \(C_{out}\): concentration leaving the tank --- units: \(\mathrm{mol/L}\)
+\end{itemize}
+
+\subsection*{4.5 Conversion in a PFR}
+
+\textbf{Name of the equation:} Conversion in a PFR
+
+\textbf{The equation (1st order):}
+\[
+X_{PFR}=1-e^{-Da}
+\]
+
+\textbf{The equation (2nd order):}
+\[
+X_{PFR}=1-\frac{1}{1+Da}
+\]
+
+\textbf{What the equation represents/how it's used:} Fractional conversion in an ideal plug flow reactor, where every fluid element sees the same history (no axial mixing). For a given \(Da\), PFR always achieves higher (or equal) conversion than a CSTR for \(n>1\) kinetics.
+
+\subsection*{4.6 Conversion in Tanks-in-Series (TIS)}
+
+\textbf{Name of the equation:} Conversion in Tanks-in-Series (TIS)
+
+\textbf{The equation (1st order):}
+\[
+X_{TIS}=1-\left(1+\frac{Da}{n}\right)^{-n}
+\]
+
+\textbf{What the equation represents/how it's used:} Conversion for \(n\) equal CSTRs in series with 1st order kinetics, where \(Da\) is the overall Damk\"ohler number based on total mean residence time. As \(n\to\infty\), this recovers the PFR result.
+
+\section*{5. Axial Dispersion (Dispersion Model)}
+
+\subsection*{5.1 1-D Dispersion Model (Governing Equation)}
+
+\textbf{Name of the equation:} 1-D Dispersion Model (Governing Equation)
+
+\textbf{The equation:}
+\[
+D_{ax}\frac{\partial^2 C}{\partial z^2}
+-
+\bar{u}\frac{\partial C}{\partial z}
++
+R(C)
+=
+0
+\]
+
+\textbf{What the equation represents/how it's used:} The 1-D steady-state species balance in a tubular reactor that lumps radial nonuniformity (e.g., laminar flow profile) into a single axial dispersion coefficient \(D_{ax}\). It is the workhorse model for quantifying deviation from ideal plug flow.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(D_{ax}\): axial dispersion coefficient --- units: \(\mathrm{m^2/s}\)
+\item \(\bar{u}\): mean axial velocity --- units: \(\mathrm{m/s}\)
+\item \(z\): axial coordinate --- units: \(\mathrm{m}\)
+\item \(R(C)\): volumetric reaction rate (negative for consumption) --- units: \(\mathrm{mol/(m^3\cdot s)}\)
+\end{itemize}
+
+\subsection*{5.2 P\'eclet Number}
+
+\textbf{Name of the equation:} P\'eclet Number
+
+\textbf{The equation:}
+\[
+Pe=\frac{\bar{u}L}{D_{ax}}=\frac{\text{convection}}{\text{dispersion}}
+\]
+
+\textbf{What the equation represents/how it's used:} The ratio of convective transport to dispersive (spreading) transport over the length of the reactor. \(Pe\gg 1\): plug flow (little dispersion). \(Pe\ll 1\): well-mixed (lots of dispersion).
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(\bar{u}\): mean fluid velocity --- units: \(\mathrm{m/s}\)
+\item \(L\): reactor length --- units: \(\mathrm{m}\)
+\item \(D_{ax}\): axial dispersion coefficient --- units: \(\mathrm{m^2/s}\)
+\end{itemize}
+
+\subsection*{5.3 Wehner--Wilhelm Solution (1st Order, Dispersion Model)}
+
+\textbf{Name of the equation:} Wehner--Wilhelm Solution (1st Order, Dispersion Model)
+
+\textbf{The equation:}
+\[
+\frac{C_{out}}{C_{in}}
+=
+\frac{4q\,e^{Pe/2}}
+{
+(1+q)^2e^{qPe/2}
+-
+(1-q)^2e^{-qPe/2}
+}
+\]
+
+where
+\[
+q=\sqrt{1+\frac{4Da}{Pe}}
+\]
+
+\textbf{What the equation represents/how it's used:} The analytical solution for outlet/inlet concentration ratio in the 1-D dispersion model with Danckwerts boundary conditions and 1st-order kinetics. You need both \(Pe\) (how much dispersion) and \(Da\) (how much reaction) to use this.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(Pe=\bar{u}L/D_{ax}\): P\'eclet number --- dimensionless
+\item \(Da=kL/\bar{u}\): Damk\"ohler number (for 1st order, dispersion model form) --- dimensionless
+\item \(q\): intermediate variable --- dimensionless
+\end{itemize}
+
+\subsection*{5.4 Dispersion Model RTD Variance (Shortcut for \(Pe>10\))}
+
+\textbf{Name of the equation:} Dispersion Model RTD Variance (Shortcut for \(Pe>10\))
+
+\textbf{The equation:}
+\[
+\sigma_\theta^2\approx \frac{2}{Pe}
+\]
+
+\textbf{What the equation represents/how it's used:} For high P\'eclet numbers (\(Pe>10\)), this shortcut links the measured dimensionless RTD variance to the P\'eclet number without solving the full Wehner--Wilhelm equation. You can measure \(\sigma_\theta^2\) from a tracer experiment and immediately get \(Pe\).
+
+\subsection*{5.5 Waste Multiplier}
+
+\textbf{Name of the equation:} Waste Multiplier
+
+\textbf{The equation:}
+\[
+\text{Waste Multiplier}=\frac{1-X_{actual}}{1-X_{PFR}}
+\]
+
+\textbf{What the equation represents/how it's used:} Compares the unreacted reactant leaving a real reactor (with \(\sigma_\theta^2>0\)) to that from an ideal PFR at the same \(Da\). A value \(>1\) means the real reactor wastes more reactant than an ideal PFR.
+
+\section*{6. Taylor--Aris Dispersion (Dispersion from First Principles)}
+
+\subsection*{6.1 Taylor--Aris Axial Dispersion Coefficient}
+
+\textbf{Name of the equation:} Taylor--Aris Axial Dispersion Coefficient
+
+\textbf{The equation:}
+\[
+D_{ax}=\mathcal{D}_{AB}+\frac{\bar{u}^2d_t^2}{192\mathcal{D}_{AB}}
+=\mathcal{D}_{AB}+\frac{\bar{u}^2R_t^2}{48\mathcal{D}_{AB}}
+\]
+
+Valid when \(L >> \bar{u}R^{2}_{t}/\mathcal{D}_{AB}\)
+
+
+\textbf{What the equation represents/how it's used:} The effective axial dispersion coefficient in a straight tube with laminar flow, derived by Taylor and Aris. The first term is molecular diffusion alone; the second term (the ``Taylor term'') is the extra spreading caused by the laminar velocity profile coupling with diffusion.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(\mathcal{D}_{AB}\): molecular diffusivity of the solute in the fluid --- units: \(\mathrm{m^2/s}\)
+\item \(\bar{u}\): mean axial fluid velocity --- units: \(\mathrm{m/s}\)
+\item \(d_t\): tube inner diameter --- units: \(\mathrm{m}\)
+\item \(r_t\): tube inner radius --- units: \(\mathrm{m}\)
+\end{itemize}
+
+\subsection*{6.2 Dimensionless Numbers (Fluid Mechanics)}
+
+\textbf{Name of the equation:} Dimensionless Numbers (Fluid Mechanics)
+
+\textbf{Schmidt Number:}
+\[
+Sc=\frac{\nu}{\mathcal{D}}
+\]
+
+\textbf{Reynolds Number:}
+\[
+Re=\frac{\bar{u}d_t}{\nu}
+\]
+
+\textbf{What the equation represents/how it's used:} \(Sc\) is the ratio of momentum diffusivity (kinematic viscosity) to mass diffusivity. \(Re\) is the ratio of inertial to viscous forces --- it determines whether flow is laminar or turbulent.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(\nu\): kinematic viscosity of the fluid --- units: \(\mathrm{m^2/s}\)
+\item \(\mathcal{D}\): molecular diffusivity --- units: \(\mathrm{m^2/s}\)
+\item \(\bar{u}\): mean velocity --- units: \(\mathrm{m/s}\)
+\item \(d_t\): tube diameter --- units: \(\mathrm{m}\)
+\end{itemize}
+
+\section*{7. Coil Reactor Dispersion (Taylor--Aris + Coiling)}
+
+\subsection*{7.1 Coil Reactor Dispersion Coefficient}
+
+\textbf{Name of the equation:} Coil Reactor Dispersion Coefficient
+
+\textbf{The equation:}
+\[
+\frac{1}{\kappa}
+=
+\frac{D_{ax,st}}{D_{ax,coil}}
+=
+1+\sqrt{Sc\cdot Ge}
+\]
+
+therefore
+\[
+D_{ax,coil}
+=
+\frac{D_{ax,st}}{1+\sqrt{Sc\cdot Ge}}
+\]
+
+\textbf{What the equation represents/how it's used:} Coiling a tube induces Dean flow (secondary flow vortices), which enhances radial mixing and reduces axial dispersion relative to a straight tube. The larger the Germano number \(Ge\), the more suppressed the axial dispersion.
+
+\subsection*{7.2 Germano Number}
+
+\textbf{Name of the equation:} Germano Number
+
+\textbf{The equation:}
+\[
+Ge=\frac{Re^2d_t}{2\rho_c}
+\]
+
+\textbf{What the equation represents/how it's used:} A dimensionless number that quantifies the strength of the Dean vortices (secondary flow) induced by coiling. A larger \(Ge\) means stronger radial mixing and lower \(D_{ax}\).
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(Re\): Reynolds number --- dimensionless
+\item \(d_t\): tube diameter --- units: \(\mathrm{m}\)
+\item \(\rho_c\): geometrical curvature radius of the coil --- units: \(\mathrm{m}\)
+\end{itemize}
+
+\subsection*{7.3 Geometrical Curvature Radius of the Coil}
+
+\textbf{Name of the equation:} Geometrical Curvature Radius of the Coil
+
+\textbf{The equation:}
+\[
+\rho_c=\sqrt{R_c^2+\left(\frac{p}{2\pi}\right)^2}\approx R_c
+\]
+
+\textbf{What the equation represents/how it's used:} The effective radius of curvature of a helical coil, accounting for both the coil radius \(R_c\) and the pitch \(p\). For small pitches, \(\rho_c\approx R_c\). Increasing the pitch \(p\) increases \(\rho_c\), which decreases \(Ge\), which increases \(D_{ax}\).
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(R_c\): coil radius (center of tube to center of helix) --- units: \(\mathrm{m}\)
+\item \(p\): pitch of the coil (axial advance per full loop) --- units: \(\mathrm{m}\)
+\end{itemize}
+
+\section*{8. Reaction Networks \& Theory of Reactor Design}
+
+\subsection*{8.1 Instantaneous Fractional Yield (Point Selectivity)}
+
+\textbf{Name of the equation:} Instantaneous Fractional Yield (Point Selectivity)
+
+\textbf{The equation:}
+\[
+\varphi=\frac{dC_R}{-dC_A}=\frac{r_R}{r_A}
+\]
+
+\textbf{What the equation represents/how it's used:} The local ratio of the rate of desired product \(R\) formation to the rate of reactant \(A\) consumption at any point in the reactor. Optimizing how \(\varphi\) varies with \(C_A\) guides reactor choice.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(C_R\): concentration of desired product \(R\) --- units: \(\mathrm{mol/m^3}\)
+\item \(C_A\): concentration of reactant \(A\) --- units: \(\mathrm{mol/m^3}\)
+\item \(r_R\): rate of formation of \(R\) --- units: \(\mathrm{mol/(m^3\cdot s)}\)
+\item \(r_A\): rate of consumption of \(A\) --- units: \(\mathrm{mol/(m^3\cdot s)}\)
+\end{itemize}
+
+\subsection*{8.2 Overall Yield}
+
+\textbf{Name of the equation:} Overall Yield
+
+\textbf{The equation:}
+\[
+\Phi=\frac{C_{Rf}}{C_{A0}-C_{Af}}=\bar{\varphi}
+\]
+
+\textbf{What the equation represents/how it's used:} The overall yield is the moles of desired product formed divided by the moles of reactant consumed over the entire reactor. It equals the average of the instantaneous fractional yield \(\varphi\).
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(C_{Rf}\): exit concentration of desired product \(R\) --- units: \(\mathrm{mol/m^3}\)
+\item \(C_{A0}\): inlet concentration of \(A\) --- units: \(\mathrm{mol/m^3}\)
+\item \(C_{Af}\): exit concentration of \(A\) --- units: \(\mathrm{mol/m^3}\)
+\end{itemize}
+
+\subsection*{8.3 Theory of Reactor Design --- Parallel Reaction Rules}
+
+\textbf{Name of the equation:} Theory of Reactor Design --- Parallel Reaction Rules
+
+\textbf{For a parallel reaction network \(A\to R\) (desired) and \(A\to S\) (undesired):}
+\[
+r_R=k_1C_A^{\alpha_1}, \qquad r_S=k_2C_A^{\alpha_2}
+\]
+
+\[
+\varphi=\frac{r_R}{r_R+r_S}
+\]
+
+\textbf{Rules:}
+\begin{itemize}
+\item If \(\alpha_1>\alpha_2\): keep \(C_A\) high \(\rightarrow\) use PFR (suppress mixing)
+\item If \(\alpha_1<\alpha_2\): keep \(C_A\) low \(\rightarrow\) use CSTR (promote mixing)
+\end{itemize}
+
+\textbf{What the equation represents/how it's used:} The optimal reactor type for a parallel reaction network is determined entirely by the relative orders of the competing reactions with respect to the key reactant.
+
+\subsection*{8.4 Van de Vusse Reaction Dimensionless Rate Constants}
+
+\textbf{Name of the equation:} Van de Vusse Reaction Dimensionless Rate Constants
+
+\textbf{For the van de Vusse network: \(A\xrightarrow{k_1}Q\xrightarrow{k_2}S\) and \(2A\xrightarrow{k_3}R\):}
+\[
+a_1=\frac{k_3C_{A0}}{k_1}, \qquad a_2=\frac{k_2}{k_1}
+\]
+
+\textbf{What the equation represents/how it's used:} Dimensionless rate constants that inform the relative natural rates of each reaction. \(a_1\) compares the 2nd-order side reaction to the 1st-order main reaction; \(a_2\) compares the downstream series step to the main reaction.
+
+\subsection*{8.5 Fractional Yield Equation for CSTR vs. PFR}
+
+\textbf{Name of the equation:} Fractional Yield Equation for CSTR vs. PFR
+
+\textbf{CSTR:}
+\[
+\frac{x_Q}{x_A}=\frac{r_Q}{r_A}
+\]
+
+\textbf{PFR:}
+\[
+\frac{dx_Q}{dx_A}=\frac{r_Q}{r_A}
+\]
+
+\textbf{What the equation represents/how it's used:} For a CSTR, the exit fractional yield equals the ratio of rates evaluated at exit conditions. For a PFR, it is a differential relationship that must be integrated. These equations are how you solve for selectivity vs. conversion in multi-reaction systems.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(x_A=(C_{A0}-C_A)/C_{A0}\): conversion of A --- dimensionless
+\item \(x_Q=C_Q/C_{A0}\): dimensionless concentration of desired product \(Q\) --- dimensionless
+\end{itemize}
+
+\section*{9. Micromixing}
+
+\subsection*{9.1 Segregated Flow Model (Maximum Segregation)}
+
+\textbf{Name of the equation:} Segregated Flow Model (Maximum Segregation)
+
+\textbf{The equation:}
+\[
+\langle X\rangle=\int_0^\infty X_{batch}(t)\,E(t)\,dt
+\]
+
+\textbf{What the equation represents/how it's used:} In the limit of maximum segregation, fluid elements never exchange material with each other. Each blob reacts like an isolated batch reactor for time \(t\), and the overall conversion is the average weighted by the RTD. This is one bound on conversion for non-linear kinetics.
+
+\subsection*{9.2 Mixing Time Estimate (Kolmogorov Microscale)}
+
+\textbf{Name of the equation:} Mixing Time Estimate (Kolmogorov Microscale)
+
+\textbf{The equation:}
+\[
+t_{mix}\sim \frac{L_{blob}^2}{\mathcal{D}_{AB}}
+\]
+
+\textbf{What the equation represents/how it's used:} The time required for molecular diffusion to homogenize a ``blob'' of fluid of size \(L_{blob}\). \(L_{blob}\) is taken from the Kolmogorov microscale (the smallest turbulent eddy size). If \(t_{mix}\ll \bar{t}\), mixing is fast and maximum-mixedness applies; if \(t_{mix}\gg \bar{t}\), segregated flow applies.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(L_{blob}\): characteristic blob (eddy) size from Kolmogorov microscale --- units: \(\mathrm{m}\)
+\item \(\mathcal{D}_{AB}\): molecular diffusivity of A in B --- units: \(\mathrm{m^2/s}\)
+\end{itemize}
+
+\section*{10. External Mass Transfer (Film Resistance)}
+
+\subsection*{10.1 External Mass Transfer Flux}
+
+\textbf{Name of the equation:} External Mass Transfer Flux
+
+\textbf{The equation:}
+\[
+N_A=k_c(C_{Ab}-C_{As})
+\]
+
+\textbf{What the equation represents/how it's used:} The molar flux of reactant A from the bulk fluid to the outer surface of the catalyst pellet across a thin diffusion ``film.'' At steady state this equals the rate of reaction at the surface.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(N_A\): molar flux of A --- units: \(\mathrm{mol/(m^2\cdot s)}\)
+\item \(k_c\): external mass transfer coefficient --- units: \(\mathrm{m/s}\)
+\item \(C_{Ab}\): bulk concentration of A in the fluid --- units: \(\mathrm{mol/m^3}\)
+\item \(C_{As}\): concentration of A at the pellet external surface --- units: \(\mathrm{mol/m^3}\)
+\end{itemize}
+
+\subsection*{10.2 Frossling (Ranz--Marshall) Correlation for \(k_c\)}
+
+\textbf{Name of the equation:} Frossling (Ranz--Marshall) Correlation for \(k_c\)
+
+\textbf{The equation:}
+\[
+Sh=\frac{k_cd_p}{\mathcal{D}}=2+0.6Re^{1/2}Sc^{1/3}
+\]
+
+\textbf{What the equation represents/how it's used:} The Sherwood number \(Sh\) is the dimensionless mass transfer coefficient. This empirical correlation (Frossling/Ranz--Marshall) relates \(k_c\) to the fluid mechanics (\(Re\)) and fluid properties (\(Sc\)). At zero flow (\(Re=0\)), \(Sh=2\) (pure diffusion around a sphere).
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(Sh\): Sherwood number --- dimensionless
+\item \(k_c\): mass transfer coefficient --- units: \(\mathrm{m/s}\)
+\item \(d_p\): pellet (particle) diameter --- units: \(\mathrm{m}\)
+\item \(\mathcal{D}\): molecular diffusivity --- units: \(\mathrm{m^2/s}\)
+\item \(Re=\bar{u}d_p/\nu\): Reynolds number based on particle diameter --- dimensionless
+\item \(Sc=\nu/\mathcal{D}\): Schmidt number --- dimensionless
+\end{itemize}
+
+\subsection*{10.3 External Effectiveness Factor}
+
+\textbf{Name of the equation:} External Effectiveness Factor
+
+\textbf{The equation (general):}
+\[
+\eta_{ext}
+=
+\frac{\text{observed rate}}{\text{rate if }C_{As}=C_{Ab}}
+\]
+
+\textbf{At steady state (1st order reaction):}
+\[
+\eta_{ext}=\frac{1}{1+Da_{ext}}, \qquad Da_{ext}=\frac{k\,C_{As}}{k_c\,a}
+\]
+
+\textbf{What the equation represents/how it's used:} How much the external film resistance slows the observed rate relative to the intrinsic rate. \(\eta_{ext}\to 1\): no external resistance. \(\eta_{ext}\to 0\): strongly film-limited.
+
+\textbf{Diagnostic:} If the observed Arrhenius activation energy \(E_{obs}<20\ \mathrm{kJ/mol}\), you are likely in the external mass transfer regime.
+
+\section*{11. Internal (Pore) Diffusion \& Thiele Modulus}
+
+\subsection*{11.1 Effective Diffusivity in a Porous Pellet}
+
+\textbf{Name of the equation:} Effective Diffusivity in a Porous Pellet
+
+\textbf{The equation:}
+\[
+D_{eff}=\frac{\varepsilon_p}{\tau_p}D_{pore}
+\]
+
+where \(D_{pore}\) is either molecular or Knudsen diffusivity depending on pore size.
+
+\textbf{What the equation represents/how it's used:} The effective diffusivity accounts for the fact that the interior of a pellet is not open space: the porosity \(\varepsilon_p\) reduces the available cross section, and the tortuosity \(\tau_p\) lengthens the actual path a molecule must travel.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(\varepsilon_p\): pellet porosity (void fraction) --- dimensionless, typically 0.3--0.6
+\item \(\tau_p\): tortuosity factor --- dimensionless, typically 2--7
+\item \(D_{pore}\): pore diffusivity (molecular or Knudsen) --- units: \(\mathrm{m^2/s}\)
+\end{itemize}
+
+\textbf{Rule of thumb:} \(D_{eff}\sim 10^{-3}\ \mathrm{cm^2/s}\) for gases and \(\sim 10^{-6}\ \mathrm{cm^2/s}\) for liquids.
+
+\subsection*{11.2 Thiele Modulus (1st Order, Spherical Pellet)}
+
+\textbf{Name of the equation:} Thiele Modulus (1st Order, Spherical Pellet)
+
+\textbf{The equation:}
+\[
+\phi=R_p\sqrt{\frac{k}{D_{eff}}}
+\]
+
+or using the Aris characteristic length \(L_c=V_p/S_p=R_p/3\) for a sphere:
+
+\[
+\phi=L_c\sqrt{\frac{k}{D_{eff}}}
+\]
+
+\textbf{What the equation represents/how it's used:} The single most important parameter governing internal mass transfer limitations. It is the ratio of the characteristic reaction rate to the characteristic diffusion rate.
+
+\textbf{Limits:}
+\begin{itemize}
+\item \(\phi\ll 1\): fast diffusion, kinetic control --- flat concentration profile, entire pellet reacts
+\item \(\phi\gg 1\): fast reaction, diffusion control --- steep gradient, pellet interior starved of reactant
+\end{itemize}
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(R_p\): pellet radius --- units: \(\mathrm{m}\)
+\item \(L_c=V_p/S_p\): Aris characteristic length (volume-to-surface ratio) --- units: \(\mathrm{m}\)
+\item \(k\): 1st-order intrinsic rate constant --- units: \(\mathrm{s^{-1}}\)
+\item \(D_{eff}\): effective diffusivity inside pellet --- units: \(\mathrm{m^2/s}\)
+\end{itemize}
+
+\subsection*{11.3 Generalized Thiele Modulus (Any Reaction Order)}
+
+\textbf{Name of the equation:} Generalized Thiele Modulus (Any Reaction Order)
+
+\textbf{The equation:}
+\[
+\phi_{gen}
+=
+R_p\sqrt{\frac{k\,C_s^{\,n-1}(n+1)}{2D_{eff}}}
+\]
+
+\textbf{What the equation represents/how it's used:} Extends the Thiele modulus concept to \(n\)-th order kinetics. For \(n=1\), it reduces to the standard Thiele modulus. For \(n\neq 1\), it accounts for the concentration-dependence of the reaction rate in the pore.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(C_s\): concentration of reactant at the external surface of the pellet --- units: \(\mathrm{mol/m^3}\)
+\item \(n\): reaction order --- dimensionless
+\item All others defined above
+\end{itemize}
+
+\subsection*{11.4 Internal Effectiveness Factor}
+
+\textbf{Name of the equation:} Internal Effectiveness Factor
+
+\textbf{The equation (general):}
+\[
+\eta
+=
+\frac{\text{observed rate (with pore diffusion)}}{\text{rate if entire pellet were at surface concentration }C_s}
+\]
+
+\textbf{For 1st order, spherical pellet:}
+\[
+\eta
+=
+\frac{3}{\phi}
+\left(
+\frac{1}{\tanh(3\phi)}-\frac{1}{3\phi}
+\right)
+\]
+
+\textbf{Asymptotic limits:}
+\begin{itemize}
+\item \(\phi\ll 1\): \(\eta\approx 1\)
+\item \(\phi\gg 1\): \(\eta\approx \dfrac{1}{\phi}\) (or \(\eta\sim 1/\phi_{gen}\) in the generalized case)
+\end{itemize}
+
+\textbf{What the equation represents/how it's used:} \(\eta\) tells you what fraction of the intrinsic pellet capacity you are actually using. In the diffusion-limited regime (\(\phi\gg 1\)), \(\eta\approx 1/\phi\), meaning you waste most of the catalyst interior.
+
+\subsection*{11.5 Membrane Reactor Thiele Modulus Scaling}
+
+\textbf{Name of the equation:} Membrane Reactor Thiele Modulus Scaling
+
+\textbf{The equation:}
+\[
+\Phi_M
+=
+\Phi_g\cdot
+\frac{2}{\left(\frac{R_2}{R_1}\right)^2-1}
+\]
+
+where \(\Phi_g\) is the generalized Thiele modulus using \(R_1\) as the length scale.
+
+\textbf{What the equation represents/how it's used:} The modified Thiele modulus for an annular membrane reactor (lumen + reactive shell). It corrects for the annular geometry, where \(R_1\) is the inner (lumen) radius and \(R_2\) is the outer radius. A smaller membrane thickness (smaller \(R_2/R_1-1\)) gives a smaller \(\Phi_M\), meaning less internal diffusion limitation and higher conversion.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(\Phi_g\): generalized Thiele modulus (using \(R_1\) as length scale) --- dimensionless
+\item \(R_1\): inner radius of the membrane (lumen outer wall) --- units: \(\mathrm{m}\)
+\item \(R_2\): outer radius of the membrane --- units: \(\mathrm{m}\)
+\end{itemize}
+
+\section*{12. Diagnostics for Mass Transfer Limitations}
+
+\subsection*{12.1 Weisz--Prater Criterion}
+
+\textbf{Name of the equation:} Weisz--Prater Criterion
+
+\textbf{The equation:}
+\[
+N_{WP}
+=
+\frac{(-r_A)_{obs}\,\rho_c\,R_p^2}{D_{eff}C_{As}}
+\ll 1
+\qquad
+(\text{no pore diffusion limitation})
+\]
+
+\textbf{What the equation represents/how it's used:} A dimensionless observable criterion --- computed entirely from measurable quantities (no need to know the intrinsic \(k\)). \(N_{WP}\ll 1\) confirms kinetic control; \(N_{WP}\gg 1\) signals severe pore diffusion limitation.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \((-r_A)_{obs}\): measured (observed) rate of consumption of A per unit catalyst volume --- units: \(\mathrm{mol/(m^3\cdot s)}\)
+\item \(\rho_c\): catalyst pellet density --- units: \(\mathrm{kg/m^3}\)
+\item \(R_p\): pellet radius --- units: \(\mathrm{m}\)
+\item \(D_{eff}\): effective pore diffusivity --- units: \(\mathrm{m^2/s}\)
+\item \(C_{As}\): concentration at external surface --- units: \(\mathrm{mol/m^3}\)
+\end{itemize}
+
+\subsection*{12.2 Falsified (Apparent) Activation Energy}
+
+\textbf{Name of the equation:} Falsified (Apparent) Activation Energy
+
+\textbf{The equation (strong diffusion control):}
+\[
+E_{obs}=\frac{E_{true}}{2}
+\]
+
+\textbf{What the equation represents/how it's used:} In the diffusion-limited regime (\(\phi\gg 1\)), the observed Arrhenius slope halves the true activation energy because \(\eta\sim 1/\phi\sim \sqrt{D_{eff}/k}\), and \(k\sim e^{-E_{true}/RT}\). This halving of activation energy in an Arrhenius plot is a diagnostic signature of strong pore diffusion limitation.
+
+\subsection*{12.3 Koros--Nowak (Madon--Boudart) Test}
+
+\textbf{Name of the equation:} Koros--Nowak (Madon--Boudart) Test
+
+\textbf{The equation:}
+\[
+s
+=
+\frac{d\ln(-r_A)_{obs}}{d\ln(\rho_c)}
+\bigg|_{fixed\ d_p,\ C_{As}}
+\]
+
+\textbf{Rules:}
+\begin{itemize}
+\item \(s=1\): kinetic control (rate proportional to active site density)
+\item \(s=0.5\): strong pore diffusion control (\(\eta\sim 1/\phi\sim 1/\sqrt{k}\sim 1/\sqrt{\rho_c}\))
+\end{itemize}
+
+\textbf{What the equation represents/how it's used:} Rather than changing pellet size (which changes hydrodynamics), the Koros--Nowak test changes the density of active material inside a fixed-size pellet. It is the most rigorous test for distinguishing kinetic vs. diffusion control.
+
+\section*{13. Selectivity in Parallel Reactions with Internal Mass Transfer}
+
+\subsection*{13.1 Observed Selectivity (Diffusion-Limited Regime)}
+
+\textbf{Name of the equation:} Observed Selectivity (Diffusion-Limited Regime)
+
+\textbf{For two parallel reactions \(A\to R\) (desired, order \(n_1\)) and \(A\to S\) (undesired, order \(n_2\)):}
+
+\textbf{In kinetic control (\(\phi\ll 1\)):}
+\[
+\frac{r_R}{r_S}
+=
+\frac{k_1}{k_2}C_A^{\,n_1-n_2}
+\]
+
+\textbf{In strong diffusion control (\(\phi\gg 1\)):}
+\[
+\frac{r_{R,obs}}{r_{S,obs}}
+=
+\frac{k_1}{k_2}
+C_A^{(n_1-n_2)/2}
+\cdot
+\sqrt{\frac{D_{eff,R}}{D_{eff,S}}}
+\]
+
+\textbf{What the equation represents/how it's used:} Internal diffusion flattens the effective reaction order dependence: the exponent on \(C_A\) is halved compared to the kinetic regime. If \(n_1>n_2\) (desired reaction is higher order), diffusion limitation hurts selectivity to \(R\).
+
+\section*{14. Miscellaneous Models}
+
+\subsection*{14.1 Free-Zone Mixing (Feed-Point Mixing) Model}
+
+\textbf{Name of the equation:} Free-Zone Mixing (Feed-Point Mixing) Model
+
+\textbf{What the equation represents/how it's used:} A multi-zone model for a reactor where reactants A and B are fed at different points, creating an A-rich zone and a mixing zone. At low recirculation ratio \(\rho=Q_r/Q_2\), poor mixing keeps an A-rich zone where an undesired higher-order reaction in A dominates, lowering selectivity but increasing conversion.
+
+\subsection*{14.2 Recycle Reactor Conversion (1st Order)}
+
+\textbf{Name of the equation:} Recycle Reactor Conversion (1st Order)
+
+\textbf{The equation:}
+\[
+\frac{C_{out}}{C_{in}}
+=
+\frac{1+Re^{-Da/(1+R)}}{1+R}
+\]
+
+\textbf{Limits:}
+\begin{itemize}
+\item \(R=0\): ideal PFR \(\big(C_{out}/C_{in}=e^{-Da}\big)\)
+\item \(R\to\infty\): ideal CSTR \(\big(C_{out}/C_{in}=1/(1+Da)\big)\)
+\end{itemize}
+
+\textbf{What the equation represents/how it's used:} The recycle reactor interpolates between PFR and CSTR behavior by recycling a fraction of the outlet stream back to the inlet. The recycle ratio \(R=Q_{recycle}/Q_{feed}\) sets the degree of back-mixing.
+
+\textbf{Explain each term and the units of each term:}
+\begin{itemize}
+\item \(R\): recycle ratio (volumetric flow recycled / fresh feed flow) --- dimensionless
+\item \(Da=k\tau\): Damk\"ohler number --- dimensionless
+\end{itemize}
+
+\end{multicols*}
+\end{document}

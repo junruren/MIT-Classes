@@ -1,0 +1,318 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[landscape,margin=0.30in,top=0.32in]{geometry}
+\usepackage{microtype}
+\usepackage{titlesec}
+
+\setlength{\columnseprule}{0.3pt}
+\setlength{\columnsep}{12pt}
+\setlength{\parskip}{0.5pt}
+\setlength{\parindent}{0pt}
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
+
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+\newcommand{\sect}[1]{%
+  \vspace{4pt}\noindent{\footnotesize\bfseries #1}%
+  \vspace{0.5pt}\\\rule{\columnwidth}{0.3pt}\vspace{1pt}}
+\newcommand{\con}[1]{\noindent{\scriptsize\textit{$\triangleright$ #1}}\\}
+
+\begin{document}
+\begin{center}
+{\small\bfseries 15.535 BAUFS Formula \& Concept Sheet --- Sessions 1--11 \hfill MIT Sloan, Spring 2026}
+\end{center}
+\vspace{-5pt}\rule{\linewidth}{0.4pt}\vspace{2pt}
+
+\begin{multicols}{3}
+\footnotesize
+
+%----- STRATEGY -----
+\sect{Strategy Framework (S1)}
+\textbf{Porter's Five Forces}: Rivalry (many competitors, low diff., high fixed costs); Entrants (capital, scale, patents, regulation); Substitutes \& switching costs; Buyer power (concentrated, undiff.); Supplier power (few, high switching costs). Strong forces $\Rightarrow$ lower margins.\\
+\textbf{Economic Attributes}: Demand (price sensitivity, cyclicality, seasonality); Supply (diff., barriers); Production (capital vs.\ labor intensity); Marketing (B2B/B2C, push/pull); Assets (short vs.\ long-term).\\
+\con{Strategy sets the benchmark for expected ratios. Deviations require explanation. Key Q: Is performance sustainable or transitory?}
+
+%----- RATIOS / DUPONT -----
+\sect{Ratios \& DuPont (S2)}
+\textbf{ROE} $=$ NI/Avg.Eq \quad \textbf{ROA} $=$ NI/Avg.TA\\
+\textbf{DuPont:} $\text{ROE} = \frac{NI}{Sales}\times\frac{Sales}{\text{Avg.TA}}\times\frac{\text{Avg.TA}}{\text{Avg.Eq}}$ = Margin $\times$ Turnover $\times$ Leverage\\
+Profitability: Gross/EBITDA/EBIT/Net margins\\
+Activity: AR/Inv/Payables/Fixed Asset Turnover\\
+Leverage: D/TA, D/E \quad Liquidity: Current, Quick, Int.Cov.\\
+Valuation: P/E, P/S, P/B, TEV/EBITDA\\
+\textbf{NCI rule}: use \textit{total} NI+Equity \textit{or} NI-to-common+Common Eq. Never mix.\\
+\textbf{Component isolation}: assign one co.'s component to other's formula to quantify impact (``proforma recast'').\\
+\con{Asset turnover has more permanent effect on ROA than margin (Soliman 2008).}
+
+%----- PIOTROSKI -----
+\sect{Piotroski F-Score (S2) --- 9 binary signals}
+\begin{enumerate}[noitemsep,topsep=0pt,leftmargin=*,label=\arabic*.,itemsep=0pt]
+\item ROA $> 0$ \quad 2. CFO $> 0$ \quad 3. CFO $>$ NI
+\item $\Delta$ROA $> 0$ \quad 5. $\Delta$Gross Margin $> 0$
+\item $\Delta$Asset Turnover $> 0$
+\item $\Delta$(LTD/TA) $< 0$ (incl.\ curr.\ portion)
+\item $\Delta$Current Ratio $> 0$ \quad 9. No new equity to public
+\end{enumerate}
+\textbf{7--9} strong; \textbf{0--3} weak. ROA = NI (bef.\ disc.ops) / Beg.TA\\
+\con{Designed for low P/B neglected stocks. Works in portfolio (idiosyncratic shocks cancel); not a commodity/macro predictor. High F $\Rightarrow$ profitability increases, positive earnings surprises, stock outperformance.}
+
+%----- ACCRUALS -----
+\sect{Accruals \& Earnings Quality (S4)}
+Total Accruals $= NI - CFO$\\
+Accrual Ratio (CFA): $(NI-CFO-CFI)/\text{Avg.TA}$; also $(NI-CFO)/\text{Avg.TA}$\\
+WC accruals: $\Delta$CA $-$ $\Delta$CL (ex. cash/ST debt); volatile, short-term\\
+Non-WC: D\&A, def.\ taxes; stable, larger\\[1pt]
+\textbf{Sign convention}: CFS \textit{backs out} accruals from NI $\Rightarrow$ accrual $=$ \textit{opposite sign} of CFS line.\\
+\textit{e.g.} Inv.\ increase: $(-98)$ on CFS $\Rightarrow$ accrual $= +98$.\\[1pt]
+\textbf{Non-cash test}: IS charge $=$ CFS add-back $\Rightarrow$ 100\% non-cash that period.\\[1pt]
+\textbf{Inventory accrual $\neq$ $\Delta$BS Inventory} (acquisitions, write-offs, FX can differ).\\[1pt]
+\textbf{CF manipulation}: Tyco (investing $\to$ operating); Enron (investing $\to$ operating); WorldCom (operating $\to$ investing); Parmalat (falsified accounts).\\
+\con{Positive accruals $\Rightarrow$ lower quality. Accr. reverse over time. Managers shift timing, not create profits.}
+
+%----- DAYS -----
+\sect{Days Metrics (S4--5)}
+Days Inv $= 365\div(\text{COGS}/\text{Avg.Inv})$ \quad Days AR $= 365\div(S/\text{Avg.AR})$\\
+Days AP $= 365\div(\text{COGS}/\text{Avg.AP})$ \quad Days Unearn $= 365\div(S/\text{Avg.Unearn})$\\
+\con{Declining Days AR + booming sales $=$ healthy. Rising Days Inv + backlog $=$ ramp-up (not necessarily bad). Stable Days Unearn $=$ mix stable; new high-days products offsetting low-days ones.}
+
+%----- COOKIE JAR -----
+\sect{Cookie Jar Reserves (S5--7)}
+Doubtful\%: Allow/$\text{AR}_g$ \; ($\text{AR}_g=\text{AR}_n+$Allow)\\
+Returns/Warranty\%: Addtn to Reserve/Sales\\
+Dep.Life $=$ Avg.Gross PPE/Dep.Exp \; (Gross $=$ Net $+$ Accum.); Rem.life $=$ Net/Dep.Exp\\
+LIFO$\to$FIFO: $\Delta$LIFO Res $=$ COGS$_L -$ COGS$_F$; FIFO COGS $=$ LIFO COGS $-\,\Delta$LIFO Res\\
+LIFO layer liquidation: drawing down inv.\ levels forces old low-cost inventory into COGS $\Rightarrow$ artificially \textit{reduces} COGS $\Rightarrow$ inflates profits. Firms must disclose this effect.\\
+DTA Allowance: required when DTA ``more likely than not'' not realizable; $\uparrow$ allowance $\Rightarrow$ $\uparrow$ tax expense.\\
+\con{Aggressive accruals foreshadow reversals. Accounting diffs can be legitimate; aggressive on one can be conservative on another.}
+
+%----- SPECIAL ITEMS -----
+\sect{Special Items \& Non-GAAP (S6--7)}
+\textbf{Core/recurring}: SG\&A, R\&D, royalties, amortization (same sign, every year).\\
+\textbf{Special}: Restructuring, impairments, M\&A costs, litigation, asset G/L, disc.ops.\\
+\textbf{Gray areas}: Litigation (winding down vs.\ ongoing); Contingent consideration (recurring if M\&A is core strategy, special if one-off). Justify with pattern + strategy.\\
+\textbf{Special items on CFS too}: Debt extinguishment, investment G/L.\\
+\textbf{Adj. rule}: Back out from NI; adjust tax; ignore BS impact. ``Back out'' $\neq$ ``ignore.''\\
+\textbf{Non-GAAP}: Street earnings; excludes specials $+$ sometimes recurring (stock comp). You decide if reasonable.\\
+\textbf{OCI} (bypasses IS $\to$ equity): AFS sec., hedges, pension G/L, FX translation, IFRS reval.\\
+\con{Negative specials $=$ cockroaches: more will follow. Non-recurring $\neq$ short-lived. Turnaround: specials $\Rightarrow$ corrective actions $\Rightarrow$ improvement eventually.}
+
+%----- Z-SCORE -----
+\sect{Bankruptcy \& Z-Scores (S3)}
+\textbf{Z} (public mfg): $1.2\frac{WC}{TA}+1.4\frac{RE}{TA}+3.3\frac{EBIT}{TA}+0.6\frac{MVE}{BVL}+1.0\frac{S}{TA}$\\
+$Z>3.0$ safe; $1.8$--$3.0$ grey; $Z<1.8$ distress\\[2pt]
+\textbf{Z$''$} (any non-fin): $3.25+6.56\frac{WC}{TA}+3.26\frac{RE}{TA}+6.72\frac{EBIT}{TA}+1.05\frac{BVE}{BVL}$\\
+$Z''>5.85$ safe; $4.35$--$5.85$ grey; $Z''<4.35$ distress. Maps to bond ratings.\\
+EBIT $=$ pretax income $+$ int.exp. \; MVE $=$ price $\times$ shares at FYE.\\EBIT/TA and S/TA use \textit{year-end} TA (not avg); other Z vars unspecified. \textit{Z article cutoffs wrong; use slide values.}\\[2pt]
+{\scriptsize\begin{tabular}{@{}l@{\ }c@{\ }c@{\ }c@{\ }c@{}}
+\toprule
+Event & WC/TA & RE/TA & EBIT/TA & BVE/BVL\\
+\midrule
+IPO/equity raise & $\uparrow$ & $\uparrow^*$ & $\uparrow^*$ & $\uparrow$\\
+Net loss & $\circ$ & $\downarrow$ & $\downarrow$ & $\downarrow$\\
+New debt & ${\uparrow}$ST & $\circ$ & $\circ$ & $\downarrow$\\
+Asset write-off & $\circ$ & $\downarrow$ & $\downarrow$ & $\downarrow$\\
+\bottomrule
+\end{tabular}}\\[1pt]
+\con{IPO: CA$\uparrow$, TA$\uparrow$, BVE$\uparrow$ (via APIC); EBIT and RE numerators unaffected. $^*$For startup (RE$<$0, EBIT$<$0): ratios increase toward zero. For profitable co (RE$>$0, EBIT$>$0): RE/TA$\downarrow$, EBIT/TA$\downarrow$. Cash cushion $\neq$ fundamental health.}
+
+%----- M-SCORE -----
+\sect{Beneish M-Score (S8)}
+{\scriptsize
+$M=-4.84+0.92\,DSRI+0.528\,GMI+0.404\,AQI+0.892\,SGI$\\
+$\phantom{M=}+0.115\,DEPI-0.172\,SGAI-0.327\,LVGI+4.679\,TATA$
+}\\[1pt]
+{\scriptsize\begin{tabular}{@{}l@{\ }l@{}}
+\toprule
+Var & Formula (num yr$_t$ / denom yr$_{t-1}$ unless noted)\\
+\midrule
+DSRI & $(AR/S)_t/(AR/S)_{t-1}$\\
+GMI & $GM_{t-1}/GM_t$\\
+AQI & $(1{-}(CA{+}PPE_n)/TA)_t/(\cdots)_{t-1}$\\
+SGI & $S_t/S_{t-1}$\\
+DEPI & $(D/(D{+}PPE_n))_{t-1}/(\cdots)_t$\\
+SGAI & $(SGA/S)_t/(SGA/S)_{t-1}$\\
+LVGI & $((LTD{+}CL)/TA)_t/(\cdots)_{t-1}$\\
+TATA & $(NI_\text{bef.disc}{-}CFO)/TA_t$\\
+\bottomrule
+\end{tabular}}\\[1pt]
+Higher M $=$ more risk. 2+ vars near manipulator col $=$ red flag.\\
+Set AQI$=1$ if $(CA{+}PPE)=TA$ in $t{-}1$; PPE incl.\ capit.\ leases.\\[1pt]
+\textbf{Common errors}: AQI: use net PPE (not bldgs); CA$+$PPE / TA (not CL). DEPI: depreciation only (not D\&A). LVGI: LTD $+$ CL in numerator / TA. TATA: divide by TA.\\[1pt]
+\textbf{Why errors cancel}: ratio-of-ratios $\Rightarrow$ num/denom errors offset; TATA small $\Rightarrow$ big rel.\ error, small abs.\ effect; LVGI negative coeff.\ moderates.\\
+\con{Intersegment transactions net to zero in consol.\ FS $\Rightarrow$ M-Score cannot detect segment-level manipulation.}
+
+%----- DECHOW -----
+\sect{Dechow F-Score (S8)}
+{\scriptsize
+$\hat{y}=-7.893+0.790r+2.518c_r+1.191c_i+1.979s$\\
+$\phantom{\hat{y}=}+0.171c_s-0.932c_\rho+1.029\,\text{iss}$
+}\\
+Prob $= e^{\hat{y}}/(1+e^{\hat{y}})$; \; F $=$ Prob$/0.0037$\\
+
+F$>1$ above normal; F$>1.85$ substantial; F$>2.45$ high\\[2pt]
+{\scriptsize\begin{tabular}{@{}l@{\ }l@{}}
+\toprule
+Var & Definition\\
+\midrule
+$r$ (rsst\_acc) & $\Delta$Non-cash NOA/Avg.TA\\
+$c_r$ (ch\_rec) & $\Delta AR_n$/Avg.TA\\
+$c_i$ (ch\_inv) & $\Delta$Inv/Avg.TA\\
+$s$ (soft\_assets) & $(TA{-}PPE_n{-}Cash)/TA$\\
+$c_s$ (ch\_cs) & $\%\Delta(S{-}\Delta AR)$\\
+$c_\rho$ (ch\_roa) & $\Delta(NI/\text{Avg.TA})$\\
+iss (issue) & $=1$ if LTD or equity issued\\
+\bottomrule
+\end{tabular}}\\[1pt]
+Non-cash NOA $=$ Equity $-$ Pref.Stk $-$ Cash. NI bef.\ disc.ops; PPE incl.\ cap.\ leases; equity incl.\ SBC.\\
+\con{Score mainly driven by soft\_assets and issue. Asset-light (low D\&A) $\Rightarrow$ CFO $<$ NI is \textit{not} automatically a bad signal (D\&A is usually the biggest accrual).}
+
+%----- BENFORD -----
+\sect{Benford's Law (S8)}
+Distribution of the occurrence of 1st digit of numbers in a group of numbers. Tends towards lower numbers. \\
+$P(d) = \log_{10}(1+1/d)$\\[2pt]
+Applies to naturally occurring data (revenues, populations). Does NOT apply to assigned numbers (zip codes, phone numbers). Deviations $=$ manipulation signal.\\
+\con{Fraudsters can't generate convincingly random-looking numbers.}
+
+%----- VALUATION -----
+\sect{Valuation Multiples (S2)}
+Trailing P/E $= P/$TTM EPS; \; Fwd P/E $= P/$NTM EPS; \; PEG $=$ (P/E)/LT growth\\
+MVE/Pretax Income: avoids tax distortions.\\
+\textbf{TEV} $=$ MVE $+$ LTD $+$ Curr.LTD $-$ Cash; \; TEV/EBITDA or TEV/EBIT.\\
+\textbf{Consistency}: entity-level numerator (TEV) $\leftrightarrow$ pre-debt denominator (EBIT/EBITDA); equity-level (MVE) $\leftrightarrow$ post-debt (NI, EPS, pretax).\\
+\con{Special items distort: transitory vs.\ recurring? Single-peer caveat: more comps $=$ stronger conclusion. Watch units (millions vs. thousands).}
+
+%----- SEGMENTS / NCI -----
+\sect{Segments \& NCI (S9)}
+Reportable segment if any: rev $\ge10\%$, profit $\ge10\%$, or assets $\ge10\%$ of all segs. Combined reported segs $\ge75\%$ of consol.\ revenue.\\
+Required disclosures: P\&L per seg; often rev/assets/capex/dep; also product/geo/customer.\\
+Intersegment transactions eliminated in consolidation.\\
+NCI(IS) $=$ minority share of sub NI; NCI(BS) $=$ minority share of sub net assets (in equity).\\
+Redeemable NCI $\to$ liabilities or temp.\ equity.\\
+\con{Check: Total Equity $-$ NCI $\to$ NI to parent. NCI $=$ ``a segment the company doesn't own.'' Treat NI and equity consistently.}
+
+%----- FORECASTING -----
+\sect{Forecasting Revenue \& Expenses (S10--11)}
+Revenue $=$ P $\times$ Q. Growth mean-reverts to \textbf{3--7\%}; typical 7--11\%; wide variance.\\
+\textbf{Revenue recognition (5-step, FASB/IASB eff.\ Jan 2018)}:
+(1) Identify contract; (2) Identify performance obligations; (3) Determine transaction price; (4) Allocate price to obligations; (5) Recognize when/as each obligation satisfied.\\
+Tricky for: subscriptions, bundles, commissions, licenses, long-term contracts.\\[1pt]
+Expenses: \%Sales or regression: $\text{Exp} = a + b\cdot S$. Adj for scale ($\downarrow$), lumpiness ($\uparrow$ST), sticky costs ($\uparrow$ST in downturns).\\
+Dep.Exp $\approx (1/\text{Dep.Life})\times\text{Avg.Gross PPE}$; apply to existing PPE $+$ capex.\\
+\con{Revenue is the engine; all forecasts follow from it. FS articulate: IS $\to$ RE $\to$ CFS. Higher fixed costs $\Rightarrow$ more margin volatility.}
+
+%----- STOCK COMP -----
+\sect{Stock Compensation (S11)}
+Fair value expensed as earned (options: Black-Scholes; RSUs: price at grant). Real cost.\\
+IS: salary exp. \; CFS: add back as non-cash op.\ adj.\ (like D\&A). \; BS: APIC $\uparrow$, DTA, treasury stock.\\
+Often excluded from Non-GAAP; Buffett/Damodaran: real operating expense; dilutes shareholders.
+
+%----- KEY RULES -----
+\sect{Key Conceptual Rules (Quiz Focus)}
+\textbf{Interpreting questions}:
+\begin{itemize}[noitemsep,topsep=0pt,leftmargin=*,itemsep=0pt]
+  \item State formula $\to$ apply it $\to$ acknowledge alternative interpretations $\to$ conclude
+  \item ``Small accrual'' can mean demand met \textit{or} supply constrained --- say both
+  \item If IS charge $=$ CFS add-back $\Rightarrow$ 100\% non-cash; state why (e.g.\ prior-period deposit)
+  \item Link: accounting signal $\to$ economic logic $\to$ forward-looking implication
+\end{itemize}
+\textbf{F/Z model philosophy}: pre-defined recipes check analyst bias; component analysis yields same insight as DuPont drill-down.\\
+\textbf{Benchmarking}: accounting diffs can be legitimate; aggressive on one $\Leftrightarrow$ conservative on another; be consistent when adjusting benchmarks; make reasonable assumptions when data is missing.\\
+\textbf{Piotroski}: high score $\Rightarrow$ profitability $\uparrow$, positive surprises, stock outperformance; portfolio effect $\neq$ single stock guarantee.\\
+\textbf{M-Score gray zone} ($-2.22$ to $-1.78$): inconclusive --- could signal other issues even if specific manipulation not detected.\\
+\textbf{Z'' gray zone} ($4.35$--$5.85$): monitor closely; one bad year can push into distress.
+
+
+%----- ACRONYMS -----
+\sect{Acronym Glossary}
+\textbf{Financial Statements \& Locations}\\[1pt]
+{\scriptsize\begin{tabular}{@{}l@{\ }l@{\ }l@{}}
+\toprule
+Acr. & Meaning & Where \\
+\midrule
+NI   & Net Income & IS (bottom line) \\
+EPS  & Earnings Per Share & IS (below NI) or calc \\
+EBIT & Earnings Before Interest \& Tax & Calc: pretax $+$ int.exp. \\
+EBITDA & EBIT $+$ Dep. $+$ Amort. & Calc (not on stmt) \\
+COGS & Cost of Goods Sold & IS \\
+GM   & Gross Margin (= Sales $-$ COGS) & IS \\
+SG\&A & Selling, General \& Admin.\ Exp. & IS \\
+R\&D & Research \& Development Exp. & IS \\
+D\&A & Depreciation \& Amortization & CFS (op.\ add-back) / FN \\
+SBC  & Stock-Based Compensation & IS (various lines) + CFS \\
+OCI  & Other Comprehensive Income & Stmt of Comp.\ Inc.\ / Eq. \\
+CFO  & Cash Flow from Operations & CFS (operating section) \\
+CFI  & Cash Flow from Investing & CFS (investing section) \\
+CFF  & Cash Flow from Financing & CFS (financing section) \\
+TA   & Total Assets & BS \\
+CA   & Current Assets & BS \\
+CL   & Current Liabilities & BS \\
+WC   & Working Capital (CA $-$ CL) & BS (calc) \\
+AR   & Accounts Receivable & BS (current assets) \\
+Inv  & Inventory & BS (current assets) \\
+AP   & Accounts Payable & BS (current liabilities) \\
+PPE  & Property, Plant \& Equipment & BS (non-current assets) \\
+LTD  & Long-Term Debt & BS (long-term liabilities) \\
+RE   & Retained Earnings & BS (equity section) \\
+BVE  & Book Value of Equity & BS (equity section) \\
+BVL  & Book Value of Liabilities & BS (total liabilities) \\
+MVE  & Market Value of Equity & Calc: price $\times$ shares \\
+TEV  & Total Enterprise Value & Calc: MVE$+$LTD$+$CurrLTD$-$Cash \\
+NCI  & Noncontrolling Interest & IS (below NI) + BS (equity) \\
+APIC & Additional Paid-In Capital & BS (equity section) \\
+DTA  & Deferred Tax Asset & BS (assets) \\
+LIFO & Last In, First Out (inventory) & FN (inventory note) \\
+FIFO & First In, First Out (inventory) & FN (inventory note) \\
+\bottomrule
+\end{tabular}}\\[3pt]
+\textbf{Model Variables}\\[1pt]
+{\scriptsize\begin{tabular}{@{}l@{\ }l@{}}
+\toprule
+Acr. & Meaning \\
+\midrule
+DSRI  & Days Sales in Receivables Index (M) \\
+GMI   & Gross Margin Index (M) \\
+AQI   & Asset Quality Index (M) \\
+SGI   & Sales Growth Index (M) \\
+DEPI  & Depreciation Index (M) \\
+SGAI  & SG\&A Expenses Index (M) \\
+LVGI  & Leverage Index (M) \\
+TATA  & Total Accruals to Total Assets (M) \\
+NOA   & Net Operating Assets (F-Score) \\
+rsst\_acc & $\Delta$Non-cash NOA / Avg.TA (F) \\
+ch\_rec  & $\Delta$Receivables / Avg.TA (F) \\
+ch\_inv  & $\Delta$Inventory / Avg.TA (F) \\
+soft\_assets & (TA$-$PPE$-$Cash)/TA (F) \\
+ch\_cs   & \% $\Delta$ Cash Sales (F) \\
+ch\_roa  & $\Delta$ Return on Assets (F) \\
+iss      & Debt or equity issuance (F) \\
+\bottomrule
+\end{tabular}}\\[3pt]
+\textbf{Standards \& Regulatory}\\[1pt]
+{\scriptsize\begin{tabular}{@{}l@{\ }l@{}}
+\toprule
+Acr. & Meaning \\
+\midrule
+GAAP  & Generally Accepted Accounting Principles \\
+IFRS  & International Financial Reporting Standards \\
+FASB  & Financial Accounting Standards Board (US) \\
+IASB  & International Accounting Standards Board \\
+SEC   & Securities \& Exchange Commission \\
+10-K  & Annual report (IS, BS, CFS, FN in Item 8) \\
+MD\&A & Management Discussion \& Analysis (Item 7) \\
+AAER  & SEC Accounting \& Auditing Enforcement Release \\
+ROE   & Return on Equity (calc from IS + BS) \\
+ROA   & Return on Assets (calc from IS + BS) \\
+P/E   & Price-to-Earnings (mkt price / EPS) \\
+PEG   & Price/Earnings-to-Growth \\
+\bottomrule
+\end{tabular}}
+
+\end{multicols}
+\end{document}
